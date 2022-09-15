@@ -181,7 +181,11 @@ body, ul, li, p, a, label, input, div {
   width: 6px;
   height: 6px;
 }
-
+/*.nav-back {
+  background-color: grey;
+  font-style: color = grey;
+}
+*/
 @media (min-width: 576px) {
   .tempaltemo-carousel .h1 { font-size: 1em !important;}
 }
@@ -204,3 +208,11 @@ body, ul, li, p, a, label, input, div {
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {}
+
+.left {
+  right = 200px;
+}
+
+.right {
+  left = 200px;
+}
