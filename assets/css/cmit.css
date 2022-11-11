@@ -17,7 +17,11 @@ Table of contents
 --------------------------------------------- */
 
 
-
+/* Fixing extra white space issue */
+html, body {
+  margin: 0;
+  overflow-x: hidden;
+}
 
 /* Typography */
 body, ul, li, p, a, label, input, div {
