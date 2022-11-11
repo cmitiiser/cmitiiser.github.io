@@ -1,3 +1,16 @@
 /*
 Custom Css
 */
+
+.highlighted {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    background-color: #D1D0CD;
+    border-left: 7px solid #6B6B69;
+    font-size: smaller;
+    font-weight: lighter;
+}
+
+.highlighted a {
+    color: inherit;
+}
