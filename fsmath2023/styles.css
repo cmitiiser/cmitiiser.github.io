@@ -61,6 +61,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    margin-bottom: 0.75rem;
+}
+
+header img {
+    padding: 0.75rem 0.25rem;
 }
 
 header .nav {
@@ -95,6 +101,8 @@ header .nav .active {
 .poster {
     display: flex;
     justify-content: space-around;
+    
+    margin: 1rem 0rem;
 }
 
 .box {
@@ -103,7 +111,6 @@ header .nav .active {
     display: flex;
     gap: 1rem;
     flex-direction: column;
-    max-width: max(45%, 32rem);
 }
 
 .boxh {
@@ -113,12 +120,11 @@ header .nav .active {
 }
 
 .dboxh {
-    gap: 8rem;
-    justify-content: center;
+    justify-content: space-evenly;
+    gap: 6rem;
 }
 
 .dboxh .box {
-    max-width: max(33%, 16rem);
     align-items: center;
     margin: 0;
 }
@@ -134,8 +140,16 @@ header .nav .active {
     color: inherit;
 }
 
-.dboxh .box:hover .text .h {
+.dboxh .box .text .h {
     text-decoration: underline;
+}
+
+.box img {
+    border-radius: 50%;
+}
+
+.d2boxh {
+    gap: 10rem;
 }
 
 @media only screen and (min-width: 36rem) {
