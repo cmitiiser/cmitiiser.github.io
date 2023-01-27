@@ -92,6 +92,8 @@ header .nav a:hover, .hnav a:hover {
     gap: 2rem;
     align-items: center;
     justify-content: space-evenly;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.75rem;
 }
 
 header .nav .active {
