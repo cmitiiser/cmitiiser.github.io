@@ -9,6 +9,7 @@ Custom Css
     border-left: 7px solid #6B6B69;
     font-size: smaller;
     font-weight: lighter;
+    margin-bottom: 0.75rem;
 }
 
 .highlighted a {
