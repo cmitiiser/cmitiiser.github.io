@@ -29,6 +29,9 @@
     <link rel="stylesheet" href="https://cmit.iisertvm.ac.in/assets/css/custom.css">
     <link rel="stylesheet" href="https://cmit.iisertvm.ac.in/fsmath2023/styles.css">
 
+    <script src="https://fred-wang.github.io/TeXZilla/TeXZilla-min.js"></script>
+    <script src="https://fred-wang.github.io/TeXZilla/examples/customElement.js"></script>
+
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="https://cmit.iisertvm.ac.in/assets/css/fontawesome.min.css">
@@ -80,90 +83,222 @@
     <div class="mt">
         <h1>Titles and Abstracts</h1>
         <hr>
-
-
-        To be announced...
-
-        <hr>
-
-        <!--
-        <h3>On dd/mm/yy</h3>
         <div class="boxh">  
-            <div class="box">
+            
+            <div class="box" style="max-width: 40rem;">
                 <div class="img">
-                    <img src="https://cmit.iisertvm.ac.in/fsmath2023/photo.jpg" width="150">
+                    <img src="https://www.math.tifrbng.res.in/people/aditi/image_normal" width="150" height="150">
                 </div>
                 <div class="text">
-                    <h3>[dd/mm/yyyy mm:hh] [Title Placeholder]</h3>
-                    <h4>Speaker: [Placeholder]</h4>
-                    <p><strong>Abstract</strong>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lorem eu leo facilisis aliquam eget nec eros. Donec in ligula ac orci varius suscipit. Phasellus facilisis lacus est, eu accumsan purus varius at. Cras egestas a dui et efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a metus id dui ornare pulvinar vitae at diam. Vestibulum vitae ligula erat. Maecenas molestie fringilla tortor vitae consectetur. Etiam convallis neque eget nibh imperdiet, et blandit lectus dapibus. Fusce aliquet nibh dictum tortor pharetra, vitae gravida ligula tempor. Nulla in iaculis ex. Proin enim augue, dignissim sed dapibus ac, imperdiet sit amet augue. Aenean vitae dolor molestie, viverra ex tempor, auctor augue. </p>
-                </div>
-            </div>
-    
-            <div class="box">
-                <div class="img">
-                    <img src="https://cmit.iisertvm.ac.in/fsmath2023/photo.jpg" width="150">
-                </div>
-                <div class="text">
-                    <h3>[dd/mm/yyyy mm:hh] [Title Placeholder]</h3>
-                    <h4>Speaker: [Placeholder]</h4>
-                    <p><strong>Abstract</strong>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lorem eu leo facilisis aliquam eget nec eros. Donec in ligula ac orci varius suscipit. Phasellus facilisis lacus est, eu accumsan purus varius at. Cras egestas a dui et efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a metus id dui ornare pulvinar vitae at diam. Vestibulum vitae ligula erat. Maecenas molestie fringilla tortor vitae consectetur. Etiam convallis neque eget nibh imperdiet, et blandit lectus dapibus. Fusce aliquet nibh dictum tortor pharetra, vitae gravida ligula tempor. Nulla in iaculis ex. Proin enim augue, dignissim sed dapibus ac, imperdiet sit amet augue. Aenean vitae dolor molestie, viverra ex tempor, auctor augue. </p>
+                    <h3>Controllability in discontinuous flux </h5>
+                    <h5>Speaker: <strong>Prof. Adimurthi A </strong>, IIT Kanpur</h4>
+                    <p><strong>Abstract</strong>:   
+                        In general controllability is not obvious for conservation laws even in one dimension since the method of linearization does not work as in the Navier Stokes Equation. One has to adopt a different method in this case. I will discuss this problem in scalar conservation laws in one dimension withdiscontinuous flux.
+                        
+                    </p>
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" style="max-width: 40rem;">
                 <div class="img">
-                    <img src="https://cmit.iisertvm.ac.in/fsmath2023/photo.jpg" width="150">
+                    <img src="https://media.licdn.com/dms/image/C5103AQEgbGduAlP9oQ/profile-displayphoto-shrink_800_800/0/1534433614176?e=2147483647&v=beta&t=XRgCPGDPF4nBQOKLoeSRqVbnpw347L_V1RgHVk7_RH8" width="150" height="150">
                 </div>
                 <div class="text">
-                    <h3>[dd/mm/yyyy mm:hh] [Title Placeholder]</h3>
-                    <h4>Speaker: [Placeholder]</h4>
-                    <p><strong>Abstract</strong>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lorem eu leo facilisis aliquam eget nec eros. Donec in ligula ac orci varius suscipit. Phasellus facilisis lacus est, eu accumsan purus varius at. Cras egestas a dui et efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a metus id dui ornare pulvinar vitae at diam. Vestibulum vitae ligula erat. Maecenas molestie fringilla tortor vitae consectetur. Etiam convallis neque eget nibh imperdiet, et blandit lectus dapibus. Fusce aliquet nibh dictum tortor pharetra, vitae gravida ligula tempor. Nulla in iaculis ex. Proin enim augue, dignissim sed dapibus ac, imperdiet sit amet augue. Aenean vitae dolor molestie, viverra ex tempor, auctor augue. </p>
+                    <h3>Diophantine tuples </h5>
+                    <h5>Speaker: <strong>Prof. Kalyan Chakraborty </strong>, Kerala School of Mathematics</h4>
+                    <p><strong>Abstract</strong>:  A Diophantine <la-tex>m</la-tex>-tuple is a collection of <la-tex>m</la-tex>-numbers such that the product of any two distinct entries increased by <la-tex>1</la-tex> should be a square in the chosen domain. Diophantine was the first who asked this question and found four rationals <la-tex>\{\frac{1}{16},\frac{33}{16},\frac{17}{4},\frac{105}{16}\}</la-tex> which satisfy this property. Fermat was the first to find a quadruple <la-tex>\{1,3,8,120\}</la-tex> which has this property. Since then the research on this topic has taken its wings along with relating this question to other branches of mathematics. The aim of my talk will be to report a couple of works from my group on this topic and delve on them a bit. I will conclude with listing many interesting doable research problems.                                                
+                    </p>
+                </div>
+            </div>
+
+            <div class="box" style="max-width: 40rem;">
+                <div class="img">
+                    <img src="https://isi.irins.org/assets/profile_images/122633.jpg" width="150" height="150">
+                </div>
+                <div class="text">
+                    <h3>The Wasserstein distance between positive matrices </h5>
+                    <h5>Speaker: <strong>Prof. Tanvi Jain </strong>, ISI Delhi</h4>
+                    <p><strong>Abstract</strong>:   
+                        We start with a brief discussion on the optimal transport
+                        problem and introduce the Wasserstein distance between positive matrices.
+                        We then talk about connections of this metric with some other interesting
+                        problems and describe its basic properties. <br>The talk is based on a joint work with Rajendra Bhatia and Yongdo Lim.
+                        
+                    </p>
+                </div>
+            </div>
+
+            <div class="box" style="max-width: 40rem;">
+                <div class="img">
+                    <img src="https://isi.irins.org/assets/profile_images/122624.jpg" width="150" height="150">
+                </div>
+                <div class="text">
+                    <h3>A random string in a medium of Poisson traps </h5>
+                    <h5>Speaker: <strong>Prof. Mathew Joseph </strong>, ISI Bangalore</h4>
+                    <p><strong>Abstract</strong>: We consider a random string modeled by the additive stochastic heat equation on a torus. The string evolves in <la-tex>R^n</la-tex> among obstacles of finite width centered around points coming from a Poisson point process. The string dies when any part of it hits an obstacle. We discuss the probability that the string survives up to time T. This talk is based on work with Siva Athreya and Carl Mueller.                                                
+                    </p>
+                </div>
+            </div>
+
+            <div class="box" style="max-width: 40rem;">
+                <div class="img">
+                    <img src="https://math.iitm.ac.in/images/profilepic/rameshk.jpg" width="150" height="150">
+                </div>
+                <div class="text">
+                    <h3>Smooth structures on <la-tex>PL</la-tex>-manifolds of dimensions between <la-tex>8</la-tex> and <la-tex>10</la-tex> </h5>
+                    <h5>Speaker: <strong>Prof. Ramesh Kasilingam </strong>, IIT Madras</h4>
+                    <p><strong>Abstract</strong>:   
+                        The work of Thom, Milnor, Hirsch and Mazur has reduced the problems of smooth-ing theory to homotopy theory and study of the fibration of classifying spaces <la-tex>P L/O → BO → BP L</la-tex>. Let <la-tex>Γ</la-tex> denote the homotopy functor from the category of 
+                        closed smooth manifolds to the category of abelian groups defined by homotopy classes of maps into
+                        <la-tex>P L/O</la-tex>, that is, <la-tex>Γ(M) = [M, P L/O]</la-tex>. <br>
+                        In this talk, we give a detailed description of <la-tex>P L/O</la-tex> in low dimensions and some
+                        general calculations of <la-tex>Γ(M)</la-tex>. In particular, if <la-tex>M</la-tex> is a closed smooth <la-tex>n</la-tex>-manifold of
+                        dimension <la-tex>n ≤ 10</la-tex>, we show that <la-tex>Γ(M)</la-tex> is determined by the cohomology of <la-tex>M</la-tex> and the
+                        homotopy groups of <la-tex>P L/O</la-tex>. The consequences are twofold : on the one hand, we prove
+                        that there exists an exotic <la-tex>n</la-tex>-sphere <la-tex>Σ ∈ Θ_n</la-tex> such that <la-tex>M#Σ</la-tex> is diffeomorphic to <la-tex>M</la-tex>
+                        where <la-tex>n = 9, 10</la-tex> and <la-tex>M</la-tex> is a closed simply connected non-spin <la-tex>n</la-tex>-manifold. On the other
+                        hand, for <la-tex>8 ≤ n ≤ 10</la-tex>, we show that there exists an exotic <la-tex>n</la-tex>-sphere <la-tex>Σ ∈ Θ_n</la-tex> such that the connected sum <la-tex>\mathbb{R}P^n
+                        #Σ</la-tex> of the real projective <la-tex>n</la-tex>-space with <la-tex>Σ</la-tex> is not diffeomorphic to the original real projective space <la-tex>\mathbb{R}P^n</la-tex>.
+                        <br>
+                        This is joint work with Dr. Samik Basu and Priyanka Magar.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box" style="max-width: 40rem;">
+                <div class="img">
+                    <img src="https://i1.rgstatic.net/ii/profile.image/272901886705666-1442076288153_Q128/Ratnakumar-P-K.jpg" width="150" height="150">
+                </div>
+                <div class="text">
+                    <h3>Young's inequality for the twisted convolution </h5>
+                    <h5>Speaker: <strong>Prof. P K Ratnakumar </strong>, Harish-Chandra Research Institute, Allahabad</h4>
+                    <p><strong>Abstract</strong>:  
+                        The classical generalised Young's inequality says that the convolution inequality <la-tex>\| f \ast g \|_{L^r(\mathbb{R}^n)} \leq \| f  \|_{L^p(\mathbb{R}^n)}  \| g \|_{L^q(\mathbb{R}^n)} </la-tex> holds for <la-tex>1\leq p,q,r \leq \infty</la-tex> if and only if <la-tex>\frac{1}{p} + \frac{1}{q}= 1+ \frac{1}{r}</la-tex>. We explore similar inequality for the twisted convolution on
+                        <la-tex>\mathbb{C}^n</la-tex> given by <la-tex>f \times_\lambda g (z) = \int_{\mathbb{C}^n} f (z-w) \,  g(w) \, e^{i\frac{\lambda}{2} \text{im}(z \cdot \bar{w}) } \,  dw, ~ 0 \neq \lambda \in \mathbb{R}</la-tex> which has better mapping properties for <la-tex>\lambda \neq 0</la-tex>.
+                        
+                        
+                        We prove  a geometric characterisation of  the triples <la-tex>(p,q,r), 1\leq p,q,r \leq \infty</la-tex> for which  the bi-linear <la-tex>\lambda</la-tex>-twisted convolution map <la-tex>B_\lambda: (f,g) \to  f \times _\lambda  \, g</la-tex> is bounded from <la-tex>L^p(\mathbb{C}^n) \times L^q(\mathbb{C}^n) \to L^r(\mathbb{C}^n)</la-tex>, leading to an analogue of  Young's inequality for  twisted convolution.
+                        
+                    </p>
+                </div>
+            </div>
+
+            <div class="box" style="max-width: 40rem;">
+                <div class="img">
+                    <img src="https://dotnet.newcastle.edu.au/nexus/Content/UserFiles/D78963F5-3F28-935B-0DE0-A7474AF6728A.jpg" width="150" height="150">
+                </div>
+                <div class="text">
+                    <h3>Low order finite element approximations of a sixth order problem </h5>
+                    <h5>Speaker: <strong>Prof. Bishnu Lamichhane </strong>, University of Newcastle, Australia</h4>
+                    <p><strong>Abstract</strong>: We consider a saddle point formulation  
+                        for a sixth order partial differential equation and its 
+                        finite element approximation.  
+                        We follow the Ciarlet-Raviart formulation for the biharmonic 
+                        problem to formulate our saddle point problem and the 
+                        finite element method. The new formulation allows us to use the H1-conforming 
+                        Lagrange finite element spaces to get the approximate the solution.  
+                        We prove a priori error estimates for our approach.
+                        Numerical results will be presented for linear and quadratic finite element methods.                        
+                         </p>
+                </div>
+            </div>
+
+            <div class="box" style="max-width: 40rem;">
+                <div class="img">
+                    <img src="http://www.math.iitb.ac.in/~neela/images/nn.jpeg" width="150" height="150">
+                </div>
+                <div class="text">
+                    <h3>Lowest-order equivalent nonstandard finite element methods for fourth-order plates </h5>
+                    <h5>Speaker: <strong>Prof. Neela Nataraj </strong>, IIT Bombay</h4>
+                    <p><strong>Abstract</strong>: The popular (piecewise) quadratic schemes for the biharmonic equation based on
+                        triangles are the nonconforming Morley finite element, the discontinuous Galerkin,
+                        the <la-tex>C^0</la-tex> interior penalty, and the WOPSIP schemes. Those methods are modified in
+                        their right-hand side with <la-tex>F \in H^{-2} (\Omega)</la-tex> replaced by <la-tex>F(JIM)</la-tex> and then are quasi-optimal in their respective discrete norms. The smoother <la-tex>JIM</la-tex> is defined for a piecewise smooth input function by a (generalized) Morley interpolation <la-tex>IM</la-tex> followed by a companion operator <la-tex>J</la-tex>. An abstract framework for the error analysis in the energy, weaker and piecewise Sobolev norms for the schemes is outlined for linear and semi-linear problems with quadratic nonlinearity. Applications include the biharmonic plate bending problem, stream function vorticity formulation of incompressible 2D
+                        Navier-Stokes problem, and the von Kármán plate bending problem. <br>
+                        This is a joint work with C. Carstensen, G.C. Remesan, and D. Shylaja.
+                         </p>
+                </div>
+            </div>
+
+            <div class="box" style="max-width: 40rem;">
+                <div class="img">
+                    <img src="https://scholar.googleusercontent.com/citations?view_op=view_photo&user=s0ZNIlYAAAAJ&citpid=1" width="150" height="150">
+                </div>
+                <div class="text">
+                    <h3>Shimura map on a class of functions</h3>
+                    <h5>Speaker: <strong>Prof. Balakrishnan Ramakrishnan</strong>, ISI Tezpur</h5>
+                    <p><strong>Abstract</strong>: The correspondence between the spaces of modular forms of half-integral weight and integral weight, developed 
+                        by Shimura, plays a major role in the theory of automorphic forms. A. Selberg observed a special property of this correspondence on a class of 
+                        functions (H. Cohen also made similar observations for the Shimura-Kohnen map). Later the observation of Selberg was extended to a wider 
+                        class of functions. In this talk, we give a brief account of these results, including our joint work with Manish Kumar Pandey.
+                         </p>
+                </div>
+            </div>
+
+            <div class="box" style="max-width: 40rem;">
+                <div class="img">
+                    <img src="https://www.isibang.ac.in/~statmath/Photos/rJaydebSarkar.JPG" width="150" height="150">
+                </div>
+                <div class="text">
+                    <h3>Commutant lifting theorem on the polydisc </h5>
+                    <h5>Speaker: <strong>Prof. Jaydeb Sarkar </strong>, ISI Bangalore</h4>
+                    <p><strong>Abstract</strong>: Sarason's one variable commutant lifting theorem is a key result in the theory of linear operators, complex analysis, and Hilbert function space theory, which has a stellar reputation in its application to classical results like Nevanlinna-Pick interpolation, Caratheodory-Fejer interpolation problem, Nehari interpolation problem, von Neumann inequality, isometric dilations, just to name a few. The expanded list easily includes control theory and electrical engineering. However, Sarason's lifting theorem does not hold in the setting of polydisc in general. Comprehending the subtleties of the lifting theorem on the polydisc is considered to be one of the challenging problems. <br>
+                        In the first half of this talk, we will provide a quick historical overview (within the span of little more than a century), present an introduction to the commutant lifting theorem, and explore how it interacts with the Nevanlinna-Pick interpolation. The second half of the talk will go over some recent advances in the commutant lifting theorem on the polydisc and its applications to interpolation and perturbation problems.
+                        
+                                                
+                         </p>
+                </div>
+            </div>
+
+            <div class="box" style="max-width: 40rem;">
+                <div class="img">
+                    <img src="https://isi.irins.org/assets/profile_images/122621.jpg" width="150" height="150">
+                </div>
+                <div class="text">
+                    <h3>Conics, cubics and algebraic cycles </h5>
+                    <h5>Speaker: <strong>Prof. Ramesh Sreekantan </strong>, ISI Bangalore</h4>
+                    <p><strong>Abstract</strong>:   
+                        In this talk we will relate some classical problems in enumerative geometry to the construction of algebraic cycles on K3 surfaces and Abelian surfaces.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box" style="max-width: 40rem;">
+                <div class="img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Srinivas_oberwolfach.jpg/200px-Srinivas_oberwolfach.jpg" width="150" height="150">
+                </div>
+                <div class="text">
+                    <h3>What are the Bloch-Beilinson Conjectures? </h5>
+                    <h5>Speaker: <strong>Prof. Vasudevan Srinivas </strong>, TIFR Bombay</h4>
+                    <p><strong>Abstract</strong>: The Bloch-Beilinson Conjectures are among the deepest open questions
+                        today, relating aspects of algebraic geometry, algebraic K-theory and
+                        number theory. <br>
+                        
+                         The conjectures have roots, on the one hand, in classical results
+                        (Euler, Riemann, Dedekind, Hilbert, Artin, etc.) on special values and
+                        zeroes of zeta functions, in the period upto the early 20th century.
+                        Another source, somewhat more recent (going upto the mid 1970's) is work
+                        of Tate, Iwasawa, Lichtenbaum, Quillen and Borel, which brought in the
+                        role of algebraic K-theory. <br>
+                        
+                        A more recent inspiration, beginning with several key calculations of
+                        Bloch, relate these to algebraic geometry. Bloch's vision was articulated
+                        in a general, more precise form by Beilinson, around 1982, resulting in
+                        what are now called the Bloch-Beilinson Conjectures. There are
+                         also refinements (e.g. the Bloch-Kato conjectures).
+                        In fact there is tantalising, but rather meagre, evidence to support these
+                        conjectures, inspite of about 40 years of effort by interested
+                        mathematicians. <br>
+                        
+                        My lecture will attempt to give an accessible introduction to this
+                        important circle of ideas.
+                                                
+                         </p>
                 </div>
             </div>
 
         </div>
         <hr>
-
-        <h3>On dd+1/mm/yy</h3>
-        <div class="boxh">
-            <div class="box">
-                <div class="img">
-                    <img src="https://cmit.iisertvm.ac.in/fsmath2023/photo.jpg" width="150">
-                </div>
-                <div class="text">
-                    <h3>[dd+1/mm/yyyy mm:hh] [Title Placeholder]</h3>
-                    <h4>Speaker: [Placeholder]</h4>
-                    <p><strong>Abstract</strong>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lorem eu leo facilisis aliquam eget nec eros. Donec in ligula ac orci varius suscipit. Phasellus facilisis lacus est, eu accumsan purus varius at. Cras egestas a dui et efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a metus id dui ornare pulvinar vitae at diam. Vestibulum vitae ligula erat. Maecenas molestie fringilla tortor vitae consectetur. Etiam convallis neque eget nibh imperdiet, et blandit lectus dapibus. Fusce aliquet nibh dictum tortor pharetra, vitae gravida ligula tempor. Nulla in iaculis ex. Proin enim augue, dignissim sed dapibus ac, imperdiet sit amet augue. Aenean vitae dolor molestie, viverra ex tempor, auctor augue. </p>
-                </div>
-            </div>
-    
-            <div class="box">
-                <div class="img">
-                    <img src="https://cmit.iisertvm.ac.in/fsmath2023/photo.jpg" width="150">
-                </div>
-                <div class="text">
-                    <h3>[dd+1/mm/yyyy mm:hh] [Title Placeholder]</h3>
-                    <h4>Speaker: [Placeholder]</h4>
-                    <p><strong>Abstract</strong>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lorem eu leo facilisis aliquam eget nec eros. Donec in ligula ac orci varius suscipit. Phasellus facilisis lacus est, eu accumsan purus varius at. Cras egestas a dui et efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a metus id dui ornare pulvinar vitae at diam. Vestibulum vitae ligula erat. Maecenas molestie fringilla tortor vitae consectetur. Etiam convallis neque eget nibh imperdiet, et blandit lectus dapibus. Fusce aliquet nibh dictum tortor pharetra, vitae gravida ligula tempor. Nulla in iaculis ex. Proin enim augue, dignissim sed dapibus ac, imperdiet sit amet augue. Aenean vitae dolor molestie, viverra ex tempor, auctor augue. </p>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="img">
-                    <img src="https://cmit.iisertvm.ac.in/fsmath2023/photo.jpg" width="150">
-                </div>
-                <div class="text">
-                    <h3>[dd+1/mm/yyyy mm:hh] [Title Placeholder]</h3>
-                    <h4>Speaker: [Placeholder]</h4>
-                    <p><strong>Abstract</strong>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lorem eu leo facilisis aliquam eget nec eros. Donec in ligula ac orci varius suscipit. Phasellus facilisis lacus est, eu accumsan purus varius at. Cras egestas a dui et efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a metus id dui ornare pulvinar vitae at diam. Vestibulum vitae ligula erat. Maecenas molestie fringilla tortor vitae consectetur. Etiam convallis neque eget nibh imperdiet, et blandit lectus dapibus. Fusce aliquet nibh dictum tortor pharetra, vitae gravida ligula tempor. Nulla in iaculis ex. Proin enim augue, dignissim sed dapibus ac, imperdiet sit amet augue. Aenean vitae dolor molestie, viverra ex tempor, auctor augue. </p>
-                </div>
-            </div>
-
-        </div>
-        <hr>
-
-        -->
 
         <br>
     </div>
