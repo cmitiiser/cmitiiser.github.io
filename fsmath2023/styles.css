@@ -115,6 +115,10 @@ header .nav .active {
     flex-direction: column;
 }
 
+.tspl {
+    max-width: 33rem;
+}
+
 .boxh {
     display: flex;
     justify-content: space-between;
