@@ -57,6 +57,11 @@ a {
     min-width: 12rem;
 }
 
+.tsp {
+    max-width: 30rem !important;
+    min-width: 30rem !important;
+}
+
 header {
     display: flex;
     justify-content: space-between;
