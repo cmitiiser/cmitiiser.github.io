@@ -1,0 +1,195 @@
+html, body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #e0dfdb;
+}
+
+.fwc {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+a {
+    color: inherit;
+}
+
+.mt {
+    margin-top: 1rem;
+}
+
+.img-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap:0;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.img-display img {
+   max-width: 16rem;
+   margin-right: 1rem;
+   margin-left: 1rem;
+}
+
+.img-display .top-image {
+    max-width: 68rem;
+    min-width: 8rem;
+}
+
+.list li {
+    padding-top: 1rem;
+}
+
+.tc {
+    text-align: center;
+}
+
+.table-res {
+    overflow-x: auto;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.table-res th, .table-res td {
+    padding: 0.25rem 0.5rem;
+    min-width: 12rem;
+}
+
+.tsp {
+    max-width: 30rem !important;
+    min-width: 30rem !important;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 0.75rem;
+}
+
+header img {
+    padding: 0.75rem 0.25rem;
+}
+
+header .nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    display: none;
+}
+
+header .nav a, .hnav a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+header .nav a:hover, .hnav a:hover {
+    border-bottom: 1px solid black;
+    color: inherit;
+}
+
+.hnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.75rem;
+}
+
+header .nav .active {
+    font-weight: 700 !important;
+}
+
+.poster {
+    display: flex;
+    justify-content: space-around;
+    
+    margin: 1rem 0rem;
+}
+
+.box {
+    margin: 1.5rem 0.5rem;
+
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.tspl {
+    max-width: 33rem;
+}
+
+.boxh {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.dboxh {
+    justify-content: space-evenly;
+    gap: 6rem;
+}
+
+.dboxh .box {
+    align-items: center;
+    margin: 0;
+}
+
+.dboxh .box .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dboxh a:hover, .dboxh a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dboxh .box .text .h {
+    text-decoration: underline;
+}
+
+.box img {
+    border-radius: 50%;
+}
+
+.d2boxh {
+    gap: 10rem;
+}
+
+@media only screen and (min-width: 36rem) {
+    .fwc {
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+}
+
+@media only screen and (min-width:56rem) {
+    .hnav {
+        display: none;
+    }
+
+    header .nav {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 72rem) {
+    .fwc {
+        margin-right: 5rem;
+        margin-left: 5rem;
+    }
+}
+
+@media only screen and (min-width: 92rem) {
+    .fwc {
+        margin-right: min(15vw, 20rem);
+        margin-left: min(15vw, 20rem);
+    }
+}
