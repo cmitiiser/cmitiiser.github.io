@@ -4,6 +4,7 @@
     <title>Frontier Symposium Mathematics 2025</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
     <link rel="apple-touch-icon" href="https://cmit.iisertvm.ac.in/assets/img/apple-icon.png">
     <link rel="apple-touch-icon" sizes="57x57" href="https://cmit.iisertvm.ac.in/assets/img/fav/apple-icon-57x57.png">
@@ -30,14 +31,38 @@
     <link rel="stylesheet" href="./styles.css">
 
     <style>
-        .mct {
-            margin: 0 auto;
+        .abstract-container {
+            margin: 2rem auto;
+            max-width: 60rem;
         }
-
-        @media only screen and (min-width: 92rem) {
-            .mct {
-                margin: 0;
-            }
+        .abstract-box {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            background-color: #f9f9f9;
+        }
+        .abstract-title {
+            font-weight: bold;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .abstract-speaker {
+            margin-top: 0.5rem;
+            font-style: italic;
+            font-weight: bold;
+        }
+        .abstract-text {
+            margin-top: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        .abstract-pic
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
         }
     </style>
 
@@ -90,18 +115,27 @@
         <a href="contact.html"><div>Contact</div></a>
     </div>
 </section>
+<style>
+    .mct {
+        margin: 0 auto;
+    }
 
+    @media only screen and (min-width: 92rem) {
+        .mct {
+            margin: 0;
+        }
+    }
+</style>
 <section class="fwc mt">
     <div class="mt">
-        <h1>Abstracts</h1>
-        Abstract for Frontier Symposium Mathematics 2025 will be released soon
+        
 
         <!--<hr>
         <strong style="margin-bottom:0.5rem">Please find the abstract and titles of all the talks for IINMM below</strong></div>
         <div class="row p-5"><iframe src=https://drive.google.com/file/d/1U2QO144AgSezHUk9rvjAzjmjsbixDy5i/preview allowfullscreen webkitallowfullscreen=true frameborder=0 width=auto height="1080" marginheight=0 marginwidth=0 allow=autoplay></iframe>
         </div>-->
 </section>
-<!--
+
 <section class="fwc mt">
     <div class="mt">
         <h1 style="text-align: center;">Titles and Abstracts</h1>
@@ -109,397 +143,228 @@
         <div class="boxh">  
             
             <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://www.iisermohali.ac.in/images/faculty/kapil.jpg" width="150" height="150" style="object-fit: cover;">
-                </div>
-                <div class="text">
-                    <h3>Beyond Abel and Jacobi</h5>
-                    <h5>Speaker: <strong>Prof. Kapil Paranjape</strong>, IISER Mohali</h4>
-                    <p><strong>Abstract</strong>:   
-
-The classical theorem of Abel and Jacobi characterises the zeroes and poles of a meromorphic function on a compact Riemann surface (or smooth projective variety) using a map which is nowadays called the Abel-Jacobi homomorphism.
-<br>
-Following the work of many algebraic geometers over the past 150 years, this result has been successively refined and studied for higher-dimensional varieties. The most sophisticated version of this refinement is via the theory of "motives" as first proposed by Grothendieck. The most elaborate conjectural refinements of the Abel-Jacobi theorem are those of Bloch and Beilinson.
-<br>
-As with most conjectures, there have been many attempts to construct counter-examples. One method is to construct "minimal" instances of these conjectures for "well-understood" varieties where the conjectures do not (as yet) follow from known results. Such examples were constructed by Griffiths, Mumford-Roitman and many others which
-led to the more precise formulations of the conjectures that we see today.
-<br>
-In this talk, the speaker will attempt to explain some ideas and examples behind this elaborate framework and present his own work in its context.
-                    </p>
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://www.europeanwomeninmaths.org/wp-content/uploads/2018/09/jaya_iyer.jpg" width="150" height="150" style="object-fit: cover;">
-                </div>
-                <div class="text">
-                    <h3>Lefschetz theorem in Algebraic Geometry</h5>
-                    <h5>Speaker: <strong>Prof. Jaya Iyer </strong>, Institute of Mathematical Sciences</h4>
-                    <p><strong>Abstract</strong>:  
-                        In this talk we will discuss the classical Lefschetz hyperplane section theorem, as a comparison theorem of topological structures. We will then pose analogues in Chow theory for algebraic varieties. The talk will be accessible to students as well.
-                    </p>
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://www.iiserpune.ac.in/storage/people/244/6ed13bef-be30-438f-8268-870f5bd5f021.jpg" width="150" height="150" style="object-fit: cover;">
-                </div>
-                <div class="text">
-                    <h3> Overdetermined problems: An interaction of PDE and Geometry</h3>
-                    <h5>Speaker: <strong>Prof. Anup Biswas </strong>, IISER Pune</h4>
-                    <p><strong>Abstract</strong>: In a celebrated paper in 1971, Serrin studied the overdetermined problem for the Laplacian operator. The proof relied on a powerful technique, now known as the method of moving planes, a refinement of a reflection principle conceived by Alexandrov. Later this idea of reflection principle was picked-up by Gidas, Ni and Nirenberg in 1979 in their landmark work on the symmetry of positive solutions of elliptic problems. The overdetermined problems were then extended for annulus as well as for unbounded domains. These problems are also related to the
-                        parallel surface problems. Recently, similar problems have been studied for nonlocal operators. In this talk, we shall give an overview of these problems and its extension.
-                        </p>
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://maths.iiserb.ac.in/images/faculty/MANAS_KAR.jpg" width="150" height="150" style="object-fit: cover;">
-                </div>
-                <div class="text">
-                    <h3>Determining coefficients for a fractional p-Laplace equation from exterior measurements </h5>
-                    <h5>Speaker: <strong>Prof. Manas Kar </strong>, IISER Bhopal</h4>
-                    <p><strong>Abstract</strong>:   
-                        In this talk, we consider an inverse problem of determining the coefficients of a fractional p-Laplace equation in the exterior domain. Assuming suitable local regularity of the coefficients in the exterior domain, we will prove an explicit reconstruction formula in the region where the exterior measurements are per- formed. This formula is then used to establish a global uniqueness result for real-analytic coefficients. In addition, we also discuss a stability estimate for the unique determination of the coefficients in the exterior measurement set.
-
-                        
-                    </p>
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://www.math.tifrbng.res.in/people/ujjwal/image_normal" width="150" height="150" style="object-fit: cover;">
-                </div>
-                <div class="text">
-                    <h3>Non-uniqueness results for fluid flow equations</h5>
-                    <h5>Speaker: <strong>Prof. Ujjwal Koley</strong>, TIFR Center for Applicable Mathematics (CAM)</h4>
-                    <p><strong>Abstract</strong>: In this talk, we will discuss about non-uniqueness results for fluid flow equations. In particular, we will concentrate on convex integration technique which plays a pivotal role in this business. This talk is accessible to all students.
-                    </p>
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://hkkaushik.files.wordpress.com/2020/03/harishkumar.jpg" width="150" height="150" style="object-fit: cover;">
-                </div>
-                <div class="text">
-                    <h3>Entropy Stable Numerical Schemes for Chew, Goldberger & Low (CGL) rarefied plasma flow equations</h5>
-                    <h5>Speaker: <strong>Prof. Harish Kumar </strong>, IIT Delhi</h4>
-                    <p><strong>Abstract</strong>:   
-                        We consider CGL equations, which are used to model rarefied plasma flows. The CGL equations are a system of nonconservative hyperbolic system. Hence, the design of stable numerical schemes is highly challenging. In this work, we design high-order entropy-stable finite-difference for the system. The key idea is to rewrite the equations in such a way that the nonconservative part does not contribute to the entropy evolution. We then symmetrize the conservative parts, which is very similar to the MHD equations, using Godunov’s symmetrization process. The final scheme is shown to be entropy stable at the semi-discrete level. Several MHD-inspired test cases are presented to test the stability and performance of the proposed scheme. This is a joint work with Anshu Yadav, Chetan Singh, Deepak Bhoriya, and Dinshaw S. Balsara.
-
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://i1.rgstatic.net/ii/profile.image/279596835590157-1443672488668_Q512/Manas-Sahoo-2.jpg" width="150" height="150" style="object-fit: cover;">
-                </div>
-                <div class="text">
-                    <h3>Initial boundary value problem for 1D scalar balance laws with strictly convex flux </h5>
-                    <h5>Speaker: <strong>Prof. Manas Sahoo</strong>, NISER</h4>
-                    <p><strong>Abstract</strong>: By introducing a suitable boundary functional, we obtain a <img src="./assets/equationmanas.png" height="35">
-                        type formula for the initial-boundary value problem for a balance law. We show that the 
-                        explicit solution given by <img src="./assets/equationmanas.png" height="35"> formula is entropy admissible and satisfies
-                         the initial condition in a strong sense and boundary condition in the sense of Bardos, 
-                         le Roux, and <img src="./assets/namemanas.png" height="50">                 
-                         </p>
-                </div>
-            </div>
-
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://www.iitk.ac.in/new/images/faculty-images/maths/ratmisra-kumar-b-v.jpg" width="150" height="150" style="object-fit: cover;">
-                </div>
-                <div class="text">
-                    <h3>Glimpses of mathematics at the frontiers of Science & Technology </h5>
-                    <h5>Speaker: <strong>Prof. B. V. Ratish Kumar </strong>, IIT Kanpur</h4>
-                    <p><strong>Abstract</strong>:  
-                        In this talk, we will take an illustrative tour on how mathematics is helping us in dealing
-                         with the problems from science and technology and thereby enriches the quality of life. Also,
-                          we will look at  a real life problem and the role of mathematics in solving it.
-                    </p>
-                </div>
-            </div>
-
-
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://isi.irins.org/assets/profile_images/1115051.JPG" width="150" height="150" style="object-fit: contain;">
-                </div>
-                <div class="text">
-                    <h3>Lattice point counting and the spectrum of the Laplacian</h5>
-                    <h5>Speaker: <strong>Prof. Satadal Ganguly </strong>, Indian Statistical Institute, Kolkata</h4>
-                    <p><strong>Abstract</strong>: Abstract: I will start by discussing some classical lattice point counting
-                         problems and then move on to some generalities. Finally, I will discuss a new
-                          result on counting lattice points on determinant surfaces.
-                         </p>
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://www.imsc.res.in/system/files/styles/profile_image/private/faculty/photos/knr-200x231.jpg?itok=zhJWh9ii" width="150" height="150" style="object-fit: contain;">
-                </div>
-                <div class="text">
-                    <h3>Graded shifts in a pure minimal free resolution</h3>
-                    </h5>
-                    <h5>Speaker: <strong>Prof. K. N. Raghavan </strong>, Institute of Mathematical Sciences</h4>
-                    <p><strong>Abstract</strong>: Can any increasing sequence of integers occur as the graded shifts in a pure minimal 
-                        free resolution (of some graded module)?   As Eisenbud-Floystad-Weyman showed,  
-                        the question becomes easier to answer (we know where to look for a solution) 
-                        if more is demanded,  namely,  equivariance (for the general linear group).    
-                         Despite the technical nature of this abstract,  the talk will attempt to be a 
-                         widely accessible introduction to the ideas involved.
-                         </p>
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://www.waltervansuijlekom.nl/wp-content/uploads/2014/05/walter_hires.jpg" width="150" height="150" style="object-fit: cover;">
-                </div>
-                <div class="text">
-                    <h3>Geometry emerging from spectra</h5>
-                    <h5>Speaker: <strong>Prof. Walter van Suijlekom </strong>, Radboud University</h4>
-                    <p><strong>Abstract</strong>: We give a gentle introduction to the spectral approach to geometry,
-                         where we replace spaces by commutative algebras, and capture the metric by combining
-                          it with the vibration spectrum of a suitable operator on the geometric space. We
-                           will give many examples and also show how to reconstruct geometry from this spectral data.
-                            This will allow us to generalize to noncommutative spaces, which we illustrate by some
-                             of the key examples. We will conclude by establishing some convergence results on the 
-                             emerging geometric spaces when an increasing part of the spectrum is available.     
-                         </p>
-                </div>
-            </div>
-
-            <div class="box" styl="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://i1.rgstatic.net/ii/profile.image/272869695422465-1442068613171_Q128/A-Parameswaran.jpg" width="150" height="150">
+                
+                <section class="abstract-container">
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://isi.irins.org/assets/profile_images/111519.jpg" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Local mapping property of the Schrödinger maximal function</div>
+                        <div class="abstract-speaker">Speaker: Prof. Swagato Kumar Ray</div>
+                        <div class="abstract-text">
+                            In this talk we will describe the local mapping property of the Schrödinger maximal function for Riemannian symmetric spaces of noncompact type with real rank 1. This is a joint work with Utsav Dewan.
+                        </div>
                     </div>
-                <div class="text">
-                    <h3> Genuinely Ramified maps and Stability</h3>
-                    <h5>Speaker: <strong>Prof. A. J. Parameswaran</strong>, ISI Tezpur</h5>
-                    <p><strong>Abstract</strong>:
-                        A morphism of smooth projective curves <la-tex> f:X\to Y </la-tex> is called Genuinely 
-                        ramified if it does not factor through an etale cover of <la-tex> Y </la-tex>.  
-                        We will discuss the equivalence of this condition in terms surjectivity of the
-                        fundamental group, pull back of stable bundles remain stable, beta subbundle of 
-                        the direct image of the structure sheaf and most interestingly on the connectivity 
-                        of the fibre product. We will also discuss that this equivalent to the connectivity 
-                        of the closure of the complement of the diagonal in the fibre product.
-                        </p>
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://isi.irins.org/assets/profile_images/111439.jpg" width="150" height="150">
-                </div>
-                <div class="text">
-                    <h3>Wavelet Analysis on Local Fields of Positive Characteristic</h3>
-                    <h5>Speaker: <strong>Prof. Biswaranjan Behera</strong>, Indian Statistical Institute</h4>
-                    <p><strong>Abstract</strong>:
-                        This talk is an overview of wavelet analysis on local fields of positive characteristic. 
-                        After a brief introduction to Fourier analysis on local fields, we will introduce 
-                        the concepts of multiresolution analysis (MRA) and wavelets on a local field 
-                        <la-tex>K</la-tex> of positive characteristic. 
-                        Next, we will discuss about the characterization of various functions 
-                        associated with wavelet analysis, namely, scaling functions, wavelets, 
-                        MRA-wavelets and low-pass filters. We will also find sufficient conditions 
-                        on a set of basic wavelets so that the corresponding wavelet system forms 
-                        an unconditional basis for <la-tex> L^p(K)</la-tex>, <la-tex>1 \leq p \leq \infty </la-tex>,
-                         and the Hardy space <la-tex>H^1(K) </la-tex>.
-                        
-                                                
-                         </p>
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://www.iisertvm.ac.in/assets/uploads/faculties/10d2712f581257950e7784721829ebc3.jpg" width="150" height="150">
-                </div>
-                <div class="text">
-                    <h3><la-tex>q</la-tex> -partition algebras
-                    </h3>
-                    <h5>Speaker: <strong>Prof. Geetha Thangavelu</strong>, IISER Thiruvananthapuram</h4>
-                    <p><strong>Abstract</strong>:   
-                        Let <la-tex>V</la-tex> be a $n$-dimensional vector space over a field. There are
-                        two actions of symmetric group on <la-tex> V\otimes r </la-tex>. The symmetric group <la-tex>S_n</la-tex>
-                        acts by letter action and the <la-tex>S_r</la-tex> acts by place permutations. The action by
-                        place permutations can be $q$-deformed to the action of
-                        Iwahori-Hecke algebras and is in Schur-Weyl duality with the natural quantum
-                        <la-tex>GL_n</la-tex> action. But there is no obvious $q$-deformed letter action
-                        of <la-tex>S_n</la-tex>.
-                        
-                        In this talk, we will see a construction of <la-tex>q</la-tex>-deformed letter action and
-                        <la-tex>q</la-tex>-partitions algebras. We also see how this partition algebras
-                        are isomorphic to the <la-tex>q</la-tex>-partition algebras defined by Halverson and Thiem.
-                        This is a joint work with Richard Dipper.
-                        </p>
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://iiscprofiles.irins.org/assets/profile_images/22811.JPG" width="150" height="150" style="object-fit: cover;">
-                </div>
-                <div class="text">
-                    <h3>A sequence of operator algebras converging to odd spheres in the quantum Gromov-Hausdorff distance</h5>
-                    <h5>Speaker: <strong>Prof. Tirthankar Bhattacharya </strong>, Indian Institute of Science </h4>
-                    <p><strong>Abstract</strong>: Marc Rieffel had introduced the notion 
-                        of the quantum Gromov-Hausdorff distance on compact quantum metric 
-                        spaces and found a sequence of matrix algebras that converges to the
-                         space of continuous functions on 2-sphere in this distance. One
-                          finds applications of similar approximations in many places in 
-                          the theoretical physics literature. We shall recall Rieffel’s
-                           work and define a compact quantum metric space structure on 
-                           the sequence of Toeplitz algebras on generalized Bergman spaces 
-                           and prove that the sequence converges to the space of continuous
-                            function on odd spheres in the quantum Gromov-Hausdorff distance.
-                             We shall start from scratch. So, a large portion of the talk will
-                              be accessible to final year M.Sc. and first year Ph.D. students.</p>
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://www.iisertvm.ac.in/assets/uploads/faculties/dr-samya-kumar.jpg" width="150" height="150">
-                </div>
-                <div class="text">
-                    <h3>GROTHENDIECK INEQUALITY </h3>
-                    <h5>Speaker: <strong>Prof. Samya Kumar Ray
-                    </strong>, IISER Thiruvananthapuram</h4>
-                    <p><strong>Abstract</strong>: In this talk we shall discuss a fundamental inequality in 
-                        functional analysis proved by Grothendieck in 1953. In the first half of our discussion, 
-                        we shall talk about a close connection between the Grothendieck inequality and von Neumann 
-                        inequality. Let us set 
-                        <la-tex>C_2(n) =\sup\{\|P(T )\|:\|P\|_{\mathbb{D}^n,\infty}\leq 1,\|T\|_\infty\leq 1\}</la-tex>, 
-                        where the supremum is taken over all polynomials <la-tex>P\in\mathbb{C}[z_1, . . . , z_n]</la-tex>
-                        of degree at most 2 and commuting <la-tex>n</la-tex>-tuples <la-tex>T := (T_1, . . . , T_n)</la-tex> of contractions 
-                        on some Hilbert space. In 1976, Varopoulos proved the remarkable inequality 
-                        <la-tex>K_G^{\mathbb{C}}\leq \lim_{n\to\infty}C_2(n)\leq 2K_G^{\mathbb{C}}</la-tex>, 
-                        where <la-tex>K_G^{\mathbb{C}}</la-tex> is the complex Grothendieck constant. We shall discuss 
-                        solution of an old question of Varopoulos who asked whether 
-                        <la-tex>\lim_{n\to\infty}C_2(n)=K_G^{\mathbb{C}}</la-tex>? In the later part of the talk 
-                        we revisit the original formulation of the Grothendieck inequality and propose<br>
-                        
-                        a generalization of the Grothendieck inequality by generalizing the notion of 
-                        the Grothendieck constant for any pair of finite dimensional Banach spaces. 
-                        We also show how our study is related to a very old conjecture of Pisier in the 
-                        geometry of Banach spaces. <br>
-                        
-                       
-                         </p>
-                </div>
-            </div>
-
-        </div>
-
-        <h3> Student Presenters </h3>
-        <div class="boxh">
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="./assets/manik.jpeg" width="150" height="150" style="object-fit: contain;">
-                </div>
-                <div class="text">
-                    <h3>An Energy Stable and AP Scheme for the Barotropic Euler System</h5>
-                    <h5>Speaker: <strong> Mr. Mainak Kar </strong>, IISER Thiruvananthapuram </h4>
-                    <p><strong>Abstract</strong>: In this talk we present an energy stable and asymptotic 
-                        preserving (AP) scheme for barotropic Euler equations scaled by the Mach number. 
-                        The Mach number characterises the different flow regimes in the asymptotic limit, 
-                        which are automatically recognised and captured by the AP scheme. The energy stability 
-                        of the scheme is achieved by introducing a velocity shift proportional to the pressure 
-                        gradient in the momentum flux. We also present the results of several numerical case 
-                        studies to substantiate the robustness and efficiency of the proposed scheme.
-
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="./assets/sulakhana.jpg" width="150" height="150" style="object-fit: contain;">
-                </div>
-                <div class="text">
-                    <h3>Permutation modules of the walled Brauer algebras</h5>
-                    <h5>Speaker: <strong>Ms. Sulakhana Chowdhury </strong>, IISER Thiruvananthapuram </h4>
-                    <p><strong>Abstract</strong>: In this talk, we will discuss the permutation modules and Young 
-                        modules of the group algebras of the direct product of symmetric groups KSa,b, and the 
-                        walled Brauer algebras Br,t(δ). In the dual Specht-filtered modules category, if the 
-                        characteristic of the field is neither 2 nor 3, then the permutation modules are dual 
-                        Specht filtered, and the Young modules are relative projective cover of the dual Specht 
-                        modules. We show that the restriction of the cell modules of Br,t(δ) to the group algebras 
-                        of the direct product of the symmetric groups is dual Specht filtered, and the Young 
-                        modules act as the relative projective cover of the cell modules of Br,t(δ). 
-                        Finally, we shall prove our main goal that if char K ̸= 2,3, then the permutation 
-                        module of Br,t(δ) can be written as a direct sum of indecomposable Young modules.</p>
-                </div>
-            </div>
-
-
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://cmit.iisertvm.ac.in/fsmath2023/assets/tony.jpg" width="150" height="150">
-                </div>
-                <div class="text">
-                    <h3>Upper bounds on the size of the Schur multiplier of some classes of groups <la-tex>p</la-tex>-groups</h5>
-                    <h5>Speaker: <strong> Mr. Tony Mavely </strong>, IISER Thiruvananthapuram </h4>
-                    <p><strong>Abstract</strong>: The Schur multiplier of a given group is the second
-                         homology group with coefficients in Z, and there has been substantial interest 
-                         in obtaining the size of the Schur multiplier. Using the maximum number of triangles 
-                         in a graph and some linear algebra, we obtain an upper bound for the size of the Schur
-                        multiplier of special p-groups of rank k. This not only gives us the existing bounds
-                        for the two extreme cases of k = 2 and k = d, but also the bounds for 2 intermediate 
-                        values of k. We also provide a bound for p-groups of nilpotency class greater than or 
-                        sequal to 3.
-                        
-                        
-                         </p>
-                </div>
-            </div>-->
-<!--
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://cmit.iisertvm.ac.in/fsmath2023/photo.jpg" width="150" height="150">
-                </div>
-                <div class="text">
-                    <h3>Bounding the exponent of a finite group and its commutator subgroup
-                        and Schur's exponent conjecture </h5>
-                    <h5>Speaker: <strong> Ms. Komma Patali </strong>, IISER Thiruvananthapuram </h4>
-                    <p><strong>Abstract</strong>: Let G be a finite p-group and S be a Sylow <la-tex>p</la-tex>-subgroup of Aut(<la-tex>G</la-tex>) with
-                        exp<la-tex>(S) = q</la-tex>. We prove that if the nilpotency class of <la-tex>G</la-tex> is <la-tex>c</la-tex>, then exp(Aut(<la-tex>G</la-tex>)) |
-                        <la-tex>p^{[log_p c]} q^3</la-tex> , and if <la-tex>G</la-tex> is a metabelian <la-tex>p</la-tex>-group of class at most <la-tex>2p - 1</la-tex>, then
-                        exp(<la-tex>G</la-tex>) | <la-tex>pq^3</la-tex>. We also prove that exp(<la-tex>\gamma_2(G)</la-tex>) | <la-tex>p^{[log_p c] - 1}</la-tex> exp(<la-tex>G/Z(G)</la-tex>) if the
-                        nilpotency class of <la-tex>G</la-tex> is at most <la-tex>c</la-tex>, and exp(<la-tex>\gamma_2(G)</la-tex>) | exp(<la-tex>G/Z(G)</la-tex>) if <la-tex>G</la-tex> is a
-                        metabelian <la-tex>p</la-tex>-group of class at most <la-tex>2p - 1</la-tex>. We discuss the progress made towards the Schur's exponent conjecture in recent years, and we will describe our
-                        contribution towards this conjecture.
-                         </p>
-                </div>
-            </div>
-
-            <div class="box" style="max-width: 40rem;">
-                <div class="img mct">
-                    <img src="https://cmit.iisertvm.ac.in/fsmath2023/assets/nishant.jpg" width="150" height="150">
-                </div>
-                <div class="text">
-                    <h3>Residual-Based a Posteriori Error Estimator for a Multi-scale Cancer Invasion Model</h5>
-                    <h5>Speaker: <strong> Mr. Nishant Ranwan </strong>, IISER Thiruvananthapuram </h4>
-                    <p><strong>Abstract</strong>: The residual-based a posteriori error estimation of the multiscale cancer invasion model, a system of three non-stationary reaction-diffusion equations consisting of nonlinear reaction terms and sensitivity functions, is studied. First we derive the upper bound for the error in terms of the given initial data and residuals. Then we derive the upper bound for the residuals by splitting them into spatial and temporal residuals. Thus we obtained a residual-based a posteriori error estimator for the coupled system that is reliable and efficient concerning the small perturbations of parameters in the model. The numerical results were demonstrated for two sets of parameters where the first
-
-                        set creates a stiffer system than the second one. Using the first set of parameters, we obtained the experimental order of convergence as <la-tex>0.78</la-tex>, and using the second set of parameters, it is <la-tex>0.88</la-tex>.
-                         </p>
-                </div>
-            </div>-->
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://niser.irins.org/assets/profile_images/243090.jpg" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Non commutative ergodic theorem associated to free group actions</div>
+                        <div class="abstract-speaker">Speaker: Prof. Panchugopal Bikram</div>
+                        <div class="abstract-text">
+                            In this talk we discuss ergodic theory related to free group actions on both classical and quantum setting.
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://lma-umr5142.univ-pau.fr/_object/ametys%253Aplugins/contentio/ametys%253Acontents/cv_-jgiacomo-fr/_attribute/photo/Giacomoni-id-2021.JPG?objectId=content://fcf99b84-43f9-4189-936b-a3dfd292e81e" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Asymptotic behavior of blowing-up and global solutions for quasilinear elliptic systems with gradient terms</div>
+                        <div class="abstract-speaker">Speaker: Prof. Jacques Giacomoni</div>
+                        <div class="abstract-text">
+                            We deal with the following quasilinear elliptic system involving gradient terms in the form:
+                            \[
+                            \begin{cases}
+                            \Delta_p u = v^m|\nabla u|^\alpha \text{ in } \Omega \\
+                            \Delta_p v = v^\beta|\nabla u|^q \text{ in } \Omega
+                            \end{cases}
+                            \]
+                            where \(\Omega \subset \mathbb{R}^N\) (\(N \geq 2\)) is either equal to \(\mathbb{R}^N\) or equal to a ball \(B_R\) centered at the origin and having radius \(R > 0\), \(1 < p < \infty\), \(m, q > 0\), \(\alpha \geq 0\), \(0 \leq \beta \leq m\) and \(\delta := (p - 1 - \alpha)(p - 1 - \beta) - qm \neq 0\).
+            
+                            Our aim is to establish the asymptotics of the:
+                            1) global radial solutions (so behaviour at infinity)
+                            2) blowing-up radial solutions (so profile of the blow up)
+                            
+                            For that we use the theory of dynamical cooperative systems. Uniqueness results follow for both types of solutions from the proved accurate asymptotics and a hidden maximum principle.
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://www.math.iitb.ac.in/~tputhen/tony-passport-size-photo.JPG" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Ring of invariants</div>
+                        <div class="abstract-speaker">Speaker: Prof. Tony Joseph Puthenpurakal</div>
+                        <div class="abstract-text">
+                            I will discuss finite subgroups G of \(GL_n(k)\) and discuss the invariant rings of G acting on \(k[X_1, ...., X_n]\).
+                        </div>
+                    </div>
+                </section>
+            
+                <div class="date-header">Titles and Abstracts - 18th January, 2025</div>
+                
+                <section class="abstract-container">
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://home.iiserb.ac.in/~saurabhk/Shri-Saurabh.jpg" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">On the bilinear Bochner-Riesz problem</div>
+                        <div class="abstract-speaker">Speaker: Prof. Saurabh Shrivastava</div>
+                        <div class="abstract-text">
+                            In this talk, we will discuss some of the recent developments on the problem of Bilinear Bochner-Riesz means in harmonic analysis.
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://www.iitg.ac.in/rafik/index_files/image002.jpg" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Canonical forms of holomorphic and meromorphic matrix-valued functions</div>
+                        <div class="abstract-speaker">Speaker: Prof. Rafikul Alam</div>
+                        <div class="abstract-text">
+                            Canonical forms are powerful tools for spectral analysis of matrices. The Smith form of a matrix polynomial and the Smith-McMillan form of a rational matrix are well known canonical forms which are used extensively in theory and applications. Although, local canonical forms such as local Smith forms of holomorphic and meromorphic matrix-valued functions are well known in the literature, there has been relatively little research on global canonical forms of holomorphic and meromorphic matrix-valued functions. We present, among other things, the global Smith form (resp., global Smith-McMillan form) of a holomorphic (resp., meromorphic) matrix-valued function which is akin to the Smith form (resp., Smith-McMillan form) of a matrix polynomial (resp., rational matrix).
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://cds.iisc.ac.in/wp-content/uploads/20231112_2225064.jpg" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Mixed-precision subspace iteration algorithm for nonlinear generalized eigenvalue problems towards quantum-modelling of materials in the exascale era</div>
+                        <div class="abstract-speaker">Speaker: Prof. Phani Motamarri</div>
+                        <div class="abstract-text">
+                            Quantum mechanical modeling of materials have played a significant role in determining a wide variety of material properties. In particular, Kohn-Sham density functional theory (DFT) calculations involving the solution of a non-linear eigenvalue problem, have been instrumental in providing many crucial insights into materials behavior, and occupy a sizable fraction of world's computational resources today. However, the stringent accuracy requirements required to compute meaningful material properties, in conjunction with the asymptotic cubic-scaling computational complexity of the underlying nonlinear eigenvalue problem, demand huge computational resources for accurate DFT calculations. Thus, these calculations are routinely limited to material systems with at most few thousands of electrons.
+            
+                            In this talk, I will present our group's very recent work on developing a local real-space formulation of density functional theory within the projector augmented wave (PAW) method that is amenable to finite-element (FE) discretization. Hardware-aware scalable computational methodologies relying on Chebyshev filtered subspace iteration procedure for solving the underlying FE discretized nonlinear PAW generalized eigenvalue problem will be discussed, along with accuracy and performance benchmarks on representative material systems.
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://iitd.irins.org/assets/profile_images/145119.jpg" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Scale-Dependent Poincaré inequalities and the stability of the Heisenberg Uncertainty Principle on the hyperbolic space</div>
+                        <div class="abstract-speaker">Speaker: Prof. Debdip Ganguly</div>
+                        <div class="abstract-text">
+                            We establish a general scale-dependent Poincaré-Hardy type identity involving a vector field on the hyperbolic space. By choosing suitable parameter, potential and vector field in this identity, we can recover, as well as derive new versions of several Poincaré type, Hardy type and Poincaré-Hardy type inequalities in the literature. We also investigate weighted Poincaré inequalities on hyperbolic space, where the weight functions depend on a scaling parameter. This leads to a new family of scale-dependent Poincaré inequalities with Gaussian type measure on the hyperbolic space which is of independent interest. As a result, we derive both scale-dependent and scale-invariant L2-stability results for the Heisenberg uncertainty principle in this setting.
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://mathweb.tifr.res.in/sites/default/files/photos/sandeepv.jpg" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">On congruent isomorphisms for tori</div>
+                        <div class="abstract-speaker">Speaker: Prof. Sandeep Varma</div>
+                        <div class="abstract-text">
+                            Nonarchimedean local fields F, F' are said to be l-close if \(O_F/p_F^l \cong O_{F'}/p_{F'}^l\), where \(O_F\) is the ring of integers of F, and \(p_F\) its maximal ideal. Given such F and F', one can talk of what it means for a torus T over F and a torus T' over F' to be l-close. Given such tori, Radhika Ganapathy has proved isomorphisms between their quotients, that take the form \(T(F)/T(F)_n \cong T'(F')/T'(F')_n\) for suitable integers n, as a special case of her more general work on reductive groups, generalizing Kazhdan's work on split reductive groups. We prove the functoriality as well as the compatibilities with the Kottwitz homomorphism and the local Langlands correspondence for analogous isomorphisms of tori that we construct. This is joint work with Anne-Marie Aubert.
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="/api/placeholder/150/150" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Convergence of Adaptive Finite Element Methods for Optimal Control Problems Involving Dirac Measures</div>
+                        <div class="abstract-speaker">Speaker: Mr. Subham Nayak</div>
+                        <div class="abstract-text">
+                            This talk focuses on the quasi-optimality of adaptive nonconforming finite element methods for optimal control problems governed by biharmonic equations involving Dirac measures. The study uses nonconforming Morley finite elements to discretize both the state and adjoint variables. While Morley elements are efficient for solving fourth-order problems, their discontinuity creates difficulties in addressing point sources on the right-hand side. A modified right-hand side is introduced using a companion operator that maps Morley elements to a conforming space to resolve this. The paper presents both a priori and a posteriori error estimates for these optimal control problems. It also establishes the optimal convergence rate of adaptive finite element methods using an axiomatic framework, demonstrating key properties such as stability, reduction, discrete reliability, and quasi-orthogonality. Theoretical results are supported by numerical experiments.
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="/api/placeholder/150/150" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Hook fusion procedure for hyperoctahedral groups</div>
+                        <div class="abstract-speaker">Speaker: Ms. Km Dimpi</div>
+                        <div class="abstract-text">
+                            The fusion procedure was first introduced in the context of constructing new solutions to the Yang-Baxter equations. From a representation-theoretic perspective, it provides a method to construct the primitive idempotents of the group algebra \(CS_n\). Specifically, a complete set of primitive idempotents, indexed by standard Young tableaux, can be obtained by evaluating certain rational functions in several variables at specific limits. James Grime introduced a version of this process, known as the hook fusion procedure, which reduces the number of auxiliary parameters involved.
+            
+                            In this talk, we will explore analogues of the hook fusion procedure for symmetric groups extended to hyperoctahedral groups. The discussion will focus on adapting the procedure and examining its implications in this broader context.
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://www.iisermohali.ac.in/images/faculty/jotsaroop.jpg" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Rellich and Hardy identities for Grushin operator</div>
+                        <div class="abstract-speaker">Speaker: Prof. Jotsaroop Kaur</div>
+                        <div class="abstract-text">
+                            We establish Hardy, Hardy-Rellich and Rellich identities and inequalities with sharp constants for Grushin vector fields. We provide explicit remainder terms which substantially improve those known in the literature. This is based on a joint work with Debdip Ganguly and Prasun Roychowdhury.
+                        </div>
+                    </div>
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="/api/placeholder/150/150" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">On an eigenvalue problem associated with mixed operators under mixed boundary conditions</div>
+                        <div class="abstract-speaker">Speaker: Mr. Lovelesh Sharma</div>
+                        <div class="abstract-text">
+                            In this talk, I am inquisitive about a class of eigenvalue problems involving both local as well as nonlocal operators, precisely the classical Laplace operator and the fractional Laplace operator in the presence of mixed boundary conditions, that is:
+                            \[
+                            \begin{cases}
+                            Lu = \lambda u, u > 0 \text{ in } \Omega,\\
+                            u = 0 \text{ in } U^c,\\
+                            N_s(u) = 0 \text{ in } N,\\
+                            \frac{\partial u}{\partial \nu} = 0 \text{ in } \partial\Omega \cap N,
+                            \end{cases}
+                            (P_\lambda)
+                            \]
+                            where \(U = (\Omega \cup N \cup (\partial\Omega \cap N))\), \(\Omega \subseteq \mathbb{R}^n\) is a non empty open set, D, N are open subsets of \(\mathbb{R}^n \setminus \bar{\Omega}\) such that \(D \cup N = \mathbb{R}^n \setminus \Omega\), \(D \cap N = \emptyset\) and \(\Omega \cup N\) is a bounded set with smooth boundary, \(\lambda > 0\) is a real parameter and
+                            \[L = -\Delta + (-\Delta)^s, \text{ for } s \in (0, 1).\]
+            
+                            I will discuss establishing the existence and some characteristics of the first eigenvalue and associated eigenfunctions to the mixed local and nonlocal problem with mixed boundary conditions, based on the topology of the disjoint sets D and N. Next, I will discuss how we apply these results to establish bifurcation type results, both from zero and infinity for the an asymptotically linear problem inclined with Original problem. Lastly, I shall motivate other standard open problems related to singular and critical exponents, which are very delicate topics of study in PDEs.
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://mathweb.tifr.res.in/sites/default/files/photos/tanmay.jpg"" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Character sheaves on algebraic groups</div>
+                        <div class="abstract-speaker">Speaker: Prof. Tanmay Deshpande</div>
+                        <div class="abstract-text">
+                            In this talk I will introduce the theory of character sheaves on algebraic groups. This is an algebro-geometric approach to study the irreducible characters and representations of finite groups of Lie type, for example matrix groups with entries in finite fields.
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://www.iisertvm.ac.in/assets/uploads/faculties/mitra-koley.jpg" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Singularities in prime characteristics</div>
+                        <div class="abstract-speaker">Speaker: Prof. Mitra Koley</div>
+                        <div class="abstract-text">
+                            For a commutative ring R of prime characteristic p, the map F : R → R sending r ↦ r^p is a ring endomorphism, called the Frobenius morphism. Frobenius morphism plays an important role in studying singularities of such rings. The singularities that have been defined in terms of the Frobenius map are called F-singularities. In this talk we will discuss some recent developments of F-singularities.
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://www.math.iitb.ac.in/People/images/faculty/hutri.jpg" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Entropy method: a tool for studying reaction-diffusion systems</div>
+                        <div class="abstract-speaker">Speaker: Prof. Harsha Hutridurga</div>
+                        <div class="abstract-text">
+                            The objective of this talk is to illustrate how the entropy method enables us to study, in an elementary fashion, the long-time asymptotic of solutions to reaction-diffusion systems corresponding to reversible chemistry. Loosely speaking, the entropy method looks for a nonnegative Lyapunov functional (also called entropy) and its nonnegative dissipation along the flow of the given evolution equation. This is then followed by proving a certain functional inequality referred to as the entropy-entropy dissipation inequality. The method concludes by using techniques from the theory of ordinary differential equations to derive decay estimates with explicit rates of convergence. The novelty of our work is to adapt the entropy method to address degenerate reaction-diffusion systems where one of the chemical species is non-diffusive.
+                        </div>
+                    </div>
+            
+                    <div class="abstract-box">
+                        <div class="abstract-pic">
+                            <img src="https://www.iisertvm.ac.in/assets/uploads/faculties/7c22342d8cc32b4034cb4fa639a8243d.jpg" width="150" height="150" style="object-fit: cover;">
+                        </div>
+                        <div class="abstract-title">Separation Property for the Nonlocal Cahn-Hilliard-Brinkman System</div>
+                        <div class="abstract-speaker">Speaker: Prof. Dharmatti Sheetal</div>
+                        <div class="abstract-text">
+                            We study the nonlocal Cahn-Hilliard-Brinkman (CHB) system, which models the phase separation of a binary fluid in a bounded domain and porous media. We focus on the system with a singular potential (logarithmic form) and a degenerate mobility function. The singular potential introduces challenges due to the blow-up of its derivatives near pure phases, while the degenerate mobility complicates the analysis. Our main result is the separation property, which ensures that the solution eventually stays away from the pure phases. We adopt a new method, inspired by De Giorgi's iteration, introduced for the two-dimensional Cahn-Hilliard equation with constant mobility. This work extends previous results and provides a general approach for proving the separation property for similar systems.
+                        </div>
+                    </div>
+                </section>
         </div>
         <hr>
 
@@ -579,7 +444,7 @@ In this talk, the speaker will attempt to explain some ideas and examples behind
                         Copyright &copy; 2023 CMIT 
                         | Designed by CMIT with <span style="color: #e25555;">&hearts;</span>
                     </p></div>
-                <div class="col-6"><p class="text-end text-light">Developed by Aryan Bhatia, Prajval K and Sarthak Thorat</p></div>
+                <div class="col-6"><p class="text-end text-light">Developed by Aryan Bhatia, Avrojit Joydhar</p></div>
             </div>
         </div>
     </div>
