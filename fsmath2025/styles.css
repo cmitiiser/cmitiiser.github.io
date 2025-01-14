@@ -4,8 +4,6 @@ html, body {
     background-color: #fffcf3;
 }
 
-
-
 .btn {
     margin: 30px 15px;
     background: #7ce3ff;
@@ -30,8 +28,6 @@ html, body {
     color: #222;
 }
 
-
-
 .fwc {
     margin-right: 0.5rem;
     margin-left: 0.5rem;
@@ -48,7 +44,7 @@ a {
 .img-display {
     display: flex;
     flex-wrap: wrap;
-    gap:0;
+    gap: 0;
     align-items: center;
     justify-content: center;
     padding-top: 1rem;
@@ -94,7 +90,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin-bottom: 0.75rem;
 }
 
@@ -111,12 +106,27 @@ header .nav {
 
 header .nav a, .hnav a {
     text-decoration: none;
-    border-bottom: 1px solid transparent;
+    position: relative;
+    color: inherit;
 }
 
-header .nav a:hover, .hnav a:hover {
-    border-bottom: 1px solid black;
-    color: inherit;
+header .nav a::after, .hnav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -1px;
+    left: 0;
+    background-color: black;
+    transition: width 0.3s ease-in-out;
+}
+
+header .nav a:hover::after, .hnav a:hover::after {
+    width: 100%;
+}
+
+header .nav .active {
+    font-weight: 700 !important;
 }
 
 .hnav {
@@ -129,20 +139,14 @@ header .nav a:hover, .hnav a:hover {
     padding-bottom: 0.75rem;
 }
 
-header .nav .active {
-    font-weight: 700 !important;
-}
-
 .poster {
     display: flex;
     justify-content: space-around;
-    
     margin: 1rem 0rem;
 }
 
 .box {
     margin: 1.5rem 0.5rem;
-
     display: flex;
     gap: 1rem;
     flex-direction: column;
@@ -198,7 +202,7 @@ header .nav .active {
     }
 }
 
-@media only screen and (min-width:56rem) {
+@media only screen and (min-width: 56rem) {
     .hnav {
         display: none;
     }
