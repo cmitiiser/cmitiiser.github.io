@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alumni Directory</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/cmit.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <a href="index.html"><img src="./img/logo.png" alt="" class="img-fluid" width="110px"></a>
+            </div>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs0target="#cmit_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+                id="cmit_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="events.html">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="newsletter.html">Newsletter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div><br>
+            </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="container my-5">
+        <h1 class="text-center mb-4">CMIT Alumni Directory</h1>
+        <p class="lead text-center mb-5">
+            Welcome to the CMIT Alumni Directory. As a vibrant community of mathematics enthusiasts, our club is proud to support a growing network of alumni who have been part of CMIT’s journey at IISER Thiruvananthapuram. This directory serves as a bridge between current members and our alumni, making it easy to connect, share experiences, and explore academic and professional opportunities.
+        </p>
+
+        <!-- Search Toggle Button -->
+        <div class="row mb-3">
+            <div class="col-12 d-flex justify-content-end">
+                <button id="searchToggle" class="btn btn-outline-secondary">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Container (Hidden by Default) -->
+        <div id="searchContainer" class="row mb-4" style="display: none;">
+            <div class="col-md-6">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search by name...">
+            </div>
+            <div class="col-md-6">
+                <select id="yearFilter" class="form-select">
+                    <option value="">All Years</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <!-- Add more years as needed -->
+                </select>
+            </div>
+        </div>
+
+        <div class="row" id="alumniGrid">
+            <!-- Alumni cards will be generated here -->
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        const alumniData = [
+            {
+                name: "Suresh Kumar",
+                year: "2021",
+                position: "PhD Candidate",
+                organization: "IISER Pune",
+                location: "India",
+                interests: "Algebraic Geometry",
+                cvLink: "https://example.com/cvs/suresh"
+            },
+            {
+                name: "Priya Nair",
+                year: "2020",
+                position: "Data Scientist",
+                organization: "TCS, Mumbai",
+                location: "India",
+                interests: "Applied Mathematics, Machine Learning",
+                cvLink: "https://example.com/cvs/priya"
+            },
+            {
+                name: "Rahul Menon",
+                year: "2022",
+                position: "Research Fellow",
+                organization: "IISc Bengaluru",
+                location: "India",
+                interests: "Number Theory",
+                cvLink: "https://example.com/cvs/rahul"
+            }
+            // Add more alumni as needed
+        ];
+
+        const alumniGrid = document.getElementById('alumniGrid');
+        const searchInput = document.getElementById('searchInput');
+        const yearFilter = document.getElementById('yearFilter');
+        const searchToggle = document.getElementById('searchToggle');
+        const searchContainer = document.getElementById('searchContainer');
+
+        function renderAlumni(alumniList) {
+            alumniGrid.innerHTML = '';
+            if (alumniList.length === 0) {
+                alumniGrid.innerHTML = '<div class="col-12 text-center py-4"><p class="text-muted">No matching alumni found.</p></div>';
+                return;
+            }
+            alumniList.forEach(alumni => {
+                const card = document.createElement('div');
+                card.className = 'col-md-6 col-lg-4 mb-4';
+                card.innerHTML = `
+                    <div class="card h-100 border border-light shadow-sm rounded-0">
+                        <div class="card-body">
+                        <h5 class="card-title mb-3">${alumni.name}</h5>
+                        <p class="mb-2 text-dark"><small><strong>Year:</strong> ${alumni.year}</small></p>
+                        <p class="mb-2 text-dark"><small><strong>Position:</strong> ${alumni.position}</small></p>
+                        <p class="mb-2 text-dark"><small><strong>Organization:</strong> ${alumni.organization}</small></p>
+                        <p class="mb-2 text-dark"><small><strong>Location:</strong> ${alumni.location}</small></p>
+                        <p class="mb-3 text-dark"><small><strong>Interests:</strong> ${alumni.interests}</small></p>
+                        <a href="${alumni.cvLink}" class="btn btn-sm btn-outline-secondary rounded-0" target="_blank">View CV/Website</a>
+                        </div>
+                    </div>
+                    `;
+
+                alumniGrid.appendChild(card);
+            });
+        }
+
+        function filterAlumni() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const year = yearFilter.value;
+            const filtered = alumniData.filter(alum => {
+                const nameMatch = alum.name.toLowerCase().includes(searchTerm);
+                const yearMatch = year === '' || alum.year === year;
+                return nameMatch && yearMatch;
+            });
+            renderAlumni(filtered);
+        }
+
+        searchToggle.addEventListener('click', function() {
+            if (searchContainer.style.display === 'none' || searchContainer.style.display === '') {
+                searchContainer.style.display = 'flex';
+            } else {
+                searchContainer.style.display = 'none';
+            }
+        });
+
+        searchInput.addEventListener('input', filterAlumni);
+        yearFilter.addEventListener('change', filterAlumni);
+
+        // Initial render
+        renderAlumni(alumniData);
+    </script>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Footer Start -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">CMIT</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            IISER TVM
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:cmit@iisertvm.ac.in">cmit@iisertvm.ac.in</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Links</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="wpc.html">WPC Archive</a></li>
+                        <li><a class="text-decoration-none" href="epiphany.html">Epiphany</a></li>
+                        <li><a class="text-decoration-none" href="discord.html">Discord</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="index.html">Home</a></li>
+                        <li><a class="text-decoration-none" href="about.html">About Us</a></li>
+                        <li><a class="text-decoration-none" href="newsletter.html">Newsletter</a></li>
+                        <li><a class="text-decoration-none" href="events.html">Events</a></li>
+                        <li><a class="text-decoration-none" href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://facebook.com/cmitiisertvm"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://instagram.com/cmitiisertvm"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/cmitiisertvm"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.youtube.com/c/cmitiisertvm"><i class="fab fa-youtube fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-6">
+                        <p class="text-start text-light">
+                            Copyright &copy; 2022 CMIT 
+                            | Designed by CMIT with <span style="color: #e25555;">&hearts;</span>
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-end text-light">Developed by Aryan Bhatia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+</body>
+</html>
