@@ -1,522 +1,490 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<!-- About-->
-<head>
-    <title>About Page</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title>About Us | CMIT</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/img/fav/manifest.json" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/cmit.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/cmit-about.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+    />
+  </head>
 
-    <!-- Load fonts style after rendering the layout styles -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-
-</head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EMH594D3B7"></script>
-<script>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-EMH594D3B7"
+  ></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-EMH594D3B7");
+  </script>
 
-    gtag('config', 'G-EMH594D3B7');
-</script>
+  <body>
+    <!-- Nav -->
+    <header class="site-nav">
+      <div class="wrap site-nav-inner">
+        <a href="index.html" class="brand">
+          <img src="assets/img/abstract logo.svg" alt="CMIT" width="35" />
+        </a>
 
-<body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="logo">
-                <a href="index.html"><img src="./img/logo.png" alt="" class="img-fluid" width="110px"></a>
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="events.html">Events</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">Meet the <em>Team</em></h1>
+          <p class="hero-text">
+            CMIT is a student-run, faculty-supervised community officially
+            recognized by the Mathematics Department at IISER
+            Thiruvananthapuram. Have questions, event suggestions, or feedback?
+            Want to propose problems for the Weekly Contest, volunteer as a peer
+            math mentor, or give a Talk Series presentation? Reach out to us at
+            <strong>mathsclub[at]iisertvm[dot]ac[dot]in</strong><br />
+            or contact any of our position bearers and faculty coordinators.
+            Stay connected with us on our socials, below.
+          </p>
+
+          <div class="about-socials">
+            <div class="socials-icons-top">
+              <a
+                href="https://facebook.com/cmitiisertvm"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <img
+                  src="https://cmit.iisertvm.ac.in/assets/icons/facebook.png"
+                  alt="Facebook"
+                  class="icon"
+                />
+              </a>
+              <a
+                href="https://instagram.com/cmitiisertvm"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <img
+                  src="https://cmit.iisertvm.ac.in/assets/icons/instagram.png"
+                  alt="Instagram"
+                  class="icon"
+                />
+              </a>
+              <a
+                href="https://twitter.com/cmitiisertvm"
+                target="_blank"
+                rel="noopener"
+                aria-label="Twitter / X"
+              >
+                <img
+                  src="https://cmit.iisertvm.ac.in/assets/icons/twitter.png"
+                  alt="Twitter / X"
+                  class="icon"
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/c/cmitiisertvm"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+              >
+                <img
+                  src="https://cmit.iisertvm.ac.in/assets/icons/youtube.png"
+                  alt="YouTube"
+                  class="icon"
+                />
+              </a>
             </div>
-
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-                data-bs-target="#cmit_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
-                id="cmit_main_nav">
-                <div class="flex-fill">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="events.html">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="newsletter.html">Newsletter</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                    </ul>
-                </div><br>
-            </div>
-    </nav>
-    <!-- Close Header -->
-    <div class="container-bg">
-        <!-- Start Section -->
-        <section class="container py-5">
-            <div class="row text-center pt-5 pb-3">
-                <div class="col-lg-12 m-auto">
-                    <h1 class="h1">About the club.</h1><br>
-                    <p>
-                        CMIT is a student-run community. Feel free to contact us regarding anything relevant, whether it
-                        is about information
-                        regarding the club, suggestions on new events, or general comments. If you want to propose
-                        problems
-                        for the Weekly Problems Contest, volunteer as a peer math discussion mentor, or want to be a
-                        speaker
-                        for the Talk Series, mail us at mathsclub [at] iisertvm [dot] ac [dot] in.
-                    </p>
-                    <p>
-                        The ‘Club of Mathematics, IISER Thiruvananthapuram’ is recognized officially by the Mathematics
-                        Department at
-                        IISER Thiruvananthapuram, and is faculty-supervised. You can contact the faculty coordinators or
-                        any of the
-                        position bearers for any information, or email your queries directly to mathsclub [at] iisertvm
-                        [dot] ac [dot] in.
-                        We are very active on social media and such platforms are great places to connect with us. Join
-                        us on Instagram,
-                        Twitter, or Facebook at @cmitiisertvm.
-                    </p>
-                    <p>Find the current position bearers of the club below, and the former coordinators here.</p>
-                </div>
-            </div>
-
-        </section>
-        <!-- End Section -->
-    </div>
-    <section class="bg-light py-5">
-        <div class="container my-4">
-            <div class="row text-center py-3">
-                <div class="col-lg-6 m-auto">
-                    <h1 class="h1">POSITION BEARERS</h1><br><br>
-                    <div class="row">
-
-                        <div class="col">
-                            <img src="./about/assets/Mukesh Mithun A D.jpeg" class="rounded-circle" width="150"
-                                height="150"><br><br>
-                            <p><b>Mukesh Mithun A D</b><br>President</p>
-                            <p>My life's sequence limsup is mathematics, liminf is gaming and a limit point is photography lying between them. So you can see my subsequence converging somewhere among them.</p>
-                        </div>
-
-                        <!-- <div class="col">
-                            <img src="./about/assets/adithya.jpg" class="rounded-circle" width="150"
-                                height="150"><br><br>
-                            <p><b> Adithya V </b>/ President</p>
-                            <p>"A postgraduate student in mathematics, currently interested in abstract and applied
-                                concepts
-                                in number theory. I have always been fond of learning and discussing mathematics with my
-                                peers, and am looking forward to more such interactions and learning experiences." </p>
-                        </div> 
-
-                        <div class="col">
-                            <img src="./about/assets/Pranit (2).jpg" class="rounded-circle" width="150"
-                                height="150"><br><br>
-                            <p><b> Satya Surya Pranit Sai Garikipati </b>/ Secretary</p>
-                            <p>I love Mathematics, People and Football. You can usually find me having fun with
-                                either/all three. </p>
-                            </p>
-                        </div> -->
-
-
-
-                        <div class="row">
-
-                            <div class="col">
-                                <img src="./about/assets/Rastogi.jpg" class="rounded-circle" width="150"
-                                     height="150"><br><br>
-                                <p><b>Aaryaman Rastogi</b><br>Website Incharge</p>
-                                <p>Math makes sense. People don't. So I study both &mdash; with a curious mind, a bit of logic, and a habit of thinking a few steps ahead.</p>
-                            </div>
-                            <!--<div class="col">
-                                <img src="./about/assets/Sarthak.jpg" class="rounded-circle" width="150"
-                                    height="150"><br><br>
-                                <p><b>Sarthak Thorat</b>/ Website Incharge</p>
-                                <p>Being a Mathematical Physics Enthusiast, it seems very natural to be here.
-                                    The greatest feeling in the World is to understand things, and that is why I
-                                    live.
-                                    Always open to conversations on any and everything.</p>
-                                </p>
-                            </div>
-
-                            <div class="row">
-
-                                <div class="col">
-                                    <img src="./about/assets/unknown.jpeg" class="rounded-circle" width="150"
-                                        height="150"><br><br>
-                                    <p><b>Yogesh Kumar KC </b>/ Design Incharge</p>
-                                    <p>I'm currently forgetting to send a photo to the team for this, but trust me it's
-                                        worth
-                                        the wait. Currently in a superposition of Mathematics and Sleep.
-                                    </p>
-
-                                </div>-->
-                                <!--<div class ="row">
-  <div class="col">
-    <img src="./about/assets/unknown.jpeg" class="rounded-circle" width="150" height="150"><br><br>
-     <p><b>Yogesh Kumar KC </b>/ Design Incharge</p>
-     <p>I'm currently forgetting to send a photo to the team for this, but trust me it's worth
-       the wait. Currently in a superposition of Mathematics and Sleep.
-     </p>
-  </div>
-  <div class="col">
-    <img src="./about/assets/Ashish.jpeg" class="rounded-circle" width="150" height="150"><br><br>
-     <p><b>Ashish Kujur</b>/ Event Incharge</p>
-     <p>Hello, Ashish here! I am currently a final year MSc Mathematics student at IISER Thiruvananthapuram.
-        I have always been fascinated by the beauty of Mathematics. Mathematics has too much to offer to learn
-        in a single lifetime. I am still looking for the little island of Mathematics to settle on. To enrich my soul,
-        I play the guitar and like exploring the world of free and open source software of which I am zealous supporter
-        and promoter.
-  </div>
-  
-</div> -->
-                                   <!-- <div class="col">
-                                        <img src="./about/assets/jubin.jpg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Jubin George Matthew</b>/ Content Incharge</p>
-                                        <p>I am really enthusiastic about physics and mathematics. Basketball and music
-                                            are what keep my
-                                            energy fired and I enjoy all kinds of scientific discussion and problem
-                                            solving. </p>
-                                    </div>-->
-                                    <!--div class="col">
-                                        <img src="./about/assets/anitha.jpg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Anitha Valliappan</b>/ Event Incharge</p>
-                                        <p>I am a Math enthusiast and passionate about music. Also a quizzer.
-                                            Always up for a discussion on anything under the Sun. I would encourage more
-                                            women in STEM. </p>
-                                    </div-->
-                                    <div class="col">
-                                        <img src="./about/assets/Christopher.jpg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Christopher Rao</b><br>Secretary</p>
-                                        <p>She Rees on my algebra till I blow up</p>
-                                    </div>
-                                </div>-
-
-                        <div class="row">
-                            <!-- s<div class="col">
-        <img src="./about/assets/Ajin.jpeg" class="rounded-circle" width="150"
-            height="150"><br><br>
-        <p><b>Ajin Shaji Jose</b>/ Event Incharge</p>
-        <p>I am really enthusiastic about physics and mathematics. Basketball and music
-            are what
-            keep my energy fired and I enjoy all kinds of scientific discussion and
-            problem solving. </p>
-    </div> -->
-    
-
-                            <div class="col">
-                                        <img src="./about/assets/Akshara K.jpg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Akshara K</b><br>Content Incharge</p>
-                                        <p>I love maths and nature.I want to reveal the hidden beauty of nature through mathematics. </p>
-                            </div>
-                            <!--div class="col">
-        <img src="./about/assets/Aparna.jpg" class="rounded-circle" width="150"
-            height="150"><br><br>
-        <p><b>Bade Aparna</b></p>
-        <p>I love experiencing art (specifically math and literature) while the universe baffles me, blows against my face. Otherwise one can find me at the beach meowing at the cattos with a book in my hand </p>
-    </div-->
-
-                            
-                            
-                            <!--div class="col">
-                                <img src="./about/assets/Mukesh Mithun A D.jpeg" class="rounded-circle" width="150"
-                                    height="150"><br><br>
-                                <p><b>Mukesh Mithun A D</b><br> Media Incharge</p>
-                                <p>My life's sequence limsup is mathematics, liminf is gaming and a limit point is photography lying between them. So you can see my subsequence converging somewhere among them.</p>
-                            </div-->
-
-                            
-                            <div class="col">
-                                        <img src="./about/assets/Aleena A J.jpg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Aleena A J</b><br>Content Incharge</p>
-                                        <p>I like math and music. I love learning new things, especially when they come with a side of unexpected hilarity! </p>
-                                    </div>
-                            
-                            
-                        </div>
-                                    <!--div class="col">
-                                        <img src="./about/assets/Aleena A J.jpg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Aleena A J</b></p>
-                                        <p>I like math and music. I love learning new things, especially when they come with a side of unexpected hilarity! </p>
-                                    </div-->
-                        
-
-                                <div class="row">
-                                    <div class="col">
-                                        <img src="./about/assets/Nab.jpg" class="rounded-circle" width="150"
-                                         height="150"><br><br>
-                                        <p><b>Nabanshu Gogoi </b></p>
-                                         <p>I document every meeting with the precision
-                                            of a sheaf: locally accurate, globally mysterious </p>
-                                    </div>
-                                    <div class="col">
-                                        <img src="./about/assets/Saad.jpg" class="rounded-circle" width="150"
-                                        height="150"><br><br>
-                                        <p><b>Saad</b></p>
-                                        <p>Paul Dirac and Pierre de Fermat enthusiast </p>
-                                    </div>
-                                    <!--div class="col">
-                                        <img src="./about/assets/Tanisha Talekar.jpg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Tanisha Talekar</b></p>
-                                        <p>A PURE mathhead, you will probably find me reading in a corner or crying in a corner or both </p>
-                                    </div-->
-                                </div>
-
-                                <!--div class="row">
-                                    <div class="col">
-                                        <img src="./about/assets/Abhay R G.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Abhay R G</b></p>
-                                        <p>Exploring mathematics through camera lens as a photographer. </p>
-                                    </div>
-                                    <div class="col">
-                                        <img src="./about/assets/Christopher.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Christopher Rao</b></p>
-                                        <p>fluent in yapanese</p>
-                                    </div>
-                                </div-->
-
-
-                                <div class="row">
-                                    <!--div class="col">
-                                        <img src="./about/assets/Krishna Trivedi.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Krishna Trivedi</b></p>
-                                        <p>"Quants are the rockstar of financial world, using maths to beat the market!!"</p>
-                                    </div-->
-                                     <div class="col">
-                                        <img src="./about/assets/Arya Raj.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Arya Raj</b></p>
-                                        <p>I am an aspiring physicist, with a passion for cinema and classic rock. I aim to boldly go where no one has gone before. **cue star trek theme</p>
-                                    </div>
-                                    <div class="col">
-                                        <img src="./about/assets/Adithya Panickar.jpg" class="rounded-circle" width="150"
-                                                height="150"><br><br>
-                                        <p><b>Adithya Panickar</b></p>
-                                        <p>Driven by curiosity to explore infinities. Deeply interested in spreading the joy of math </p>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <img src="./about/assets/Aanadee Das.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Aanandee Das</b></p>
-                                        <p>Maths is fun.</p>
-                                    </div>
-                                    <div class="col">
-                                        <img src="./about/assets/Aneeth Kumar.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Aneeth Kumaar</b></p>
-                                        <p>A weird mix of math homework, camera rolls, and too many open photoshop tabs.</p>
-                                    </div>
-                                </div>
-
-                                <!--div class="row">
-                                    <div class="col">
-                                        <img src="./about/assets/Aravind Lomrore.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Arvind Lomrore</b></p>
-                                        <p>Don't know how I entered the club. I thrive on sports and logic—they're my passions and keep me going. Glad to be here!</p>
-                                    </div>
-                                    <div class="col">
-                                        <img src="./about/assets/Arya Raj.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Arya Raj</b></p>
-                                        <p>I am an aspiring physicist, with a passion for cinema and classic rock. I aim to boldly go where no one has gone before. **cue star trek theme</p>
-                                    </div>
-                                </div-->
-
-                                <!--div class="row">
-                                    <div class="col">
-                                        <img src="./about/assets/Chaitanya Purwar.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Chaitanya Purwar</b></p>
-                                        <p>i want her to eigen on my value till i linear transformation</p>
-                                    </div>
-                                    <div class="col">
-                                        <img src="./about/assets/AsheIMG6x.jpg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Ashin Vinod</b></p>
-                                        <p>Error 404. Description not found.</p>
-                                    </div>
-                                </div-->
-
-                                <div class="row">
-                                    <!--div class="col">
-                                        <img src="./about/assets/Maitrya Ganu.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Ganu Maitreya Sameer</b></p>
-                                        <p>Maths enthusiast with good analytical thinking and skills</p>
-                                    </div-->
-                                     <div class="col">
-                                        <img src="./about/assets/Naman Agarwal.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Naman Agarwal</b></p>
-                                        <p>Exploring the mysteries of the universe through mathematical and physical principles.</p>
-                                    </div>
-                                    <div class="col">
-                                        <img src="./about/assets/Manit Kishore.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Manit Kishor</b></p>
-                                        <p>Mathematics is my girlfriend. Hard to deal and understand but she is a cutie when you truly get to know her ways and feelings, Me ? I am a student at IISER TVM. In love with maths. Thanks for reading this. Have a good day.</p>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <!--div class="col">
-                                        <img src="./about/assets/Naman Agarwal.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Naman Agarwal</b></p>
-                                        <p>Exploring the mysteries of the universe through mathematical and physical principles.</p>
-                                    </div-->
-                                    <div class="col">
-                                        <img src="./about/assets/Amal.jpg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Amal Krishna Sajeesh</b></p>
-                                        <p>Just here for art and the vibes</p>
-                                    </div>
-                                    <div class="col">
-                                        <img src="./about/assets/emmy.jpeg" class="rounded-circle" width="150"
-                                            height="150"><br><br>
-                                        <p><b>Riya Vithal Diwan</b></p>
-                                        <p></p>
-                                    </div>
-                                </div>
-
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- Main Content Area -->
+    <main class="wrap about-section">
+      <!-- Top Leadership Row (President & Secretary Alone) -->
+      <section class="team-leadership">
+        <article class="member-card leader-card">
+          <div class="member-avatar">
+            <img
+              src="./about/assets/Mukesh Mithun A D.jpeg"
+              alt="Mukesh Mithun A D"
+            />
+          </div>
+          <div class="member-info">
+            <h2 class="member-name">Mukesh Mithun A D</h2>
+            <span class="member-role">President</span>
+            <p class="member-bio">
+              My life's sequence limsup is mathematics, liminf is gaming and a
+              limit point is photography lying between them. So you can see my
+              subsequence converging somewhere among them.
+            </p>
+          </div>
+        </article>
 
-    <!-- Start Footer -->
-    <footer class="bg-dark" id="tempaltemo_footer">
-        <div class="container">
-            <div class="row">
+        <article class="member-card leader-card">
+          <div class="member-avatar">
+            <img src="./about/assets/Christopher.jpg" alt="Christopher Rao" />
+          </div>
+          <div class="member-info">
+            <h2 class="member-name">Christopher Rao</h2>
+            <span class="member-role">Secretary</span>
+            <p class="member-bio">She Rees on my algebra till I blow up</p>
+          </div>
+        </article>
+      </section>
 
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">CMIT</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt fa-fw"></i>
-                            IISER TVM
-                        </li>
-                        <li>
-                            <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:cmit@iisertvm.ac.in">cmit@iisertvm.ac.in</a>
-                        </li>
-                    </ul>
-                </div>
+      <hr class="section-divider" />
 
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Links</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="wpc.html">WPC Archive</a></li>
-                        <li><a class="text-decoration-none" href="epiphany.html">Epiphany</a></li>
-                        <li><a class="text-decoration-none" href="discord.html">Discord</a></li>
-                    </ul>
-                </div>
+      <!-- General Team Grid (Scales from 2 to 5 columns max) -->
+      <section class="team-grid">
+        <article class="member-card">
+          <div class="member-avatar">
+            <img src="./about/assets/Rastogi.jpg" alt="Aaryaman Rastogi" />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Aaryaman Rastogi</h3>
+            <span class="member-role">Website Incharge</span>
+            <p class="member-bio">
+              Math makes sense. People don't. So I study both with a curious
+              mind and logic.
+            </p>
+          </div>
+        </article>
 
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="index.html">Home</a></li>
-                        <li><a class="text-decoration-none" href="about.html">About Us</a></li>
-                        <li><a class="text-decoration-none" href="newsletter.html">Newsletter</a></li>
-                        <li><a class="text-decoration-none" href="events.html">Events</a></li>
-                        <li><a class="text-decoration-none" href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
+        <article class="member-card">
+          <div class="member-avatar">
+            <img src="./about/assets/Akshara K.jpg" alt="Akshara K" />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Akshara K</h3>
+            <span class="member-role">Content Incharge</span>
+            <p class="member-bio">
+              I love maths and nature. Revealing hidden beauty through
+              mathematics.
+            </p>
+          </div>
+        </article>
 
+        <article class="member-card">
+          <div class="member-avatar">
+            <img src="./about/assets/Aleena A J.jpg" alt="Aleena A J" />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Aleena A J</h3>
+            <span class="member-role">Content Incharge</span>
+            <p class="member-bio">
+              I like math and music, and learning new things with unexpected
+              hilarity!
+            </p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar">
+            <img src="./about/assets/Nab.jpg" alt="Nabanshu Gogoi" />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Nabanshu Gogoi</h3>
+            <span class="member-role">Team Member</span>
+            <p class="member-bio">
+              Documenting every meeting like a sheaf: locally accurate, globally
+              mysterious.
+            </p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar">
+            <img src="./about/assets/Saad.jpg" alt="Saad" />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Saad</h3>
+            <span class="member-role">Team Member</span>
+            <p class="member-bio">
+              Paul Dirac and Pierre de Fermat enthusiast.
+            </p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar">
+            <img src="./about/assets/Arya Raj.jpeg" alt="Arya Raj" />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Arya Raj</h3>
+            <span class="member-role">Team Member</span>
+            <p class="member-bio">
+              Aspiring physicist passionate about cinema and classic rock.
+              Boldly going!
+            </p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar">
+            <img
+              src="./about/assets/Adithya Panickar.jpg"
+              alt="Adithya Panickar"
+            />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Adithya Panickar</h3>
+            <span class="member-role">Team Member</span>
+            <p class="member-bio">
+              Driven by curiosity to explore infinities and spread the joy of
+              math.
+            </p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar">
+            <img src="./about/assets/Aanadee Das.jpeg" alt="Aanandee Das" />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Aanandee Das</h3>
+            <span class="member-role">Team Member</span>
+            <p class="member-bio">Maths is fun.</p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar">
+            <img src="https://akwastaken.github.io/assets/pfp_transparent.webp" alt="Aneeth Kumaar" />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Aneeth Kumaar</h3>
+            <span class="member-role">Team Member</span>
+            <p class="member-bio">
+              An unfortunate mix of endless music, camera rolls, and frozen Photoshop
+              tabs.
+            </p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar">
+            <img src="./about/assets/Naman Agarwal.jpeg" alt="Naman Agarwal" />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Naman Agarwal</h3>
+            <span class="member-role">Team Member</span>
+            <p class="member-bio">
+              Exploring the mysteries of the universe through math and physics.
+            </p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar">
+            <img src="./about/assets/Manit Kishore.jpeg" alt="Manit Kishor" />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Manit Kishor</h3>
+            <span class="member-role">Team Member</span>
+            <p class="member-bio">
+              Student at IISER TVM in love with the ways of mathematics.
+            </p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar">
+            <img src="./about/assets/Amal.jpg" alt="Amal Krishna Sajeesh" />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Amal Krishna Sajeesh</h3>
+            <span class="member-role">Team Member</span>
+            <p class="member-bio">Just here for art and the vibes.</p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar">
+            <img src="./about/assets/emmy.jpeg" alt="Riya Vithal Diwan" />
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Riya Vithal Diwan</h3>
+            <span class="member-role">Team Member</span>
+            <p class="member-bio">
+              Passionate about mathematics and problem solving.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="wrap footer-content">
+        <!-- Top Row: Branding, Contact & Socials -->
+        <div class="footer-top">
+          <!-- Left Column: CMIT + Location & Email stacked underneath -->
+          <div class="footer-left-col">
+            <div class="footer-brand">
+              <span class="footer-logo">CMIT</span>
             </div>
 
-            <div class="row text-light mb-4">
-                <div class="col-12 mb-3">
-                    <div class="w-100 my-3 border-top border-light"></div>
-                </div>
-                <div class="col-auto me-auto">
-                    <ul class="list-inline text-left footer-icons">
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank"
-                                href="https://facebook.com/cmitiisertvm"><i
-                                    class="fab fa-facebook-f fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank"
-                                href="https://instagram.com/cmitiisertvm"><i
-                                    class="fab fa-instagram fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank"
-                                href="https://twitter.com/cmitiisertvm"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank"
-                                href="https://www.youtube.com/c/cmitiisertvm"><i
-                                    class="fab fa-youtube fa-lg fa-fw"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- <div class="col-auto">
-                    <label class="sr-only" for="subscribeEmail">Email address</label>
-                    <div class="input-group mb-2">
-                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
-                        <div class="input-group-text btn-success text-light">Subscribe</div>
-                    </div>
-                -->
+            <div class="footer-contact">
+              <a
+                href="https://maps.app.goo.gl/UE5UbxBuXX6exYZLA"
+                class="footer-contact-element footer-location"
+              >
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z" />
+                  <circle cx="12" cy="9" r="2.3" fill="var(--ink-dark)" />
+                </svg>
+                IISER TVM
+              </a>
+
+              <a
+                href="mailto:cmit@iisertvm.ac.in"
+                class="footer-contact-element footer-email"
+              >
+                <svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                >
+                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                  <path d="M3 7l9 6 9-6"></path>
+                </svg>
+                cmit@iisertvm.ac.in
+              </a>
             </div>
-        </div>
+          </div>
+
+          <!-- Right Column: Socials Title + Icons -->
+          <div class="footer-socials">
+            <span class="socials-title">Socials</span>
+            <div class="socials-icons">
+              <a
+                href="https://facebook.com/cmitiisertvm"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <img
+                  src="https://cmit.iisertvm.ac.in/assets/icons/facebook.png"
+                  alt="Facebook"
+                  class="icon"
+                />
+              </a>
+              <a
+                href="https://instagram.com/cmitiisertvm"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <img
+                  src="https://cmit.iisertvm.ac.in/assets/icons/instagram.png"
+                  alt="Instagram"
+                  class="icon"
+                />
+              </a>
+              <a
+                href="https://twitter.com/cmitiisertvm"
+                target="_blank"
+                rel="noopener"
+                aria-label="Twitter / X"
+              >
+                <img
+                  src="https://cmit.iisertvm.ac.in/assets/icons/twitter.png"
+                  alt="Twitter / X"
+                  class="icon"
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/c/cmitiisertvm"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+              >
+                <img
+                  src="https://cmit.iisertvm.ac.in/assets/icons/youtube.png"
+                  alt="YouTube"
+                  class="icon"
+                />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div class="w-100 bg-black py-3">
-            <div class="container">
-                <div class="row pt-2">
-                    <div class="col-6">
-                        <p class="text-start text-light">
-                            Copyright &copy; 2022 CMIT
-                            | Designed by CMIT with <span style="color: #e25555;">&hearts;</span>
-                        </p>
-                    </div>
-                    <div class="col-6">
-                        <p class="text-end text-light">Developed by Aryan Bhatia</p>
-                    </div>>
-                </div>
-            </div>
+        <!-- Navigation Rows -->
+        <div class="footer-nav">
+          <nav class="footer-links-group" aria-label="Main Navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="events.html">Events</a>
+            <a href="newsletter.html">Newsletter</a>
+            <a href="blog.html">Blog</a>
+          </nav>
+
+          <nav class="footer-links-group accent-links" aria-label="Quick Links">
+            <a href="wpc.html">WPC Archive</a>
+            <a href="epiphany.html">Epiphany</a>
+            <a href="discord.html">Discord</a>
+          </nav>
         </div>
 
+        <!-- Bottom Copyright -->
+        <div class="footer-bottom">
+          <p>&copy; Club for Mathematics, IISER Thiruvananthapuram.</p>
+        </div>
+      </div>
     </footer>
-    <!-- End Footer -->
 
-    <!-- Start Script -->
-    <script src="assets/js/jquery-1.11.0.min.js"></script>
-    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/cmit.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <!-- End Script -->
-</body>
-
+    <script src="assets/js/site.js"></script>
+  </body>
 </html>

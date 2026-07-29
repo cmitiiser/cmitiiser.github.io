@@ -13,6 +13,8 @@
   --moss: #5c7a63;
   --moss-deep: #3f5a48;
   --moss-wash: #e4e9e3;
+  --logo-gray: #323232;
+  --accent-gold: #eeb947;
 
   --font-body: "Roboto", sans-serif;
   --font-head: "STIX Two Text", Georgia, serif;
@@ -106,7 +108,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 3rem;
 }
 .brand {
   display: block;
@@ -116,12 +118,15 @@ a:hover {
   display: flex;
   gap: 1.75rem;
 }
+
 .nav-links a {
   color: var(--ink);
   font-size: 0.95rem;
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease; 
 }
+
 .nav-links a:hover {
   color: var(--moss-deep);
   border-bottom-color: var(--moss);
@@ -224,15 +229,15 @@ a:hover {
   margin-bottom: 0.25rem;
 }
 .hero-title em {
-  font-style: italic;
-  color: var(--moss-deep);
+  font-weight: 1000;
+  font-style: normal;
+  color: var(--logo-gray);
 }
 .hero-sub {
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 1.1rem;
   color: var(--muted);
-  margin-bottom: 1.25rem;
 }
 .hero-text {
   max-width: 48ch;
@@ -277,6 +282,12 @@ a:hover {
   .hero-cta {
     justify-content: center;
   }
+
+  .hero-sub {
+    max-width: 47ch;
+    margin: 1.25rem auto;
+    line-height: 1.4;
+  }
 }
 
 /* ---------------- Notices ---------------- */
@@ -319,82 +330,206 @@ a:hover {
 }
 
 /* ---------------- Footer ---------------- */
+/* Modern Minimalist Footer */
 .site-footer {
-  background-color: var(--ink-dark);
-  color: #c9cfc7;
-}
-.footer-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  padding: 3rem 1.5rem 1.5rem;
-}
-.footer-col {
-  flex: 1 1 200px;
-}
-.footer-heading {
-  color: #fff;
-  font-size: 1.25rem;
-  padding-bottom: 0.75rem;
-  margin-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-.footer-heading.accent {
-  color: var(--moss);
-}
-.footer-list li {
-  padding-top: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.footer-list a {
-  color: #c9cfc7;
-}
-.footer-list a:hover {
-  color: #fff;
+  background-color: var(--logo-gray);
+  border-top: 1px solid var(--line);
+  padding: 2.5rem 0 1.5rem;
+  color: var(--ink);
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin-top: auto;
 }
 
-.footer-social-row {
-  padding: 0 1.5rem 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  margin-top: 0.5rem;
-  padding-top: 1.5rem;
-}
-.social-list {
+.footer-content {
   display: flex;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 2rem;
 }
-.social-list a {
+
+/* Top Section Layout */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Keeps left & right columns vertically aligned */
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+/* Left Column: Brand + Stacked Contact */
+.footer-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-logo {
+  font-family: 'STIX Two Text', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--card, #2c4a3e);
+  letter-spacing: -0.02em;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column; /* Stacks location & email line-by-line */
+  gap: 0.35rem;
+  opacity: 0.7;
+}
+
+.footer-contact .footer-contact-element {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--card);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-contact .footer-contact-element:hover {
+  color: var(--accent-gold);
+}
+
+/* Right Column: Social Title + Icons */
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Right-aligns title with icons */
+  gap: 0.5rem;
+}
+
+.socials-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  /* text-transform: uppercase; */
+  letter-spacing: 0.05em;
+  color: var(--card);
+  opacity: 0.8;
+}
+
+.socials-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.footer-socials a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.4em;
-  height: 2.4em;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  color: #c9cfc7;
-}
-.social-list a:hover {
-  background-color: var(--moss);
-  border-color: var(--moss);
-  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background-color: var(--paper);
+  transition: transform 0.2s ease;
 }
 
-.footer-bottom {
-  background-color: #000;
-  padding: 0.9rem 0;
+.footer-socials a:hover {
+  transform: translateY(-5px);
 }
-.footer-bottom-inner {
+
+/* Navigation Links */
+.footer-nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--line);
 }
-.footer-bottom-inner p {
+
+.footer-links-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-links-group a {
+  font-size: 0.88rem;
+  color: var(--card);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  opacity: 0.8;
+}
+
+.footer-links-group a:hover {
+  color: var(--accent-gold);
+}
+
+.footer-links-group.accent-links a {
+  font-weight: 500;
+  color: var(--card);
+  opacity: 0.6;
+}
+
+.footer-links-group.accent-links a:hover {
+  color: var(--accent-gold);
+}
+
+.footer-links-sep {
+  height: 16px;
+  width: 1px;
+  background-color: var(--line);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.78rem;
+  color: var(--muted);
   margin: 0;
-  font-size: 0.9rem;
 }
-.heart {
-  color: #8b5a46;
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left-col {
+    align-items: center;
+  }
+
+  .footer-contact {
+    align-items: center;
+  }
+
+  .socials-title {
+    display: none; /* Hides "Socials" heading on narrow screens */
+  }
+
+  .footer-socials {
+    align-items: center; /* Centers icons on mobile */
+  }
+  
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .footer-links-sep {
+    display: none;
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
 }

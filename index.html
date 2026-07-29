@@ -1,212 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>CMIT</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CMIT</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/fav/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/fav/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/fav/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/fav/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/fav/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/fav/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/fav/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/fav/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/fav/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/fav/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/fav/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/fav/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/fav/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/fav/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/img/fav/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+<link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/fav/favicon-16x16.png">
+<link rel="manifest" href="assets/img/fav/manifest.json">
+<meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/cmit.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
-
-    <!-- Load fonts style after rendering the layout styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/css/cmit-index.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
 
 </head>
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EMH594D3B7"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-EMH594D3B7');
 </script>
 
 <body>
-    
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="logo">
-            <a href="index.html"><img src="./img/logo.png" alt="" class="img-fluid" width="110px"></a>
-            </div>
 
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#cmit_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <!-- Nav -->
+  <header class="site-nav">
+    <div class="wrap site-nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/img/abstract logo.svg" alt="CMIT" width="35px">
+      </a>
 
-            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="cmit_main_nav">
-                <div class="flex-fill">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="events.html">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="newsletter.html">Newsletter</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                    </ul>
-                </div><br>
-        </div>
-    </nav>
-    <!-- Close Header -->
-    <div class="container-bg">
-<div class="container">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-    <div class="row p-5">
-     
-        <div class="highlighted">
-           Read the fourth newsletter by CMIT, <a href="./newsletter.html">click here to know more.</a>
-        </div>
-
-        <div class="highlighted">
-            Fourth BRICS Mathematics Conference 2021 was held in IISER Thiruvananthapuram, <a href="brics2021/index.html">click here to know more.</a>
-        </div>
-
-        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-            <img class="img-fluid" src="./img/CMIT_Logo_Transparent.png" alt="">
-        </div>
-        <div class="col-lg-6 mb-0 d-flex align-items-center">
-            <div class="text-align-left align-self-center">
-                <h1 class="welcome"><b>Welcome to</b> CMIT!</h1>
-                <h3 class="h2">The IISER Thiruvananthapuram Math Club</h3>
-                <p>
-                    ‘Club of Mathematics, IISER Thiruvananthapuram’ or CMIT, as we call it, is a student-run, department recognized, open Mathematics club at the Indian Institute of Science Education and Research, Thiruvananthapuram — with objectives of promoting Mathematics 
-                    and provide an environment for the student community to discuss, learn and indulge in various activities throughout the year. Learn more 
-                    about the club on our about and activities page, or read our blog and newsletter.
-                </p>
-            </div>
-        </div>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="events.html">Events</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="about.html">About</a>
+      </nav>
     </div>
-</div>
-</div>
+  </header>
 
-    <!-- Start Footer -->
-    <footer class="bg-dark" id="tempaltemo_footer">
-        <div class="container">
-            <div class="row">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
 
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">CMIT</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt fa-fw"></i>
-                            IISER TVM
-                        </li>
-                        <li>
-                            <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:cmit@iisertvm.ac.in">cmit@iisertvm.ac.in</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Links</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="wpc.html">WPC Archive</a></li>
-                        <li><a class="text-decoration-none" href="epiphany.html">Epiphany</a></li>
-                        <li><a class="text-decoration-none" href="discord.html">Discord</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="index.html">Home</a></li>
-                        <li><a class="text-decoration-none" href="about.html">About Us</a></li>
-                        <li><a class="text-decoration-none" href="newsletter.html">Newsletter</a></li>
-                        <li><a class="text-decoration-none" href="events.html">Events</a></li>
-                        <li><a class="text-decoration-none" href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="row text-light mb-4">
-                <div class="col-12 mb-3">
-                    <div class="w-100 my-3 border-top border-light"></div>
-                </div>
-                <div class="col-auto me-auto">
-                    <ul class="list-inline text-left footer-icons">
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://facebook.com/cmitiisertvm"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://instagram.com/cmitiisertvm"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/cmitiisertvm"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.youtube.com/c/cmitiisertvm"><i class="fab fa-youtube fa-lg fa-fw"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- <div class="col-auto">
-                    <label class="sr-only" for="subscribeEmail">Email address</label>
-                    <div class="input-group mb-2">
-                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
-                        <div class="input-group-text btn-success text-light">Subscribe</div>
-                    </div>
-                -->
-                </div>
-            </div>
+      <div class="hero-copy">
+        <p class="eyebrow">IISER Thiruvananthapuram</p>
+        <h1 class="hero-title">Welcome to <em>CMIT</em></h1>
+        <h2 class="hero-sub">The Official Mathematics Club of IISER Thiruvananthapuram </h2>
+        <p class="hero-text">
+          'Club of Mathematics, IISER Thiruvananthapuram' or CMIT, as we call it, is a student-run,
+          department recognized, open Mathematics club - with objectives of promoting mathematics
+          and providing an environment for the student community to discuss, learn and indulge in
+          various activities throughout the year.
+        </p>
+        <div class="hero-cta">
+          <a href="about.html" class="link-arrow">Learn about the club</a>
+          <a href="blog.html" class="link-arrow">Read the blog</a>
         </div>
+      </div>
 
-        <div class="w-100 bg-black py-3">
-            <div class="container">
-                <div class="row pt-2">
-                    <div class="col-6">
-                        <p class="text-start text-light">
-                            Copyright &copy; 2025 CMIT 
-                            | Designed by CMIT with <span style="color: #e25555;">&hearts;</span>
-                        </p></div>
-                    <div class="col-6"><p class="text-end text-light">Developed by Aryan Bhatia</p></div>>
-                </div>
-            </div>
-        </div>
+      <div class="hero-figure">
+        <img src="assets/img/cmit.logo.png" alt="CMIT logo" class="hero-logo">
+      </div>
 
-    </footer>
-    <!-- End Footer -->
+    </div>
+  </section>
 
-    <!-- Start Script -->
-    <script src="assets/js/jquery-1.11.0.min.js"></script>
-    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/cmit.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <!-- End Script -->
+  <!-- Notices -->
+  <section class="notices-wrap">
+    <div class="wrap">
+      <div class="notices">
+        <p class="notices-label">Notices</p>
+        <ul class="notices-list">
+          <li>
+            <span class="notice-index">01</span>
+            <span>Read the fourth newsletter by CMIT. <a href="newsletter.html">Available here.</a></span>
+          </li>
+          <li>
+            <span class="notice-index">02</span>
+            <span>Fourth BRICS Mathematics Conference 2021 was held in IISER Thiruvananthapuram. <a href="brics2021/index.html">Read more about it here.</a></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+  <div class="wrap footer-content">
+    
+    <!-- Top Row: Branding, Contact & Socials -->
+    <div class="footer-top">
+  <!-- Left Column: CMIT + Location & Email stacked underneath -->
+  <div class="footer-left-col">
+    <div class="footer-brand">
+      <span class="footer-logo">CMIT</span>
+    </div>
+
+    <div class="footer-contact">
+      <a href="https://maps.app.goo.gl/UE5UbxBuXX6exYZLA" class="footer-contact-element footer-location">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z"/>
+          <circle cx="12" cy="9" r="2.3" fill="var(--ink-dark)"/>
+        </svg>
+        IISER TVM
+      </a>
+
+      <a href="mailto:cmit@iisertvm.ac.in" class="footer-contact-element footer-email">
+        <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+          <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+          <path d="M3 7l9 6 9-6"></path>
+        </svg>
+        cmit@iisertvm.ac.in
+      </a>
+    </div>
+  </div>
+
+  <!-- Right Column: Socials Title + Icons -->
+  <div class="footer-socials">
+    <span class="socials-title">Socials</span>
+    <div class="socials-icons">
+      <a href="https://facebook.com/cmitiisertvm" target="_blank" rel="noopener" aria-label="Facebook">
+        <img src="https://cmit.iisertvm.ac.in/assets/icons/facebook.png" alt="Facebook" class="icon"/>
+      </a>
+      <a href="https://instagram.com/cmitiisertvm" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="https://cmit.iisertvm.ac.in/assets/icons/instagram.png" alt="Instagram" class="icon"/>
+      </a>
+      <a href="https://twitter.com/cmitiisertvm" target="_blank" rel="noopener" aria-label="Twitter / X">
+        <img src="https://cmit.iisertvm.ac.in/assets/icons/twitter.png" alt="Twitter / X" class="icon"/>
+      </a>
+      <a href="https://www.youtube.com/c/cmitiisertvm" target="_blank" rel="noopener" aria-label="YouTube">
+        <img src="https://cmit.iisertvm.ac.in/assets/icons/youtube.png" alt="YouTube" class="icon"/>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <!-- Navigation Rows -->
+    <div class="footer-nav">
+      <nav class="footer-links-group" aria-label="Main Navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="events.html">Events</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+      <!-- <div class="footer-links-sep"></div> -->
+
+      <nav class="footer-links-group accent-links" aria-label="Quick Links">
+        <a href="wpc.html">WPC Archive</a>
+        <a href="epiphany.html">Epiphany</a>
+        <a href="discord.html">Discord</a>
+      </nav>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      <p>&copy; Club for Mathematics, IISER Thiruvananthapuram.</p>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="assets/js/site.js"></script>
 </body>
-
 </html>
