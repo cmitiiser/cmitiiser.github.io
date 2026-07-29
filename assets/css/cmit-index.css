@@ -213,6 +213,8 @@ a:hover {
   justify-content: center;
 }
 .hero-logo {
+  width: 90vw;
+  height: auto;
   max-width: 400px;
 }
 
