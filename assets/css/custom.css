@@ -3,15 +3,17 @@ Custom Css
 */
 
 .highlighted {
-    padding: 0.5rem;
-    padding-left: 1rem;
-    background-color: #D1D0CD;
-    border-left: 7px solid #6B6B69;
-    font-size: smaller;
-    font-weight: lighter;
-    margin-bottom: 0.75rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  background-color: #E9E7DF;
+  border-left: 4px solid #5C7A63;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+  color: #262A2E;
 }
 
 .highlighted a {
-    color: inherit;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #5C7A63;
 }

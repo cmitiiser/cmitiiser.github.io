@@ -1,0 +1,225 @@
+/* ============================================
+   Email Builder — tool page
+   Uses tokens defined in cmit.css:
+   --paper --card --ink --ink-dark --muted --line
+   --moss --moss-deep --moss-wash --font-body --font-head
+   ============================================ */
+
+body.mailgen-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.tool-main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tool header */
+.tool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.5rem;
+  background-color: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+.tool-header .eyebrow { margin: 0 0 0.15rem; }
+.tool-title { font-size: 1.4rem; margin: 0; }
+.tool-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+.btn-tool {
+  background-color: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+.btn-tool:hover { border-color: var(--moss); color: var(--moss-deep); }
+.btn-tool.primary { background-color: var(--moss); border-color: var(--moss); color: #fff; }
+.btn-tool.primary:hover { background-color: var(--moss-deep); border-color: var(--moss-deep); }
+.btn-tool.primary.is-copied { background-color: var(--moss-deep); border-color: var(--moss-deep); }
+
+/* Workspace */
+.workspace { flex: 1; min-height: 0; display: flex; }
+.pane { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.pane + .pane { border-left: 1px solid var(--line); }
+
+.pane-header {
+  height: 2.5rem;
+  padding: 0 1rem;
+  background-color: var(--moss-wash);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pane-header-sep { color: var(--line); margin: 0 0.3rem; }
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  cursor: pointer;
+}
+.tab-btn.active { color: var(--moss-deep); border-bottom: 2px solid var(--moss-deep); }
+
+.pane-body { flex: 1; min-height: 0; display: flex; flex-direction: column; position: relative; }
+
+/* CodeMirror editor — font pinned directly on CodeMirror's own line
+   elements, not inherited, so nothing else on the page can override it */
+.CodeMirror,
+.CodeMirror pre,
+.CodeMirror .CodeMirror-line,
+.CodeMirror-measure,
+.CodeMirror-measure pre,
+.CodeMirror-linenumber {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, Menlo, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.CodeMirror { flex: 1; height: 100% !important; }
+.cm-s-cmit.CodeMirror { background-color: var(--card); color: var(--ink); }
+.cm-s-cmit .CodeMirror-gutters { background-color: var(--paper); border-right: 1px solid var(--line); }
+.cm-s-cmit .CodeMirror-linenumber { color: var(--muted); }
+.cm-s-cmit .CodeMirror-cursor { border-left: 1px solid var(--moss-deep); }
+.cm-s-cmit .CodeMirror-activeline-background { background-color: var(--moss-wash); }
+.cm-s-cmit .CodeMirror-selected { background-color: rgba(92,122,99,0.18); }
+.cm-s-cmit .cm-comment { color: var(--muted); font-style: italic; }
+.cm-s-cmit .cm-keyword { color: var(--moss-deep); font-weight: 600; }
+.cm-s-cmit .cm-tag { color: #6C879B; font-weight: 600; }
+.cm-s-cmit .cm-property { color: var(--moss); }
+.cm-s-cmit .cm-bracket { color: var(--muted); }
+.cm-s-cmit .cm-strong { font-weight: 700; }
+.cm-s-cmit .cm-em { font-style: italic; }
+.cm-s-cmit .cm-link { color: #6C879B; text-decoration: underline; }
+.cm-s-cmit .cm-atom, .cm-s-cmit .cm-number { color: #B5675B; }
+
+/* Preview iframe + raw code view */
+#html-preview { flex: 1; border: none; background-color: #ffffff; }
+.code-view {
+  display: none;
+  flex: 1;
+  margin: 0;
+  padding: 1rem;
+  overflow: auto;
+  background-color: var(--card);
+  color: var(--moss-deep);
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Documentation modal */
+dialog#docs-modal {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 0;
+  width: 90%;
+  max-width: 640px;
+  background-color: var(--card);
+  color: var(--ink);
+}
+dialog#docs-modal::backdrop { background-color: rgba(38, 42, 46, 0.45); }
+
+.docs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.docs-header h2 { font-size: 1.2rem; margin: 0; }
+
+/* Every element inside the docs modal gets one explicit, consistent size —
+   nothing is left to fall back on browser or body defaults. */
+.docs-body {
+  padding: 1.25rem 1.5rem 1.75rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+.docs-body p,
+.docs-body li,
+.docs-body td,
+.docs-body th {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 0.6rem;
+}
+.docs-body h3 {
+  font-size: 1.05rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+.docs-body h3:first-child { margin-top: 0; }
+.docs-body h4 {
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+.docs-body ul { padding-left: 1.25rem; list-style: disc; margin-bottom: 0.75rem; }
+.docs-body ul ul { margin-top: 0.3rem; margin-bottom: 0.3rem; }
+
+.docs-body code,
+.docs-body pre {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, Menlo, monospace;
+  font-size: 0.82rem;
+}
+.docs-body code {
+  background-color: var(--moss-wash);
+  color: var(--moss-deep);
+  padding: 0.15rem 0.35rem;
+  border-radius: 2px;
+}
+.docs-body pre {
+  background-color: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  margin: 0.5rem 0 1rem;
+}
+.docs-body pre code { background: transparent; padding: 0; }
+
+.docs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+.docs-table th,
+.docs-table td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.docs-table th {
+  border-bottom: 2px solid var(--line);
+  font-weight: 500;
+}
+
+/* Narrow screens: editor on top, preview below */
+@media (max-width: 991.98px) {
+  .workspace { flex-direction: column; }
+  .pane { flex: 1 1 50%; }
+  .pane + .pane { border-left: none; border-top: 1px solid var(--line); }
+  .tool-title { font-size: 1.2rem; }
+}
