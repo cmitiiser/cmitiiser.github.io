@@ -205,7 +205,6 @@ a:hover {
 }
 .hero-copy {
   flex: 1 1 420px;
-  margin-left: 50px;
 }
 .hero-figure {
   flex: 1 1 280px;
@@ -433,7 +432,7 @@ a:hover {
 /* ---------------- 1. Leadership Row (Always 2 Columns) ---------------- */
 .team-leadership {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Exactly 2 columns always */
+  grid-template-columns: 1fr; /* 1 column on mobile */
   gap: 1.5rem;
   max-width: 800px;
   margin: 0 auto 3rem;
@@ -481,6 +480,10 @@ a:hover {
   }
   .team-grid .member-card {
     width: calc((100% - (1.25rem * 2)) / 3);
+  }
+
+  .team-leadership {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet/desktop */
   }
 }
 

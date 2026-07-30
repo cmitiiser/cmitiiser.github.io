@@ -329,168 +329,155 @@ a:hover {
 }
 
 
-/* ---------------- Newsletter Section Layout ---------------- */
+/* ============================================
+   Events Section Layout
+   ============================================ */
+
 
 .newsletter-section {
   padding-top: 3rem;
   padding-bottom: 4rem;
 }
 
-/* Issue Card Grid (Desktop: Cover ~35-40%, Text ~60%, with gap) */
-.issue-card {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr; /* Approx 40% cover, 60% text */
-  gap: 3rem;
-  align-items: start;
-  margin-bottom: 3.5rem;
-}
-
-/* Cover Image Container */
-.issue-cover {
-  width: 100%;
+/* Outer layout container */
+.events-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.issue-cover a {
-  display: block;
-  width: 100%;
-  max-width: 380px; /* Prevents overly huge cover images on wide monitors */
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+/* Individual Semester Block / Card */
+.sem-container {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--moss-deep);
+  border-radius: 4px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.issue-cover a:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+.sem-container:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
-.issue-cover img {
+/* Semester Header */
+.sem-title {
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  letter-spacing: 0.05em;
+  color: var(--moss-deep);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dashed var(--line);
+}
+
+/* --- UNIFORM EVENT SPACING --- */
+.sem-container > p,
+.sem-container > a {
   display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  margin-bottom: 1rem;
 }
 
-/* Issue Content Styling */
-.issue-content {
-  max-width: 85%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  color: var(--ink, #1a1a1a);
-  line-height: 1.6;
+.sem-container a p {
+  margin-bottom: 0;
 }
 
-.issue-content p {
-  margin: 0;
+/* --- HANGING INDENT & TYPOGRAPHY --- */
+.sem-container p {
   font-size: 0.98rem;
+  color: var(--ink);
+  line-height: 1.6;
+  
+  padding-left: 1.75rem; 
+  text-indent: -1.75rem;
 }
 
-/* Issue Heading & Call to Action Link */
-.issue-meta {
-  margin-top: 0.5rem;
-  padding-top: 1rem;
-  border-top: 1px dashed var(--line, #e0e0e0);
+.sem-container > :last-child {
+  margin-bottom: 0;
 }
 
-.issue-meta h3 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin: 0 0 0.4rem 0;
-  color: var(--card, #2c4a3e);
-}
-
-.issue-meta .read-link {
+.sem-container p b {
   font-weight: 500;
+  color: var(--ink-dark);
+}
+
+.sem-container a {
+  color: var(--ink);
+  /* text-decoration: none; */
+  transition: color 0.2s ease;
+}
+
+.sem-container a:hover {
+  color: var(--moss-deep);
+}
+
+/* Interactive hover arrow for linked events */
+.sem-container a p {
+  position: relative;
+}
+
+.sem-container a p::after {
+  content: " \2192";
+  opacity: 0;
+  color: var(--moss);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  transform: translateX(-4px);
+  text-indent: 0; 
+}
+
+.sem-container a:hover p::after {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* Nested lists (un-indent them so they align naturally with sub-items) */
+.sem-container ul {
+  list-style-type: disc !important;
+  margin: -0.5rem 0 1rem 3.25rem !important;
+  padding-left: 1rem;
+}
+
+.sem-container ul li {
   font-size: 0.95rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  text-align: center;
-  gap: 0.25rem;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+  padding-left: 0;
+  text-indent: 0;
 }
 
-.issue-meta .read-link:hover {
-  text-decoration: underline;
+/* Superscript styling */
+.sem-container sup {
+  font-size: 0.7em;
+  line-height: 0;
 }
 
-/* Section Divider Line */
-.issue-divider {
-  border: 0;
-  height: 1px;
-  background-color: var(--line, #e0e0e0);
-  margin: 3.5rem 0;
-}
-
-/* ---------------- Mobile Responsive ---------------- */
-
+/* Mobile responsive padding adjustments */
 @media (max-width: 768px) {
-  .issue-card {
-    grid-template-columns: 1fr; /* Stacks vertically: Cover top, Text bottom */
-    gap: 1.75rem;
+  .newsletter-section {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
   }
 
-  .issue-cover a {
-    max-width: 280px; /* Keeps cover image nicely proportioned on phones */
-    margin: 0 auto;
+  .sem-container {
+    padding: 1.25rem 1.25rem;
   }
 
-  .issue-content p {
-    justify-content: center;
-    text-align: center;
+  /* Reduce indent slightly on small mobile screens */
+  .sem-container p {
+    padding-left: 1.25rem;
+    text-indent: -1.25rem;
   }
 
-  .issue-meta {
-    text-align: center;
+  .sem-container ul {
+    margin-left: 2rem !important;
   }
 }
 
-
-/* Button Bar for Newsletter Actions */
-.issue-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.btn-donut {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--moss-deep);
-  color: var(--card);
-  font-family: 'STIX Two Text', Georgia, serif; /* Using card text font family */
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  text-decoration: none !important; /* Removes underline */
-  transition: transform 0.1s ease;
-}
-
-.btn-donut:hover {
-  color: var(--card);
-  transform: translateY(-1px);
-}
-
-.btn-donut:active {
-  transform: translateY(0);
-}
-
-/* Stack buttons full width on small screens if desired */
-@media (max-width: 768px) {
-  .issue-actions {
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-}
 
 
 
