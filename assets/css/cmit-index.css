@@ -59,6 +59,8 @@
   font-weight: 1000;
   font-style: normal;
   color: var(--logo-gray);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 .hero-sub {
   font-family: var(--font-body);

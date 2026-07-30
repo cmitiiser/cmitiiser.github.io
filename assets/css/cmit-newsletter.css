@@ -52,9 +52,14 @@
   margin-bottom: 0.25rem;
 }
 .hero-title em {
+  /* font-family: var(--logo-font); */
+  /* letter-spacing: -0.04em; */
   font-weight: 1000;
   font-style: normal;
   color: var(--logo-gray);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  /* text-decoration-style: wavy; */
 }
 .hero-sub {
   font-family: var(--font-body);
