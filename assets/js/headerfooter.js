@@ -23,5 +23,5 @@ function setupMobileNav() {
   }
 }
 
-loadComponent("site-header", "/assets/template/nav.html", setupMobileNav);
-loadComponent('site-footer', '/assets/template/footer.html');
+loadComponent("site-header", "./assets/template/nav.html", setupMobileNav);
+loadComponent('site-footer', './assets/template/footer.html');
