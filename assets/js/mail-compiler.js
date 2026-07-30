@@ -289,15 +289,38 @@ function switchTab(tab) {
   }
 }
 
+function downloadHTML() {
+  if (!generatedHTML) return;
+
+  // 1. Create a Blob object containing the compiled HTML
+  const blob = new Blob([generatedHTML], { type: "text/html;charset=utf-8" });
+
+  // 2. Create a temporary invisible <a> download element
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  
+  // 3. Name the downloaded file (e.g., email-template.html)
+  link.download = "email-template.html";
+
+  // 4. Trigger the download programmatically and clean up
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(link.href);
+}
+
 function copyToClipboard() {
+  if (!generatedHTML) return;
+
   navigator.clipboard.writeText(generatedHTML).then(() => {
     const btn = document.getElementById("copy-btn");
-    btn.textContent = "Copied!";
-    btn.classList.add("is-copied");
+        btn.classList.add("is-copied");
+    
     setTimeout(() => {
-      btn.textContent = "Copy HTML Code";
       btn.classList.remove("is-copied");
     }, 2000);
+  }).catch(err => {
+    console.error("Failed to copy code: ", err);
   });
 }
 

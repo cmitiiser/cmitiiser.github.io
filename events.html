@@ -48,31 +48,8 @@
 
   <body>
     <!-- Nav -->
-    <header class="site-nav">
-      <div class="wrap site-nav-inner">
-        <a href="index.html" class="brand">
-          <img src="assets/img/abstract logo.svg" alt="CMIT" width="35px" />
-        </a>
-
-        <button
-          class="nav-toggle"
-          id="nav-toggle"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-        >
-          <span></span><span></span><span></span>
-        </button>
-
-        <nav class="nav-links" id="nav-links">
-          <a href="index.html">Home</a>
-          <a href="blog.html">Blog</a>
-          <a href="events.html">Events</a>
-          <a href="newsletter.html">Newsletter</a>
-          <a href="about.html">About</a>
-        </nav>
-      </div>
-    </header>
-
+    <div id="site-header"></div>
+    
     <!-- Hero -->
     <section class="hero">
       <div class="hero-grid" aria-hidden="true"></div>
@@ -781,132 +758,9 @@
       </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="wrap footer-content">
-        <!-- Top Row: Branding, Contact & Socials -->
-        <div class="footer-top">
-          <!-- Left Column: CMIT + Location & Email stacked underneath -->
-          <div class="footer-left-col">
-            <div class="footer-brand">
-              <span class="footer-logo">CMIT</span>
-            </div>
+    <div id="site-footer"></div>
 
-            <div class="footer-contact">
-              <a
-                href="https://maps.app.goo.gl/UE5UbxBuXX6exYZLA"
-                class="footer-contact-element footer-location"
-              >
-                <svg class="icon" viewBox="0 0 24 24">
-                  <path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z" />
-                  <circle cx="12" cy="9" r="2.3" fill="var(--ink-dark)" />
-                </svg>
-                IISER TVM
-              </a>
-
-              <a
-                href="mailto:cmit@iisertvm.ac.in"
-                class="footer-contact-element footer-email"
-              >
-                <svg
-                  class="icon"
-                  viewBox="0 0 24 24"
-                  width="16"
-                  height="16"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  fill="none"
-                >
-                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                  <path d="M3 7l9 6 9-6"></path>
-                </svg>
-                cmit@iisertvm.ac.in
-              </a>
-            </div>
-          </div>
-
-          <!-- Right Column: Socials Title + Icons -->
-          <div class="footer-socials">
-            <span class="socials-title">Socials</span>
-            <div class="socials-icons">
-              <a
-                href="https://facebook.com/cmitiisertvm"
-                target="_blank"
-                rel="noopener"
-                aria-label="Facebook"
-              >
-                <img
-                  src="https://cmit.iisertvm.ac.in/assets/icons/facebook.png"
-                  alt="Facebook"
-                  class="icon"
-                />
-              </a>
-              <a
-                href="https://instagram.com/cmitiisertvm"
-                target="_blank"
-                rel="noopener"
-                aria-label="Instagram"
-              >
-                <img
-                  src="https://cmit.iisertvm.ac.in/assets/icons/instagram.png"
-                  alt="Instagram"
-                  class="icon"
-                />
-              </a>
-              <a
-                href="https://twitter.com/cmitiisertvm"
-                target="_blank"
-                rel="noopener"
-                aria-label="Twitter / X"
-              >
-                <img
-                  src="https://cmit.iisertvm.ac.in/assets/icons/twitter.png"
-                  alt="Twitter / X"
-                  class="icon"
-                />
-              </a>
-              <a
-                href="https://www.youtube.com/c/cmitiisertvm"
-                target="_blank"
-                rel="noopener"
-                aria-label="YouTube"
-              >
-                <img
-                  src="https://cmit.iisertvm.ac.in/assets/icons/youtube.png"
-                  alt="YouTube"
-                  class="icon"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Navigation Rows -->
-        <div class="footer-nav">
-          <nav class="footer-links-group" aria-label="Main Navigation">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="events.html">Events</a>
-            <a href="newsletter.html">Newsletter</a>
-            <a href="blog.html">Blog</a>
-          </nav>
-
-          <!-- <div class="footer-links-sep"></div> -->
-
-          <nav class="footer-links-group accent-links" aria-label="Quick Links">
-            <a href="wpc.html">WPC Archive</a>
-            <a href="epiphany.html">Epiphany</a>
-            <a href="discord.html">Discord</a>
-          </nav>
-        </div>
-
-        <!-- Bottom Copyright -->
-        <div class="footer-bottom">
-          <p>&copy; Club for Mathematics, IISER Thiruvananthapuram.</p>
-        </div>
-      </div>
-    </footer>
-
+    <script src="assets/js/headerfooter.js"></script>
     <script src="assets/js/site.js"></script>
   </body>
 </html>
