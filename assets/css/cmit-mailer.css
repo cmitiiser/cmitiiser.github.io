@@ -331,7 +331,7 @@ dialog#docs-modal::backdrop { background-color: rgba(38, 42, 46, 0.45); }
 .hero-title {
   font-size: 3rem;
   line-height: 1.1;
-  margin-bottom: 0.25rem;
+  margin-bottom: 1.5rem;
 }
 .hero-title em {
   font-weight: 1000;

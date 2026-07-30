@@ -1,6 +1,5 @@
 @import url('general.css');
 
-
 /* ---------------- Hero ---------------- */
 .hero {
   position: relative;
@@ -30,7 +29,6 @@
 }
 .hero-copy {
   flex: 1 1 420px;
-  margin-left: 50px;
 }
 .hero-figure {
   flex: 1 1 280px;
@@ -38,8 +36,6 @@
   justify-content: center;
 }
 .hero-logo {
-  width: 90vw;
-  height: auto;
   max-width: 400px;
 }
 
@@ -53,24 +49,21 @@
 .hero-title {
   font-size: 3rem;
   line-height: 1.1;
-  margin-bottom: 0.25rem;
+  margin-bottom: 1.5rem;
 }
 .hero-title em {
   font-weight: 1000;
   font-style: normal;
   color: var(--logo-gray);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
 }
 .hero-sub {
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 1.1rem;
   color: var(--muted);
-  margin-bottom: 1.5rem;
 }
 .hero-text {
-  max-width: 48ch;
+  max-width: 80vw;
   margin-bottom: 1.5rem;
 }
 
@@ -157,4 +150,23 @@
 }
 .notices-list a:hover {
   text-decoration-color: var(--moss);
+}
+
+
+.main-image {
+  flex: 1 1 280px;
+  display: flex;
+  justify-content: center;
+}
+.main-image-img {
+  width: 90vw;
+  height: auto;
+  max-width: 400px;
+}
+
+@media (max-width: 1000px) {
+  .main-image {
+    max-width: 80vw;
+    margin: 2rem auto;
+  }
 }

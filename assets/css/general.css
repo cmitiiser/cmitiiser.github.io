@@ -18,27 +18,22 @@
   --logo-font: "Geometos Rounded", sans-serif;
 }
 
-/* Reset */
+/* Reset & Sticky Footer Base */
 * {
   box-sizing: border-box;
 }
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-img {
-  max-width: 100%;
-  display: block;
-}
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+
+html {
+  height: 100%;
 }
 
-/* Base typography */
 body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh; /* Handles mobile viewport bar shifts */
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 300;
@@ -46,6 +41,24 @@ body {
   color: var(--ink);
   background-color: var(--paper);
 }
+
+/* Main Content Container - expands to push footer down */
+.site-main, main {
+  flex: 1 0 auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base typography */
 h1,
 h2,
 h3,
@@ -102,11 +115,10 @@ a:hover {
   background-color: color-mix(in srgb, var(--card) 90%, transparent);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  position: fixed;
-  border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid var(--line);
 }
 .site-nav-inner {
   display: flex;
@@ -186,6 +198,7 @@ a:hover {
   color: var(--ink);
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
   margin-top: auto;
+  flex-shrink: 0; /* Prevents footer from collapsing under flexbox */
 }
 
 .footer-content {
@@ -256,7 +269,6 @@ a:hover {
   display: block;
   font-size: 1rem;
   font-weight: 400;
-  /* text-transform: uppercase; */
   letter-spacing: 0.05em;
   color: var(--card);
   opacity: 0.8;
@@ -361,11 +373,11 @@ a:hover {
   }
 
   .socials-title {
-    display: none; /* Hides "Socials" heading on narrow screens */
+    display: none;
   }
 
   .footer-socials {
-    align-items: center; /* Centers icons on mobile */
+    align-items: center;
   }
   
   .footer-nav {

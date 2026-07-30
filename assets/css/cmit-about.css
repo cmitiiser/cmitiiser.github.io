@@ -51,7 +51,7 @@
 .hero-title {
   font-size: 3rem;
   line-height: 1.1;
-  margin-bottom: 0.25rem;
+  margin-bottom: 1.5rem;
 }
 .hero-title em {
   font-weight: 1000;
@@ -232,9 +232,19 @@
 .member-name {
   font-family: 'STIX Two Text', Georgia, serif;
   font-size: 1.1rem;
+  line-height: 1.1;
   font-weight: 600;
   color: var(--logo-gray, #323232);
   margin: 0;
+}
+
+.member-batch {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 1030;
+  color: var(--moss-deep, #1b382d);
+  opacity: 0.5;
+  margin: -0.2rem;
 }
 
 .member-role {
@@ -284,6 +294,15 @@
   height: 1px;
   background-color: var(--line, #e0e0e0);
   margin: 2.5rem 0;
+}
+
+.team-section-title {
+  font-family: 'STIX Two Text', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--logo-gray, #323232);
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 /* ---------------- 2. Main Responsive Grid (2 -> 5 cols) ---------------- */
