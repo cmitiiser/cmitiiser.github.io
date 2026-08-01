@@ -1,6 +1,6 @@
 let templateHTML = '';
 
-fetch('/assets/template/template.html')
+fetch('./assets/template/template.html')
   .then(response => {
     if (!response.ok) throw new Error('Failed to load template.html');
     return response.text();
