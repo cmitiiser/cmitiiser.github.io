@@ -1,5 +1,6 @@
 @import url('general.css');
 
+
 /* ---------------- Hero ---------------- */
 .hero {
   position: relative;
@@ -29,6 +30,7 @@
 }
 .hero-copy {
   flex: 1 1 420px;
+  margin-left: 50px;
 }
 .hero-figure {
   flex: 1 1 280px;
@@ -36,6 +38,8 @@
   justify-content: center;
 }
 .hero-logo {
+  width: 90vw;
+  height: auto;
   max-width: 400px;
 }
 
@@ -49,9 +53,11 @@
 .hero-title {
   font-size: 3rem;
   line-height: 1.1;
-  margin-bottom: 1.5rem;
+  margin: 5rem 0 1.1rem;
 }
 .hero-title em {
+  font-family: var(--logo-font);
+  font-size: 10rem;
   font-weight: 1000;
   font-style: normal;
   color: var(--logo-gray);
@@ -61,9 +67,10 @@
   font-weight: 400;
   font-size: 1.1rem;
   color: var(--muted);
+  margin-bottom: 1.5rem;
 }
 .hero-text {
-  max-width: 80vw;
+  max-width: 48ch;
   margin-bottom: 1.5rem;
 }
 
@@ -150,27 +157,4 @@
 }
 .notices-list a:hover {
   text-decoration-color: var(--moss);
-}
-
-
-/* ---------------- Discord ---------------- */
-
-
-
-.main-image {
-  flex: 1 1 280px;
-  display: flex;
-  justify-content: center;
-}
-.main-image-img {
-  width: 90vw;
-  height: auto;
-  max-width: 400px;
-}
-
-@media (max-width: 1000px) {
-  .main-image {
-    max-width: 80vw;
-    margin: 2rem auto;
-  }
 }

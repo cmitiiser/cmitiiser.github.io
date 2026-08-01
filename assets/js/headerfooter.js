@@ -16,12 +16,24 @@ function setupMobileNav() {
   const navLinks = document.getElementById("nav-links");
 
   if (toggleBtn && navLinks) {
-    toggleBtn.addEventListener("click", () => {
+    toggleBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
       const isOpen = navLinks.classList.toggle("is-open");
       toggleBtn.setAttribute("aria-expanded", isOpen);
+    });
+
+    document.addEventListener("click", (event) => {
+      const isClickInsideMenu = navLinks.contains(event.target);
+      const isClickOnToggle = toggleBtn.contains(event.target);
+
+      if (navLinks.classList.contains("is-open") && !isClickInsideMenu && !isClickOnToggle) {
+        navLinks.classList.remove("is-open");
+        toggleBtn.setAttribute("aria-expanded", "false");
+      }
     });
   }
 }
 
-loadComponent("site-header", "./assets/template/nav.html", setupMobileNav);
-loadComponent('site-footer', './assets/template/footer.html');
+
+loadComponent("site-header", "/assets/template/nav.html", setupMobileNav);
+loadComponent('site-footer', '/assets/template/footer.html');
