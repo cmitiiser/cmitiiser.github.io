@@ -153,19 +153,28 @@
 }
 
 
-/* ---------------- Blogs ---------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ---------------- Cards (Blogs & Talks) ---------------- */
 
 .card {
-  /* background-color: var(--card); */
   border: 2px solid var(--line);
   border-radius: 20px;
   overflow: hidden;
+  width: 100%;
+  min-width: 0; /* Critical: allows card to shrink below content size */
+  box-sizing: border-box;
 }
 
-.card-img {
+.card-img,
+.img-fluid {
   width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
+  display: block;
 }
 
 .card-body {
@@ -177,6 +186,8 @@
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
   line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .read-link {
@@ -193,79 +204,27 @@
   text-decoration: underline;
 }
 
-
-/* ---------------- Grid ---------------- */
+/* ---------------- Grid Container ---------------- */
 
 .blog-posts {
-  padding: 0 2rem 5rem 2rem;
-  max-width: 1500px;
+  padding: 0 1.5rem 5rem 1.5rem;
+  max-width: 1300px;
   margin: 0 auto;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-
-  gap: 1.25rem 1.25rem;
-
-  align-items: stretch;
-  justify-items: center;
-}
-
-/* ---------------- Talks ---------------- */
-
-.card {
-  border: 2px solid var(--line);
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.card-img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.card-body {
-  padding: 1.5rem;
-}
-
-.card-title {
-  font-family: var(--font-head);
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.4;
-}
-
-.read-link {
-  font-weight: 500;
-  font-size: 0.95rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  text-align: center;
-  gap: 0.25rem;
-}
-
-.read-link:hover {
-  text-decoration: underline;
-}
-
-/* ---------------- Grid ---------------- */
-
-.blog-posts {
-  padding: 0 2rem 5rem 2rem;
-  max-width: 1500px;
-  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1.25rem 1.25rem;
+  /* Scales down to small screens smoothly while targeting ~320px columns on larger screens */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 1.25rem;
   align-items: stretch;
-  justify-items: center;
+  justify-items: stretch;
+  width: 100%;
 }
+
+/* ---------------- Single Talk View ---------------- */
 
 .talk-page-main {
   padding: 0 0 5rem 0;
@@ -284,6 +243,7 @@
   gap: 1.25rem;
   font-family: var(--font-body);
   line-height: 1.6;
+  min-width: 0;
 }
 
 .talk-details p {
@@ -293,18 +253,22 @@
 .talk-poster {
   flex: 1 1 350px;
   max-width: 500px;
+  width: 100%;
 }
 
 .talk-poster img {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  display: block;
 }
 
 .talk-footer-note a {
   color: var(--moss-deep, #4a7c59);
   text-decoration: underline;
 }
+
+/* ---------------- Media Queries ---------------- */
 
 @media (max-width: 900px) {
   .talk-content-grid {
@@ -314,5 +278,15 @@
   
   .talk-poster {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-posts {
+    padding: 0 1rem 3rem 1rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
   }
 }
