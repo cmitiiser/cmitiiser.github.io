@@ -230,16 +230,18 @@
 
 .sem-container a {
   color: var(--ink);
-  /* text-decoration: none; */
+  text-decoration: none;
+  text-underline-offset: 4px;
   transition: color 0.2s ease;
 }
 
 .sem-container a:hover {
-  color: var(--moss-deep);
+  color: var(--accent-gold);
 }
 
 /* Interactive hover arrow for linked events */
 .sem-container a p {
+  text-decoration: underline;
   position: relative;
 }
 
