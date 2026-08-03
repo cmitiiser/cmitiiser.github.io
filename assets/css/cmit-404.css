@@ -36,6 +36,7 @@
   flex: 1 1 280px;
   display: flex;
   justify-content: center;
+  mix-blend-mode: multiply;
 }
 .hero-logo {
   width: 90vw;
