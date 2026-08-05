@@ -1,0 +1,435 @@
+@import url('general.css');
+
+/* Highlighted text */
+
+.highlighted {
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  background-color: #E9E7DF;
+  border-left: 4px solid #5C7A63;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+  color: #262A2E;
+}
+
+.highlighted a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #5C7A63;
+}
+
+/* Body */
+
+body.mailgen-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.tool-main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tool header */
+.tool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.5rem;
+  background-color: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+.tool-header .eyebrow { margin: 0 0 0.15rem; }
+.tool-title { font-size: 1.4rem; margin: 0; }
+
+.tool-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-tool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.75rem; /* Balanced padding around icons */
+  min-width: 2rem;       /* Keeps square shape when icon-only */
+  height: 2rem;          /* Gives a consistent height */
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  box-sizing: border-box;
+
+  background-color: var(--moss); 
+  border-color: var(--moss); 
+  color: #fff; 
+}
+
+.ux-icon {
+  width: 1.1rem;
+  /* height: 1.4rem; */
+  display: block;
+  object-fit: contain;
+  /* Darkens dark SVGs automatically if your background is light, or invert on primary */
+  transition: filter 0.2s ease;
+}
+
+.btn-tool:hover { 
+  border-color: var(--moss); 
+  color: var(--moss-deep); 
+}
+
+.btn-tool .ux-icon {
+  filter: brightness(0) invert(1);
+}
+
+.btn-tool:hover { 
+  background-color: var(--moss-deep); 
+  border-color: var(--moss-deep); 
+}
+
+.btn-tool.is-copied {
+  background-color: var(--moss-deep);
+  border-color: var(--moss-deep);
+  transform: scale(0.96);
+}
+
+/* Workspace */
+.workspace { flex: 1; min-height: 0; display: flex; }
+.pane { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.pane + .pane { border-left: 1px solid var(--line); }
+
+.pane-header {
+  height: 2.5rem;
+  padding: 0 1rem;
+  background-color: var(--moss-wash);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pane-header-sep { color: var(--line); margin: 0 0.3rem; }
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  cursor: pointer;
+}
+.tab-btn.active { color: var(--moss-deep); border-bottom: 2px solid var(--moss-deep); }
+
+.pane-body { flex: 1; min-height: 0; display: flex; flex-direction: column; position: relative; }
+
+/* CodeMirror editor — font pinned directly on CodeMirror's own line
+   elements, not inherited, so nothing else on the page can override it */
+.CodeMirror,
+.CodeMirror pre,
+.CodeMirror .CodeMirror-line,
+.CodeMirror-measure,
+.CodeMirror-measure pre,
+.CodeMirror-linenumber {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, Menlo, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.CodeMirror { flex: 1; height: 100% !important; }
+.cm-s-cmit.CodeMirror { background-color: var(--card); color: var(--ink); }
+.cm-s-cmit .CodeMirror-gutters { background-color: var(--paper); border-right: 1px solid var(--line); }
+.cm-s-cmit .CodeMirror-linenumber { color: var(--muted); }
+.cm-s-cmit .CodeMirror-cursor { border-left: 1px solid var(--moss-deep); }
+.cm-s-cmit .CodeMirror-activeline-background { background-color: var(--moss-wash); }
+.cm-s-cmit .CodeMirror-selected { background-color: rgba(92,122,99,0.18); }
+.cm-s-cmit .cm-comment { color: var(--muted); font-style: italic; }
+.cm-s-cmit .cm-keyword { color: var(--moss-deep); font-weight: 600; }
+.cm-s-cmit .cm-tag { color: #6C879B; font-weight: 600; }
+.cm-s-cmit .cm-property { color: var(--moss); }
+.cm-s-cmit .cm-bracket { color: var(--muted); }
+.cm-s-cmit .cm-strong { font-weight: 700; }
+.cm-s-cmit .cm-em { font-style: italic; }
+.cm-s-cmit .cm-link { color: #6C879B; text-decoration: underline; }
+.cm-s-cmit .cm-atom, .cm-s-cmit .cm-number { color: #B5675B; }
+
+/* Preview iframe + raw code view */
+#html-preview { flex: 1; border: none; background-color: #ffffff; }
+.code-view {
+  display: none;
+  flex: 1;
+  margin: 0;
+  padding: 1rem;
+  overflow: auto;
+  background-color: var(--card);
+  color: var(--moss-deep);
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Documentation modal */
+dialog#docs-modal {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 0;
+  width: 90%;
+  max-width: 640px;
+  background-color: var(--card);
+  color: var(--ink);
+}
+dialog#docs-modal::backdrop { background-color: rgba(38, 42, 46, 0.45); }
+
+.docs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.docs-header h2 { font-size: 1.2rem; margin: 0; }
+
+/* Every element inside the docs modal gets one explicit, consistent size —
+   nothing is left to fall back on browser or body defaults. */
+.docs-body {
+  padding: 1.25rem 1.5rem 1.75rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+.docs-body p,
+.docs-body li,
+.docs-body td,
+.docs-body th {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 0.6rem;
+}
+.docs-body h3 {
+  font-size: 1.05rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+.docs-body h3:first-child { margin-top: 0; }
+.docs-body h4 {
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+.docs-body ul { padding-left: 1.25rem; list-style: disc; margin-bottom: 0.75rem; }
+.docs-body ul ul { margin-top: 0.3rem; margin-bottom: 0.3rem; }
+
+.docs-body code,
+.docs-body pre {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, Menlo, monospace;
+  font-size: 0.82rem;
+}
+.docs-body code {
+  background-color: var(--moss-wash);
+  color: var(--moss-deep);
+  padding: 0.15rem 0.35rem;
+  border-radius: 2px;
+}
+.docs-body pre {
+  background-color: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  margin: 0.5rem 0 1rem;
+}
+.docs-body pre code { background: transparent; padding: 0; }
+
+.docs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+.docs-table th,
+.docs-table td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.docs-table th {
+  border-bottom: 2px solid var(--line);
+  font-weight: 500;
+}
+
+/* Narrow screens: editor on top, preview below */
+@media (max-width: 991.98px) {
+  .workspace { flex-direction: column; }
+  .pane { flex: 1 1 50%; }
+  .pane + .pane { border-left: none; border-top: 1px solid var(--line); }
+  .tool-title { font-size: 1.2rem; }
+}
+
+
+/* ---------------- Hero ---------------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(38, 42, 46, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 42, 46, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at 30% 20%, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at 30% 20%,
+    black 45%,
+    transparent 85%
+  );
+}
+.hero-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.hero-copy {
+  flex: 1 1 420px;
+  margin-left: 50px;
+}
+.hero-figure {
+  flex: 1 1 280px;
+  display: flex;
+  justify-content: center;
+}
+.hero-logo {
+  width: 90vw;
+  height: auto;
+  max-width: 400px;
+}
+
+.eyebrow {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--moss-deep);
+  margin-bottom: 0.4rem;
+}
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.hero-title em {
+  font-weight: 1000;
+  font-style: normal;
+  color: var(--logo-gray);
+}
+.hero-sub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+.hero-text {
+  max-width: 48ch;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+.link-arrow {
+  color: var(--moss-deep);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+.link-arrow:hover {
+  color: var(--moss);
+  border-bottom-color: var(--moss);
+}
+.link-arrow::after {
+  content: "\00a0\2192";
+}
+
+@media (max-width: 1000px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-copy {
+    flex: 1 1 100%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .hero-text {
+    align-items: center;
+    margin: 40px auto;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .hero-sub {
+    max-width: 47ch;
+    margin: 1.25rem auto;
+    line-height: 1.4;
+  }
+}
+
+/* ---------------- Notices ---------------- */
+.notices-wrap {
+  padding-bottom: 3rem;
+}
+.notices {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--moss);
+  border-radius: 2px;
+  padding: 1.25rem 1.75rem;
+}
+.notices-label {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.notices-list li {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.5rem 0;
+}
+.notices-list li + li {
+  border-top: 1px solid var(--line);
+}
+.notice-index {
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+  color: var(--moss-deep);
+}
+.notices-list a {
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+}
+.notices-list a:hover {
+  text-decoration-color: var(--moss);
+}

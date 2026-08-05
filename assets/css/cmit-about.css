@@ -1,0 +1,355 @@
+@import url('general.css');
+
+
+
+/* ---------------- Hero ---------------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(38, 42, 46, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 42, 46, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at 30% 20%, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at 30% 20%,
+    black 45%,
+    transparent 85%
+  );
+}
+.hero-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.hero-copy {
+  flex: 1 1 420px;
+}
+.hero-figure {
+  flex: 1 1 280px;
+  display: flex;
+  justify-content: center;
+}
+.hero-logo {
+  max-width: 400px;
+}
+
+.eyebrow {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--moss-deep);
+  margin-bottom: 0.4rem;
+}
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.hero-title em {
+  font-weight: 1000;
+  font-style: normal;
+  color: var(--logo-gray);
+}
+.hero-sub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+.hero-text {
+  max-width: 80vw;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+.link-arrow {
+  color: var(--moss-deep);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+.link-arrow:hover {
+  color: var(--moss);
+  border-bottom-color: var(--moss);
+}
+.link-arrow::after {
+  content: "\00a0\2192";
+}
+
+@media (max-width: 1000px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-copy {
+    flex: 1 1 100%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .hero-text {
+    align-items: center;
+    margin: 40px auto;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .hero-sub {
+    max-width: 47ch;
+    margin: 1.25rem auto;
+    line-height: 1.4;
+  }
+}
+
+/* ---------------- Notices ---------------- */
+.notices-wrap {
+  padding-bottom: 3rem;
+}
+.notices {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--moss);
+  border-radius: 2px;
+  padding: 1.25rem 1.75rem;
+}
+.notices-label {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.notices-list li {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.5rem 0;
+}
+.notices-list li + li {
+  border-top: 1px solid var(--line);
+}
+.notice-index {
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+  color: var(--moss-deep);
+}
+.notices-list a {
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+}
+.notices-list a:hover {
+  text-decoration-color: var(--moss);
+}
+
+
+/* ---------------- About / Team Page Layout ---------------- */
+
+.about-section {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.about-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background-color: var(--paper);
+  transition: transform 0.2s ease;
+}
+
+.about-socials a:hover {
+  transform: translateY(-5px);
+}
+
+.socials-icons-top {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+/* Base Member Card Styling */
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  background-color: var(--paper, #ffffff);
+  border: 1px solid var(--line, #e5e5e5);
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.member-card:hover {
+  /* transform: translateY(-3px); */
+  border-color: var(--moss, #2c4a3e);
+  /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06); */
+}
+
+.member-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 2px solid var(--line, #e5e5e5);
+  flex-shrink: 0;
+}
+
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.member-name {
+  font-family: 'STIX Two Text', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.1;
+  font-weight: 600;
+  color: var(--logo-gray, #323232);
+  margin: 0;
+}
+
+.member-batch {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 1030;
+  color: var(--moss-deep, #1b382d);
+  opacity: 0.5;
+  margin: -0.2rem;
+}
+
+.member-role {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--moss-deep, #1b382d);
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.member-bio {
+  font-size: 0.85rem;
+  color: var(--ink, #333333);
+  line-height: 1.4;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* ---------------- 1. Leadership Row (Always 2 Columns) ---------------- */
+.team-leadership {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 column on mobile */
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.leader-card {
+  padding: 1.5rem;
+  border-width: 2px;
+}
+
+.leader-card .member-avatar {
+  width: 140px;
+  height: 140px;
+}
+
+.leader-card .member-name {
+  font-size: 1.25rem;
+}
+
+/* ---------------- Section Divider ---------------- */
+.section-divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--line, #e0e0e0);
+  margin: 2.5rem 0;
+}
+
+.team-section-title {
+  font-family: 'STIX Two Text', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--logo-gray, #323232);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ---------------- 2. Main Responsive Grid (2 -> 5 cols) ---------------- */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers the last row's leftover items */
+  gap: 1rem;
+}
+
+/* Base Card Width (Mobile: 2 Columns with gap calculated) */
+.team-grid .member-card {
+  width: calc((100% - 1rem) / 2);
+}
+
+/* Tablet (Medium screens): 3 Columns */
+@media (min-width: 600px) {
+  .team-grid {
+    gap: 1.25rem;
+  }
+  .team-grid .member-card {
+    width: calc((100% - (1.25rem * 2)) / 3);
+  }
+
+  .team-leadership {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet/desktop */
+  }
+}
+
+/* Desktop (Large screens): 4 Columns */
+@media (min-width: 1000px) {
+  .team-grid {
+    gap: 1.5rem;
+  }
+
+  .socials-icons-top {
+    justify-content: left;
+  }
+
+  .team-grid .member-card {
+    width: calc((100% - (1.5rem * 3)) / 4);
+  }
+}
+
+/* Wide Desktop (Max capacity): 5 Columns */
+@media (min-width: 1200px) {
+  .team-grid .member-card {
+    width: calc((100% - (1.5rem * 4)) / 5);
+  }
+}

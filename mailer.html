@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMIT Email HTML Generator</title>
+
+    <link rel="stylesheet" href="assets/css/cmit-mailer.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;1,400&display=swap"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"
+    />
+    
+  </head>
+  <body class="mailgen-page">
+    <main class="tool-main">
+      <div class="tool-header">
+        <div>
+          <p class="eyebrow">Web // <a href="index.html">CMIT</a></p>
+          <h1 class="tool-title">Email Builder</h1>
+        </div>
+        <div class="tool-actions">
+          <button class="btn-tool" id="docs-btn" type="button">
+            <img
+              src="assets/icons/info.svg"
+              alt="Documentation Icon"
+              class="ux-icon"
+            />
+          </button>
+          <button
+            class="btn-tool"
+            id="download-btn"
+            type="button"
+            onclick="downloadHTML()"
+          >
+            <img
+              src="assets/icons/download.svg"
+              alt="Download Icon"
+              class="ux-icon"
+            />
+          </button>
+          <button
+            class="btn-tool"
+            id="copy-btn"
+            type="button"
+            onclick="copyToClipboard()"
+          >
+            <img src="assets/icons/copy.svg" alt="Copy Icon" class="ux-icon" />
+          </button>
+        </div>
+      </div>
+
+      <div class="workspace">
+        <!-- INPUT EDITOR -->
+        <div class="pane editor-pane">
+          <div class="pane-header"><span>Input Script</span></div>
+          <div class="pane-body">
+            <textarea id="dsl-input"></textarea>
+          </div>
+        </div>
+
+        <!-- PREVIEW & CODE PANE -->
+        <div class="pane preview-pane">
+          <div class="pane-header">
+            <span>Output</span>
+            <div>
+              <button
+                class="tab-btn active"
+                id="tab-preview"
+                onclick="switchTab('preview')"
+              >
+                Visual Preview
+              </button>
+              <span class="pane-header-sep">|</span>
+              <button class="tab-btn" id="tab-code" onclick="switchTab('code')">
+                Raw HTML Code
+              </button>
+            </div>
+          </div>
+          <div class="pane-body">
+            <iframe id="html-preview"></iframe>
+            <pre class="code-view" id="html-code"></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Documentation modal -->
+    <dialog id="docs-modal">
+      <div class="docs-header">
+        <h2>Documentation</h2>
+        <button class="btn-tool" id="docs-close" type="button">Close</button>
+      </div>
+      <div class="docs-body">
+        <p>
+          The email builder reads a lightweight, block-based custom DSL
+          (Domain-Specific Language) and compiles it into clean, email-compliant
+          HTML wrapped inside the template layout.
+        </p>
+
+        <!-- 1. GENERAL SYNTAX & RULES -->
+        <h3>General Syntax Rules</h3>
+        <ul>
+          <li>
+            <strong>Global Directives:</strong> Must be written outside any
+            blocks, typically at the very top of the document.
+          </li>
+          <li>
+            <strong>Block Syntax:</strong> Written as
+            <code>blocktype { ... }</code> spanning multiple lines, or
+            <code>blocktype {}</code> for empty/self-closing blocks.
+          </li>
+          <li>
+            <strong>Modifier Properties:</strong> Lines starting with a dot
+            (e.g., <code>.property: value</code>) placed immediately after a
+            block's closing brace <code>}</code> attach specifically to that
+            preceding block.
+          </li>
+          <li>
+            <strong>Comments:</strong> Lines starting with
+            <code>//</code> outside of blocks are ignored by the compiler.
+          </li>
+        </ul>
+
+        <!-- 2. INLINE TEXT FORMATTING -->
+        <h3>Inline Text Formatting</h3>
+        <p>
+          Inline formatting applies inside text-bearing blocks such as
+          <code>p</code>, <code>list</code>, <code>ul</code>, <code>ol</code>,
+          and default fallback block types:
+        </p>
+        <ul>
+          <li>
+            <strong>Bold:</strong> Wrap text in double asterisks:
+            <code>**text**</code> &rarr; <strong>text</strong>
+          </li>
+          <li>
+            <strong>Italics:</strong> Wrap text in single asterisks:
+            <code>*text*</code> &rarr; <em>text</em>
+          </li>
+          <li>
+            <strong>Links:</strong> Use Markdown link syntax:
+            <code>[Link Text](url)</code>.
+            <ul>
+              <li>
+                If no protocol is provided (e.g.,
+                <code>[Site](cmit.iisertvm.ac.in)</code>),
+                <code>https://</code> is automatically prepended.
+              </li>
+              <li>
+                Links automatically render with <code>target="_blank"</code> to
+                open safely in a new browser tab.
+              </li>
+              <li>
+                Email schemes like <code>mailto:user@example.com</code> are
+                fully preserved.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- 3. TITLE DIRECTIVE -->
+        <h3>Title</h3>
+        <p>Sets the main subject/title variable inside the template header:</p>
+        <pre><code>.title: Movie Screening: Good Will Hunting</code></pre>
+
+        <!-- 4. BLOCK TYPES -->
+        <h3>Block Types</h3>
+
+        <h4>1. Paragraph Block (<code>p</code>)</h4>
+        <p>
+          Generates an email-safe <code>&lt;p&gt;</code> element. Multiple lines
+          inside a paragraph block are merged into a continuous flow by default.
+        </p>
+        <pre><code>p {
+  Hey all, CMIT is celebrating Pi Week with an exciting movie screening!
+}
+.color: #333333
+.font-size: 16px
+.line-height: 1.5</code></pre>
+
+        <h4>
+          2. List Block (<code>list</code>, <code>ul</code>, <code>ol</code>)
+        </h4>
+        <p>
+          Generates an unordered <code>&lt;ul&gt;</code> list structure. You can
+          use <code>list</code>, <code>ul</code>, or <code>ol</code> as the
+          block identifier.
+        </p>
+        <p>
+          List item lines must start with <code>*</code>, <code>-</code>, or a
+          number followed by a period (e.g., <code>1.</code>):
+        </p>
+        <pre><code>list {
+  * **Movie:** Good Will Hunting
+  * **Date:** 22 March 2026
+  * **Venue:** PSB Seminar Hall
+}
+.list-style: none
+.padding: 0
+.margin: 20px 0</code></pre>
+        <p>
+          Numbered lists retain their prefix ordering while supporting inline
+          formatting:
+        </p>
+        <pre><code>ol {
+  1. **First step:** Arrive on time at 9 PM.
+  2. **Second step:** Grab your snacks.
+  3. **Third step:** Enjoy the movie!
+}</code></pre>
+
+        <h4>3. Divider Block (<code>div</code>)</h4>
+        <p>
+          Creates a horizontal dividing line or space separator. Written as a
+          single-line empty block <code>div {}</code>:
+        </p>
+        <pre><code>div {}
+.border-top: 1px dashed #0066cc
+.margin: 20px 0</code></pre>
+
+        <h4>4. Image Block (<code>img</code>)</h4>
+        <p>
+          Renders a responsive image tag. Pass the image URL as the content body
+          inside the braces:
+        </p>
+        <pre><code>img {
+  https://picsum.photos/600/300
+}
+.width: 90%
+.align: center
+.alt: Event Poster</code></pre>
+
+        <!-- 5. ALL AVAILABLE PROPERTIES & STYLES -->
+        <h3>Property Modifiers Reference</h3>
+        <p>
+          Attached directly below closing block braces <code>}</code> using the
+          <code>.key: value</code> format.
+        </p>
+
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Applicable Blocks</th>
+              <th>Description &amp; Syntax</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.align:</code></td>
+              <td>All Blocks</td>
+              <td>
+                Sets alignment (<code>left</code>, <code>center</code>,
+                <code>right</code>, <code>justify</code>). On
+                <code>img</code> blocks, auto-calculates margins for centering.
+              </td>
+            </tr>
+            <tr>
+              <td><code>.margin:</code></td>
+              <td>All Blocks</td>
+              <td>
+                Defines outer spacing (e.g., <code>.margin: 20px 0</code> or
+                <code>.margin: 10px auto</code>).
+              </td>
+            </tr>
+            <tr>
+              <td><code>.padding:</code></td>
+              <td>All Blocks</td>
+              <td>
+                Defines inner spacing (e.g., <code>.padding: 10px</code>,
+                <code>.padding: 0</code>).
+              </td>
+            </tr>
+            <tr>
+              <td><code>.font-size:</code></td>
+              <td><code>p</code>, <code>list</code>, fallback</td>
+              <td>
+                Sets text size (e.g., <code>.font-size: 18px</code>,
+                <code>.font-size: 1.1rem</code>).
+              </td>
+            </tr>
+            <tr>
+              <td><code>.line-height:</code></td>
+              <td><code>p</code>, <code>list</code>, fallback</td>
+              <td>
+                Sets line height spacing (e.g., <code>.line-height: 1.6</code>,
+                <code>.line-height: 24px</code>).
+              </td>
+            </tr>
+            <tr>
+              <td><code>.color:</code></td>
+              <td><code>p</code>, <code>list</code>, fallback</td>
+              <td>
+                Sets text hex color or name (e.g., <code>.color: #0066cc</code>,
+                <code>.color: #333333</code>).
+              </td>
+            </tr>
+            <tr>
+              <td><code>.pre:</code></td>
+              <td><code>p</code></td>
+              <td>
+                Set <code>.pre: true</code> to preserve exact original line
+                breaks, tabs, and whitespace inside a paragraph.
+              </td>
+            </tr>
+            <tr>
+              <td><code>.list-style:</code></td>
+              <td><code>list</code>, <code>ul</code>, <code>ol</code></td>
+              <td>
+                Set to <code>none</code> to remove bullet symbols/number
+                prefixes and remove default left padding. Supports CSS values
+                like <code>disc</code>, <code>square</code>,
+                <code>decimal</code>.
+              </td>
+            </tr>
+            <tr>
+              <td><code>.border-top:</code></td>
+              <td><code>div</code></td>
+              <td>
+                Sets the top border line style of a divider (e.g.,
+                <code>.border-top: 1px dashed #0066cc</code>,
+                <code>.border-top: 2px solid #ccc</code>). Default is
+                <code>2px solid #cccccc</code>.
+              </td>
+            </tr>
+            <tr>
+              <td><code>.width:</code></td>
+              <td><code>img</code></td>
+              <td>
+                Sets display width for images (e.g., <code>.width: 100%</code>,
+                <code>.width: 300px</code>).
+              </td>
+            </tr>
+            <tr>
+              <td><code>.alt:</code></td>
+              <td><code>img</code></td>
+              <td>
+                Sets screen-reader alt text for blocked images (e.g.,
+                <code>.alt: Poster Banner</code>). Defaults to
+                <code>Image</code>.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </dialog>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/mode/simple.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/selection/active-line.min.js"></script>
+    <script src="assets/js/cmit-dsl-mode.js"></script>
+    <script src="assets/js/mail-compiler.js"></script>
+  </body>
+</html>

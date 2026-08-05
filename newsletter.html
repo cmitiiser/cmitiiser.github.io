@@ -1,371 +1,385 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <title>CMIT</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <script src="assets/js/headerfooter.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
 
-    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/fav/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/fav/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/fav/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/fav/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/fav/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/fav/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/fav/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/fav/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/fav/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/fav/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/fav/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/fav/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/fav/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/fav/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/img/fav/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/img/fav/manifest.json" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/cmit.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/cmit-newsletter.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+    />
+  </head>
 
-    <!-- Load fonts style after rendering the layout styles -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-
-    <style>
-        .newsletter img {
-            width: 75%;
-        }
-
-        .newsletter .pctrl {
-            padding: 1rem !important;
-        }
-
-        @media screen and (min-width: 32rem) {
-            .newsletter .pctrl {
-                padding: 5rem !important;
-            }
-        }
-    </style>
-
-</head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EMH594D3B7"></script>
-<script>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-EMH594D3B7"
+  ></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-EMH594D3B7");
+  </script>
 
-    gtag('config', 'G-EMH594D3B7');
-</script>
+  <body>
+    <!-- Nav -->
+    <header id="site-header" class="site-nav"></header>
 
-<body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="logo">
-                <a href="index.html"><img src="./img/logo.png" alt="" class="img-fluid" width="110px"></a>
-            </div>
-
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-                data-bs-target="#cmit_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
-                id="cmit_main_nav">
-                <div class="flex-fill">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="events.html">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="newsletter.html">Newsletter</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                    </ul>
-                </div><br>
-            </div>
-    </nav>
-    <!-- Close Header -->
-    <div class="container-bg">
-        <br>
-        <div class="container newsletter">
-
-            <div class="row p-5 pctrl">
-                <h1><b>Donut — The CMIT Newsletter.</h1></b>
-
-                <br><br>
-                <p>
-                    'Donut' is the official newsletter from the Club of Mathematics, IISER Thiruvanathapuram. This is
-                    a platform to host interesting expository articles from diverse fields of mathematics, news from the
-                    latest at CMIT and math community, as well as recreational mathematics, tidbits, problems, and games
-                    —
-                    all packed in a visually creative flow. Donut is also a medium to develop an interactive community
-                    for
-                    exchange of mathematical interests. To get updates about future issues, subscribe to our newsletter
-                    on the home page.
-
-                </p>
-                <hr>
-                <div class="row p-5 pctrl">
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <a href="https://drive.google.com/file/d/1OYYgvC3R2hd-oZVZ1XtOMkc-Ct90bCer/view"><img
-                                class="img-fluid mx-auto d-block" src="./img/CMIT_Donut_Cover_07.24.png" alt=""></a>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="text-align-left align-self-center">
-                            <p>After a brief hiatus of 1.5 years, we are thrilled to bring you the fourth 
-                                edition of our quarterly newsletter, Donut! This issue is special as we celebrate 
-                                the Fifth Foundation Anniversary of CMIT, highlighted by a major breakthrough with
-                                 Ramsey's theorem R(3,3) = 6, depicted on our cover page.</p>
-
-                            <p>In this edition, we cover exciting new events such as the Pi Week celebrations, 
-                                including Pi-oximity, Pi-uiz 5.0, and the Marble Sliding Competition, along with 
-                                insights from Frontier Symposium '24.</p>
-
-                            <p> We hope you enjoy this issue and appreciate your patience and support.
-                                 We value your feedback and submissions for future editions. You can 
-                                 submit anonymous feedback here:
-                                <a
-                                    href="https://docs.google.com/forms/d/e/1FAIpQLScfTczX2dpr6Z6i_kHQnT5MM6Li7pP-zcsG_1kB4YExK-szGA/viewform">CMIT
-                                    feedback Google form</a>
-                                <br> <br>To
-                                submit content for future issues of Donut, reach out to us at mathsclub@iisertvm.ac.in
-                            </p>
-
-                            <p><b>CMIT Donut, Fourth Issue</b></p>
-                            <a href="https://drive.google.com/file/d/1OYYgvC3R2hd-oZVZ1XtOMkc-Ct90bCer/view">Read this
-                                issue</a> >
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <hr>
-                <div class="row p-5 pctrl">
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <a href="https://drive.google.com/file/d/1mKeLh08OIEqaGY08vtu7XJiDrFeJ-nNZ/view"><img
-                                class="img-fluid mx-auto d-block" src="./img/CMIT_Donut_Cover_11.22.png" alt=""></a>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="text-align-left align-self-center">
-                            <p>The third issue of our quarterly newsletter, Donut, features the events organized by
-                                CMIT, including the fun events in
-                                accordance with Pi Week celebrations, the Abel prize talk and the very many peer
-                                discussions that we have had. This is
-                                also our third and final part of mathomic series. Dive into their conversation to know
-                                the latest news in the field of Mathematics.</p>
-
-                            <p>Glazed or red and white sprinkles? We have got you covered</p>
-
-                            <p> We hope you enjoy this issue as we continue to bring regular editions in the future. We
-                                would love
-                                to have your feedback and submissions for future issues. You can submit anonymous
-                                feedback here:
-                                <a
-                                    href="https://docs.google.com/forms/d/e/1FAIpQLScfTczX2dpr6Z6i_kHQnT5MM6Li7pP-zcsG_1kB4YExK-szGA/viewform">CMIT
-                                    feedback Google form</a>
-                                <br> <br>To
-                                submit content for future issues of Donut, reach out to us at mathsclub@iisertvm.ac.in
-                            </p>
-
-                            <p><b>CMIT Donut, Third Issue</b></p>
-                            <a href="https://drive.google.com/file/d/1mKeLh08OIEqaGY08vtu7XJiDrFeJ-nNZ/view">Read this
-                                issue</a> >
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="row p-5 pctrl">
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <a href="https://drive.google.com/file/d/197W7mzpN8kQJTXdUfzoBDmbuoNWHgmyy/view"><img
-                                class="img-fluid mx-auto d-block" src="./img/CMIT_Donut_Cover_02.22.png" alt=""
-                                width="50%"></a>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="text-align-left align-self-center">
-                            <p>The second issue of our quaterly newsletter, Donut features recent significant events at
-                                CMIT, including the
-                                Fourth BRICS Mathematics Conference, events from the Third Foundation Anniversary
-                                celebration, collaborations
-                                with the Science and Technology Council during the Anvesha season, and a special
-                                Math-Omic.</p>
-
-                            <p> We hope you enjoy this issue as we continue to bring regular editions in the future. We
-                                would love to have your feedback and submissions for future issues. You can submit
-                                anonymous
-                                feedback here:
-                                <a
-                                    href="https://docs.google.com/forms/d/e/1FAIpQLScfTczX2dpr6Z6i_kHQnT5MM6Li7pP-zcsG_1kB4YExK-szGA/viewform">CMIT
-                                    feedback Google form</a>
-                                <br> <br>To submit content for future issues of Donut, reach out to us at
-                                mathsclub@iisertvm.ac.in
-                            <p><b>CMIT Donut, Second Issue</b></p>
-                            <a href="https://drive.google.com/file/d/197W7mzpN8kQJTXdUfzoBDmbuoNWHgmyy/view">Read this
-                                issue</a> >
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="row p-5 pctrl">
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <a href="https://drive.google.com/file/d/1j4RKWeukUq9bxuQuNPAvfFQMrSSxi9uy/view"><img
-                                class="img-fluid mx-auto d-block" src="./img/CMIT_Donut_Cover_10.21.png" alt=""
-                                width="50%"></a>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="text-align-left align-self-center">
-                            <p>On the occasion of the third foundation anniversary of the club, we bring to you the first
-                                issue of our newsletter. We have been fervently greeted with an influx of articles from the
-                                students, and our designers and editors worked their best to make this a reality. Know more about this issue's designers and editors on our about page.</p>
-                            <p> We hope you enjoy the inaugural issue as we continue to bring regular editions in the
-                                future. We would love to have your feedback and submissions for future issues. You can
-                                submit anonymous feedback here:
-                                <a
-                                    href="https://docs.google.com/forms/d/e/1FAIpQLScfTczX2dpr6Z6i_kHQnT5MM6Li7pP-zcsG_1kB4YExK-szGA/viewform">CMIT
-                                    feedback Google form</a>
-                                <br> <br>To submit content for future issues of Donut, reach out to us at
-                                mathsclub@iisertvm.ac.in
-                            <p><b>CMIT Donut, Inaugural Issue</b></p>
-                            <a href="https://drive.google.com/file/d/1j4RKWeukUq9bxuQuNPAvfFQMrSSxi9uy/view">Read this
-                                issue</a> >
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-            </div>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title"><em>DONUT</em> – The CMIT Newsletter</h1>
+          <p class="hero-text">
+            'Donut' is the official newsletter from the Club of Mathematics,
+            IISER Thiruvanathapuram. This is a platform to host interesting
+            expository articles from diverse fields of mathematics, news from
+            the latest at CMIT and math community, as well as recreational
+            mathematics, tidbits, problems, and games — all packed in a visually
+            creative flow. Donut is also a medium to develop an interactive
+            community for exchange of mathematical interests. To get updates
+            about future issues, subscribe to our newsletter on the home page.
+          </p>
         </div>
-    </div>
-    </div>
+      </div>
+    </section>
 
-
-
-    <!-- Start Footer -->
-    <footer class="bg-dark" id="tempaltemo_footer">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">CMIT</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt fa-fw"></i>
-                            IISER TVM
-                        </li>
-                        <li>
-                            <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:cmit@iisertvm.ac.in">cmit@iisertvm.ac.in</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Links</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="wpc.html">WPC Archive</a></li>
-                        <li><a class="text-decoration-none" href="epiphany.html">Epiphany</a></li>
-                        <li><a class="text-decoration-none" href="discord.html">Discord</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="index.html">Home</a></li>
-                        <li><a class="text-decoration-none" href="about.html">About Us</a></li>
-                        <li><a class="text-decoration-none" href="newsletter.html">Newsletter</a></li>
-                        <li><a class="text-decoration-none" href="events.html">Events</a></li>
-                        <li><a class="text-decoration-none" href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="row text-light mb-4">
-                <div class="col-12 mb-3">
-                    <div class="w-100 my-3 border-top border-light"></div>
-                </div>
-                <div class="col-auto me-auto">
-                    <ul class="list-inline text-left footer-icons">
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank"
-                                href="https://facebook.com/cmitiisertvm"><i
-                                    class="fab fa-facebook-f fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank"
-                                href="https://instagram.com/cmitiisertvm"><i
-                                    class="fab fa-instagram fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank"
-                                href="https://twitter.com/cmitiisertvm"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank"
-                                href="https://www.youtube.com/c/cmitiisertvm"><i
-                                    class="fab fa-youtube fa-lg fa-fw"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- <div class="col-auto">
-                    <label class="sr-only" for="subscribeEmail">Email address</label>
-                    <div class="input-group mb-2">
-                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
-                        <div class="input-group-text btn-success text-light">Subscribe</div>
-                    </div>
-                -->
-            </div>
+    <!-- Main Content Area -->
+    <main class="wrap newsletter-section">
+        
+      <!-- Issue 5 -->
+      <article class="issue-card">
+        <div class="issue-cover">
+          <a
+            href="./assets/donuts/CMIT_DONUT5_07.26.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="./img/CMIT_Donut_Cover_07.26.jpg"
+              alt="CMIT Donut Fourth Issue Cover"
+            />
+          </a>
         </div>
+        <div class="issue-content">
+          <p>
+            After a brief hiatus of 1.5 years, we are thrilled to bring you the
+            fourth edition of our quarterly newsletter, Donut! This issue is
+            special as we celebrate the Fifth Foundation Anniversary of CMIT,
+            highlighted by a major breakthrough with Ramsey's theorem R(3,3) =
+            6, depicted on our cover page.
+          </p>
+          <p>
+            In this edition, we cover exciting new events such as the Pi Week
+            celebrations, including Pi-oximity, Pi-uiz 5.0, and the Marble
+            Sliding Competition, along with insights from Frontier Symposium
+            '24.
+          </p>
+          <p>
+            We hope you enjoy this issue and appreciate your patience and
+            support. We value your feedback and submissions for future editions.
+          </p>
+
+          <!-- Action Buttons on a New Line -->
+          <div class="issue-actions">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScfTczX2dpr6Z6i_kHQnT5MM6Li7pP-zcsG_1kB4YExK-szGA/viewform"
+              target="_blank"
+              rel="noopener"
+              class="btn-donut"
+            >
+              Give Feedback
+            </a>
+            <a href="mailto:mathsclub@iisertvm.ac.in" class="btn-donut">
+              Submit Content
+            </a>
+          </div>
+
+          <div class="issue-meta">
+            <h3>CMIT Donut, Fifth Issue</h3>
+            <a
+              href="./assets/donuts/CMIT_DONUT5_07.26.pdf"
+              target="_blank"
+              rel="noopener"
+              class="read-link"
+              >Read this issue &rarr;</a
+            >
+          </div>
         </div>
+      </article>
 
-        <div class="w-100 bg-black py-3">
-            <div class="container">
-                <div class="row pt-2">
-                    <div class="col-6">
-                        <p class="text-start text-light">
-                            Copyright &copy; 2024 CMIT
-                            | Designed by CMIT with <span style="color: #e25555;">&hearts;</span>
-                        </p>
-                    </div>
-                    <div class="col-6">
-                        <p class="text-end text-light">Developed by Aryan Bhatia</p>
-                    </div>>
-                </div>
-            </div>
+      <hr class="issue-divider" />
+
+      <!-- Issue 4 -->
+      <article class="issue-card">
+        <div class="issue-cover">
+          <a
+            href="https://drive.google.com/file/d/1OYYgvC3R2hd-oZVZ1XtOMkc-Ct90bCer/view"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="./img/CMIT_Donut_Cover_07.24.png"
+              alt="CMIT Donut Fourth Issue Cover"
+            />
+          </a>
         </div>
+        <div class="issue-content">
+          <p>
+            After a brief hiatus of 1.5 years, we are thrilled to bring you the
+            fourth edition of our quarterly newsletter, Donut! This issue is
+            special as we celebrate the Fifth Foundation Anniversary of CMIT,
+            highlighted by a major breakthrough with Ramsey's theorem R(3,3) =
+            6, depicted on our cover page.
+          </p>
+          <p>
+            In this edition, we cover exciting new events such as the Pi Week
+            celebrations, including Pi-oximity, Pi-uiz 5.0, and the Marble
+            Sliding Competition, along with insights from Frontier Symposium
+            '24.
+          </p>
+          <p>
+            We hope you enjoy this issue and appreciate your patience and
+            support. We value your feedback and submissions for future editions.
+          </p>
 
-    </footer>
-    <!-- End Footer -->
+          <!-- Action Buttons on a New Line -->
+          <div class="issue-actions">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScfTczX2dpr6Z6i_kHQnT5MM6Li7pP-zcsG_1kB4YExK-szGA/viewform"
+              target="_blank"
+              rel="noopener"
+              class="btn-donut"
+            >
+              Give Feedback
+            </a>
+            <a href="mailto:mathsclub@iisertvm.ac.in" class="btn-donut">
+              Submit Content
+            </a>
+          </div>
+
+          <div class="issue-meta">
+            <h3>CMIT Donut, Fourth Issue</h3>
+            <a
+              href="https://drive.google.com/file/d/1OYYgvC3R2hd-oZVZ1XtOMkc-Ct90bCer/view"
+              target="_blank"
+              rel="noopener"
+              class="read-link"
+              >Read this issue &rarr;</a
+            >
+          </div>
+        </div>
+      </article>
+
+      <hr class="issue-divider" />
+
+      <!-- Issue 3 -->
+      <article class="issue-card">
+        <div class="issue-cover">
+          <a
+            href="https://drive.google.com/file/d/1mKeLh08OIEqaGY08vtu7XJiDrFeJ-nNZ/view"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="./img/CMIT_Donut_Cover_11.22.png"
+              alt="CMIT Donut Third Issue Cover"
+            />
+          </a>
+        </div>
+        <div class="issue-content">
+          <p>
+            The third issue of our quarterly newsletter, Donut, features the
+            events organized by CMIT, including the fun events in accordance
+            with Pi Week celebrations, the Abel prize talk and the very many
+            peer discussions that we have had. This is also our third and final
+            part of mathomic series. Dive into their conversation to know the
+            latest news in the field of Mathematics.
+          </p>
+          <p>Glazed or red and white sprinkles? We have got you covered.</p>
+          <p>
+            We hope you enjoy this issue as we continue to bring regular
+            editions in the future. We would love to have your feedback and
+            submissions for future issues.
+          </p>
+
+          <!-- Action Buttons on a New Line -->
+          <div class="issue-actions">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScfTczX2dpr6Z6i_kHQnT5MM6Li7pP-zcsG_1kB4YExK-szGA/viewform"
+              target="_blank"
+              rel="noopener"
+              class="btn-donut"
+            >
+              Give Feedback
+            </a>
+            <a href="mailto:mathsclub@iisertvm.ac.in" class="btn-donut">
+              Submit Content
+            </a>
+          </div>
+
+          <div class="issue-meta">
+            <h3>CMIT Donut, Third Issue</h3>
+            <a
+              href="https://drive.google.com/file/d/1mKeLh08OIEqaGY08vtu7XJiDrFeJ-nNZ/view"
+              target="_blank"
+              rel="noopener"
+              class="read-link"
+              >Read this issue &rarr;</a
+            >
+          </div>
+        </div>
+      </article>
+
+      <hr class="issue-divider" />
+
+      <!-- Issue 2 -->
+      <article class="issue-card">
+        <div class="issue-cover">
+          <a
+            href="https://drive.google.com/file/d/197W7mzpN8kQJTXdUfzoBDmbuoNWHgmyy/view"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="./img/CMIT_Donut_Cover_02.22.png"
+              alt="CMIT Donut Second Issue Cover"
+            />
+          </a>
+        </div>
+        <div class="issue-content">
+          <p>
+            The second issue of our quarterly newsletter, Donut features recent
+            significant events at CMIT, including the Fourth BRICS Mathematics
+            Conference, events from the Third Foundation Anniversary
+            celebration, collaborations with the Science and Technology Council
+            during the Anvesha season, and a special Math-Omic.
+          </p>
+          <p>
+            We hope you enjoy this issue as we continue to bring regular
+            editions in the future. We would love to have your feedback and
+            submissions for future issues.
+          </p>
+
+          <!-- Action Buttons on a New Line -->
+          <div class="issue-actions">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScfTczX2dpr6Z6i_kHQnT5MM6Li7pP-zcsG_1kB4YExK-szGA/viewform"
+              target="_blank"
+              rel="noopener"
+              class="btn-donut"
+            >
+              Give Feedback
+            </a>
+            <a href="mailto:mathsclub@iisertvm.ac.in" class="btn-donut">
+              Submit Content
+            </a>
+          </div>
+
+          <div class="issue-meta">
+            <h3>CMIT Donut, Second Issue</h3>
+            <a
+              href="https://drive.google.com/file/d/197W7mzpN8kQJTXdUfzoBDmbuoNWHgmyy/view"
+              target="_blank"
+              rel="noopener"
+              class="read-link"
+              >Read this issue &rarr;</a
+            >
+          </div>
+        </div>
+      </article>
+
+      <hr class="issue-divider" />
+
+      <!-- Issue 1 -->
+      <article class="issue-card">
+        <div class="issue-cover">
+          <a
+            href="https://drive.google.com/file/d/1j4RKWeukUq9bxuQuNPAvfFQMrSSxi9uy/view"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="./img/CMIT_Donut_Cover_10.21.png"
+              alt="CMIT Donut Inaugural Issue Cover"
+            />
+          </a>
+        </div>
+        <div class="issue-content">
+          <p>
+            On the occasion of the third foundation anniversary of the club, we
+            bring to you the first issue of our newsletter. We have been
+            fervently greeted with an influx of articles from the students, and
+            our designers and editors worked their best to make this a reality.
+            Know more about this issue's designers and editors on our about
+            page.
+          </p>
+          <p>
+            We hope you enjoy the inaugural issue as we continue to bring
+            regular editions in the future. We would love to have your feedback
+            and submissions for future issues.
+          </p>
+
+          <!-- Action Buttons on a New Line -->
+          <div class="issue-actions">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScfTczX2dpr6Z6i_kHQnT5MM6Li7pP-zcsG_1kB4YExK-szGA/viewform"
+              target="_blank"
+              rel="noopener"
+              class="btn-donut"
+            >
+              Give Feedback
+            </a>
+            <a href="mailto:mathsclub@iisertvm.ac.in" class="btn-donut">
+              Submit Content
+            </a>
+          </div>
+
+          <div class="issue-meta">
+            <h3>CMIT Donut, Inaugural Issue</h3>
+            <a
+              href="https://drive.google.com/file/d/1j4RKWeukUq9bxuQuNPAvfFQMrSSxi9uy/view"
+              target="_blank"
+              rel="noopener"
+              class="read-link"
+              >Read this issue &rarr;</a
+            >
+          </div>
+        </div>
+      </article>
+    </main>
 
 
-    <!-- Start Script -->
-    <script src="assets/js/jquery-1.11.0.min.js"></script>
-    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/cmit.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <!-- End Script -->
-</body>
-
+    <footer id="site-footer" class="site-footer"></footer>
+    
+  </body>
 </html>

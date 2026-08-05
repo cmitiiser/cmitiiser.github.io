@@ -1,0 +1,305 @@
+@import url('general.css');
+
+/* ---------------- Hero ---------------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(38, 42, 46, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 42, 46, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at 30% 20%, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at 30% 20%,
+    black 45%,
+    transparent 85%
+  );
+}
+.hero-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.hero-copy {
+  flex: 1 1 420px;
+}
+.hero-figure {
+  flex: 1 1 280px;
+  display: flex;
+  justify-content: center;
+}
+.hero-logo {
+  max-width: 400px;
+}
+
+.eyebrow {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--moss-deep);
+  margin-bottom: 0.4rem;
+}
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.hero-title em {
+  font-weight: 1000;
+  font-style: normal;
+  color: var(--logo-gray);
+}
+.hero-sub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+.hero-text {
+  max-width: 80vw;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+.link-arrow {
+  color: var(--moss-deep);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+.link-arrow:hover {
+  color: var(--moss);
+  border-bottom-color: var(--moss);
+}
+.link-arrow::after {
+  content: "\00a0\2192";
+}
+
+@media (max-width: 1000px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-copy {
+    flex: 1 1 100%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .hero-text {
+    align-items: center;
+    margin: 40px auto;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .hero-sub {
+    max-width: 47ch;
+    margin: 1.25rem auto;
+    line-height: 1.4;
+  }
+}
+
+/* ---------------- Notices ---------------- */
+.notices-wrap {
+  padding-bottom: 3rem;
+}
+.notices {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--moss);
+  border-radius: 2px;
+  padding: 1.25rem 1.75rem;
+}
+.notices-label {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.notices-list li {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.5rem 0;
+}
+.notices-list li + li {
+  border-top: 1px solid var(--line);
+}
+.notice-index {
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+  color: var(--moss-deep);
+}
+.notices-list a {
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+}
+.notices-list a:hover {
+  text-decoration-color: var(--moss);
+}
+
+
+/* ============================================
+   Events Section Layout
+   ============================================ */
+
+
+.newsletter-section {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+/* Outer layout container */
+.events-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* max-width: 900px; */
+  margin: 0 auto;
+}
+
+/* Individual Semester Block / Card */
+.sem-container {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--moss-deep);
+  border-radius: 4px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sem-container:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Semester Header */
+.sem-title {
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  letter-spacing: 0.05em;
+  color: var(--moss-deep);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dashed var(--line);
+}
+
+/* --- UNIFORM EVENT SPACING --- */
+.sem-container > p,
+.sem-container > a {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.sem-container a p {
+  margin-bottom: 0;
+}
+
+/* --- HANGING INDENT & TYPOGRAPHY --- */
+.sem-container p {
+  font-size: 0.98rem;
+  color: var(--ink);
+  line-height: 1.6;
+  
+  padding-left: 1.75rem; 
+  text-indent: -1.75rem;
+}
+
+.sem-container > :last-child {
+  margin-bottom: 0;
+}
+
+.sem-container p b {
+  font-weight: 500;
+  color: var(--ink-dark);
+}
+
+.sem-container a {
+  color: var(--ink);
+  text-decoration: none;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.sem-container a:hover {
+  color: var(--accent-gold);
+}
+
+/* Interactive hover arrow for linked events */
+.sem-container a p {
+  text-decoration: underline;
+  position: relative;
+}
+
+.sem-container a p::after {
+  content: " \2192";
+  opacity: 0;
+  color: var(--moss);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  transform: translateX(-4px);
+  text-indent: 0; 
+}
+
+.sem-container a:hover p::after {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* Nested lists (un-indent them so they align naturally with sub-items) */
+.sem-container ul {
+  list-style-type: disc !important;
+  margin: -0.5rem 0 1rem 3.25rem !important;
+  padding-left: 1rem;
+}
+
+.sem-container ul li {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+  padding-left: 0;
+  text-indent: 0;
+}
+
+/* Superscript styling */
+.sem-container sup {
+  font-size: 0.7em;
+  line-height: 0;
+}
+
+/* Mobile responsive padding adjustments */
+@media (max-width: 768px) {
+  .newsletter-section {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .sem-container {
+    padding: 1.25rem 1.25rem;
+  }
+
+  /* Reduce indent slightly on small mobile screens */
+  .sem-container p {
+    padding-left: 1.25rem;
+    text-indent: -1.25rem;
+  }
+
+  .sem-container ul {
+    margin-left: 2rem !important;
+  }
+}
