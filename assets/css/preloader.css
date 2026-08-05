@@ -1,0 +1,109 @@
+/* ==========================================
+   PRELOADER OVERLAY STYLES
+   ========================================== */
+
+   
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f1efe9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#preloader.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-container {
+  width: 150px;
+}
+
+@media (max-width: 768px) {
+  .preloader-container {
+    width: 100px;
+  }
+}
+
+#logo-preloader {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+#c circle {
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+#c {
+  transform-origin: 220px 260px;
+}
+
+/* Base keyframe animation setup */
+#c circle {
+  transform: scale(0);
+  opacity: 0;
+  animation: bloom 3s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+.anchor-main {
+  fill: #163c59;
+  animation-delay: 0s !important;
+}
+.anchor-accent {
+  fill: #eeb947;
+  animation-delay: 0.1s !important;
+}
+
+#c circle:nth-child(n + 3) {
+  fill: #abaaa6;
+}
+
+/* Stagger delays */
+#c circle:nth-child(7)  { animation-delay: 0.2s; }
+#c circle:nth-child(10) { animation-delay: 0.24s; }
+#c circle:nth-child(13) { animation-delay: 0.28s; }
+#c circle:nth-child(4)  { animation-delay: 0.32s; }
+#c circle:nth-child(6)  { animation-delay: 0.32s; }
+#c circle:nth-child(11) { animation-delay: 0.36s; }
+#c circle:nth-child(9)  { animation-delay: 0.36s; }
+#c circle:nth-child(14) { animation-delay: 0.4s; }
+#c circle:nth-child(3)  { animation-delay: 0.44s; }
+#c circle:nth-child(15) { animation-delay: 0.48s; }
+#c circle:nth-child(5)  { animation-delay: 0.52s; }
+#c circle:nth-child(8)  { animation-delay: 0.56s; }
+#c circle:nth-child(12) { animation-delay: 0.6s; }
+#c circle:nth-child(16) { animation-delay: 0.64s; }
+#c circle:nth-child(17) { animation-delay: 0.68s; }
+
+@keyframes bloom {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  30%,
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}

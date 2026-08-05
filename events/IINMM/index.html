@@ -5,35 +5,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <script src="/assets/js/preloader.js" defer></script>
     <script src="/assets/js/headerfooter.js" defer></script>
     <script src="/assets/js/site.js" defer></script>
 
     <!-- MathJax for TeX rendering -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
     <script
       id="MathJax-script"
       async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      defer
     ></script>
 
-    <link rel="apple-touch-icon" href="/assets/img/apple-icon.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/img/fav/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/img/fav/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/assets/img/fav/manifest.json" />
-    <meta name="theme-color" content="#ffffff" />
-
-    <link rel="stylesheet" href="/assets/css/cmit-eventspage.css" />
-    <link rel="stylesheet" href="/assets/css/custom.css" />
+    <link rel="stylesheet" href="/assets/css/cmit-eventspage.css" defer />
+    <link rel="stylesheet" href="/assets/css/preloader.css" defer />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
@@ -58,6 +44,38 @@
   </script>
 
   <body>
+    <!-- PRELOADER -->
+
+    <div id="preloader" aria-label="Loading page">
+      <div class="preloader-container">
+        <svg
+          id="logo-preloader"
+          viewBox="0 0 441.73 525.29"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="c">
+            <circle class="anchor-main" cx="150.52" cy="110.3" r="110.3" />
+            <circle class="anchor-accent" cx="45.37" cy="307.42" r="45.37" />
+            <circle cx="413.76" cy="146.34" r="27.97" />
+            <circle cx="326.02" cy="234.08" r="27.97" />
+            <circle cx="413.76" cy="234.08" r="27.97" />
+            <circle cx="238.27" cy="321.83" r="27.97" />
+            <circle cx="326.02" cy="321.83" r="27.97" />
+            <circle cx="413.76" cy="321.83" r="27.97" />
+            <circle cx="150.52" cy="409.58" r="27.97" />
+            <circle cx="238.27" cy="409.58" r="27.97" />
+            <circle cx="326.02" cy="409.58" r="27.97" />
+            <circle cx="413.76" cy="409.58" r="27.97" />
+            <circle cx="62.78" cy="497.32" r="27.97" />
+            <circle cx="150.52" cy="497.32" r="27.97" />
+            <circle cx="238.27" cy="497.32" r="27.97" />
+            <circle cx="326.02" cy="497.32" r="27.97" />
+            <circle cx="413.76" cy="497.32" r="27.97" />
+          </g>
+        </svg>
+      </div>
+    </div>
+
     <!-- Nav -->
     <header id="site-header" class="site-nav"></header>
 
@@ -437,7 +455,10 @@
                 <small>IISER TVM</small>
               </div>
               <div class="organizer-member">
-                <img src="/assets/img/default_profile.jpeg" alt="CG Venkatasubramanian" />
+                <img
+                  src="/assets/img/default_profile.jpeg"
+                  alt="CG Venkatasubramanian"
+                />
                 <span class="organizer-name">CG Venkatasubramanian</span>
                 <small>IISER Tirupati</small>
               </div>
