@@ -7,7 +7,7 @@
 
     <script src="/assets/js/preloader.js" defer></script>
 
-    <link rel="stylesheet" href="/assets/css/cmit-mailer.css" defer/>
+    <link rel="stylesheet" href="/assets/css/cmit-mailer.css" defer />
     <link rel="stylesheet" href="/assets/css/preloader.css" defer />
 
     <link
@@ -23,12 +23,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"
     />
-    
   </head>
   <body class="mailgen-page">
-
     <!-- PRELOADER -->
-     
+
     <div id="preloader" aria-label="Loading page">
       <div class="preloader-container">
         <svg
@@ -107,27 +105,42 @@
 
         <!-- PREVIEW & CODE PANE -->
         <div class="pane preview-pane">
-          <div class="pane-header">
-            <span>Output</span>
-            <div>
-              <button
-                class="tab-btn active"
-                id="tab-preview"
-                onclick="switchTab('preview')"
-              >
-                Visual Preview
-              </button>
-              <span class="pane-header-sep">|</span>
-              <button class="tab-btn" id="tab-code" onclick="switchTab('code')">
-                Raw HTML Code
-              </button>
-            </div>
-          </div>
-          <div class="pane-body">
-            <iframe id="html-preview"></iframe>
-            <pre class="code-view" id="html-code"></pre>
-          </div>
-        </div>
+  <div class="pane-header">
+    <span>Output</span>
+    <div style="display: flex; align-items: center; gap: 8px">
+      <button
+        class="tab-btn active"
+        id="tab-preview"
+        onclick="switchTab('preview')"
+      >
+        Visual Preview
+      </button>
+      <span class="pane-header-sep">|</span>
+      <button class="tab-btn" id="tab-code" onclick="switchTab('code')">
+        Raw HTML Code
+      </button>
+    </div>
+  </div>
+
+  <div class="pane-body">
+    <iframe id="html-preview"></iframe>
+    <pre class="code-view" id="html-code"></pre>
+
+    <button
+      class="btn-tool floating-dark-toggle"
+      id="toggle-dark-mode-btn"
+      type="button"
+      onclick="toggleDarkModePreview()"
+      title="Preview iOS Gmail Dark Mode"
+    >
+      <img
+        src="/assets/icons/light_mode.svg"
+        alt="Dark Mode Icon"
+        class="ux-icon"
+      />
+    </button>
+  </div>
+</div>
       </div>
     </main>
 

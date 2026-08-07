@@ -276,16 +276,22 @@ cm.setValue(defaultDSL);
 cm.on("change", updateOutput);
 
 function switchTab(tab) {
+  const darkToggleBtn = document.getElementById("toggle-dark-mode-btn");
+
   if (tab === "preview") {
     previewFrame.style.display = "block";
     codeContainer.style.display = "none";
     document.getElementById("tab-preview").classList.add("active");
     document.getElementById("tab-code").classList.remove("active");
+    
+    if (darkToggleBtn) darkToggleBtn.style.display = "flex";
   } else {
     previewFrame.style.display = "none";
     codeContainer.style.display = "block";
     document.getElementById("tab-code").classList.add("active");
     document.getElementById("tab-preview").classList.remove("active");
+    
+    if (darkToggleBtn) darkToggleBtn.style.display = "none";
   }
 }
 
@@ -329,3 +335,65 @@ function copyToClipboard() {
 const docsModal = document.getElementById("docs-modal");
 document.getElementById("docs-btn").addEventListener("click", () => docsModal.showModal());
 document.getElementById("docs-close").addEventListener("click", () => docsModal.close());
+
+
+
+let isDarkModePreview = false;
+
+function toggleDarkModePreview() {
+  isDarkModePreview = !isDarkModePreview;
+  const btn = document.getElementById("toggle-dark-mode-btn");
+
+  if (isDarkModePreview) {
+    btn.classList.add("active");
+  } else {
+    btn.classList.remove("active");
+  }
+
+  applyDarkModeToIframe();
+}
+
+function applyDarkModeToIframe() {
+  const iframe = document.getElementById("html-preview");
+  if (!iframe) return;
+
+  if (isDarkModePreview) {
+    iframe.classList.add("ios-dark-mode");
+
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    if (iframeDoc && iframeDoc.head) {
+      let darkStyle = iframeDoc.getElementById("ios-dark-mode-style");
+      if (!darkStyle) {
+        darkStyle = iframeDoc.createElement("style");
+        darkStyle.id = "ios-dark-mode-style";
+        iframeDoc.head.appendChild(darkStyle);
+      }
+
+      /* 
+        The exact mathematical inverse filter array for <img> tags
+        to restore native image colors inside the modified container:
+      */
+      darkStyle.textContent = `
+        img, [style*="background-image"] {
+          filter: brightness(89%) contrast(122%) hue-rotate(180deg) invert(100%) !important;
+        }
+      `;
+    }
+  } else {
+    iframe.classList.remove("ios-dark-mode");
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    if (iframeDoc) {
+      const darkStyle = iframeDoc.getElementById("ios-dark-mode-style");
+      if (darkStyle) darkStyle.remove();
+    }
+  }
+}
+
+
+// Ensure dark mode filter is re-applied whenever output updates
+const originalUpdateOutput = updateOutput;
+updateOutput = function () {
+  originalUpdateOutput();
+  // Small delay to ensure iframe DOM has loaded the srcdoc
+  setTimeout(applyDarkModeToIframe, 50);
+};
