@@ -320,6 +320,10 @@ const cm = CodeMirror.fromTextArea(dslTextarea, {
   }
 });
 
+requestAnimationFrame(() => {
+  cm.refresh();
+});
+
 function updateOutput() {
   generatedHTML = compileEmailTemplate(cm.getValue());
   previewFrame.srcdoc = generatedHTML;

@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (loader) {
       loader.classList.add("preloader-hidden");
       
+      // Notify main script that layout is visible so CodeMirror can refresh
+      window.dispatchEvent(new Event('preloaderDone'));
+      
       document.body.classList.add("hero-start");
       
       const handleTransitionEnd = (e) => {
