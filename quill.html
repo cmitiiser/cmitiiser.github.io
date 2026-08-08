@@ -7,12 +7,24 @@
 
     <link rel="stylesheet" href="/assets/css/cmit-quill.css" defer />
     <link rel="stylesheet" href="/assets/css/preloader.css" defer />
-    
+
     <script src="/assets/js/preloader.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/mode/simple.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/selection/active-line.min.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/mode/simple.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/selection/active-line.min.js"
+      defer
+    ></script>
     <script src="assets/js/cmit-dsl-mode.js" defer></script>
     <script src="assets/js/mail-compiler.js" defer></script>
 
@@ -93,7 +105,7 @@
             class="btn-tool"
             id="copy-btn"
             type="button"
-            onclick="copyToClipboard()"
+            onclick="copyRenderedHTML()"
           >
             <img src="assets/icons/copy.svg" alt="Copy Icon" class="ux-icon" />
           </button>
@@ -111,42 +123,57 @@
 
         <!-- PREVIEW & CODE PANE -->
         <div class="pane preview-pane">
-  <div class="pane-header">
-    <span>Output</span>
-    <div style="display: flex; align-items: center; gap: 8px">
-      <button
-        class="tab-btn active"
-        id="tab-preview"
-        onclick="switchTab('preview')"
-      >
-        Visual Preview
-      </button>
-      <span class="pane-header-sep">|</span>
-      <button class="tab-btn" id="tab-code" onclick="switchTab('code')">
-        Raw HTML Code
-      </button>
-    </div>
-  </div>
+          <div class="pane-header">
+            <span>Output</span>
+            <div style="display: flex; align-items: center; gap: 8px">
+              <button
+                class="tab-btn active"
+                id="tab-preview"
+                onclick="switchTab('preview')"
+              >
+                Visual Preview
+              </button>
+              <span class="pane-header-sep">|</span>
+              <button class="tab-btn" id="tab-code" onclick="switchTab('code')">
+                Raw HTML Code
+              </button>
+            </div>
+          </div>
 
-  <div class="pane-body">
-    <iframe id="html-preview"></iframe>
-    <pre class="code-view" id="html-code"></pre>
+          <div class="pane-body">
+            <iframe id="html-preview"></iframe>
+            <pre class="code-view" id="html-code"></pre>
 
-    <button
-      class="btn-tool floating-dark-toggle"
-      id="toggle-dark-mode-btn"
-      type="button"
-      onclick="toggleDarkModePreview()"
-      title="Preview iOS Gmail Dark Mode"
-    >
-      <img
-        src="/assets/icons/light_mode.svg"
-        alt="Dark Mode Icon"
-        class="ux-icon"
-      />
-    </button>
-  </div>
-</div>
+            <button
+              class="btn-tool floating-dark-toggle"
+              id="toggle-dark-mode-btn"
+              type="button"
+              onclick="toggleDarkModePreview()"
+              title="Preview iOS Gmail Dark Mode"
+            >
+              <img
+                src="/assets/icons/light_mode.svg"
+                alt="Dark Mode Icon"
+                class="ux-icon"
+              />
+            </button>
+
+            <button
+              class="btn-tool floating-copy-code"
+              id="copy-code-btn"
+              type="button"
+              onclick="copyRawHTML()"
+              title="Copy HTML Code"
+              style="display: none;"
+            >
+              <img
+                src="assets/icons/copy.svg"
+                alt="Copy Icon"
+                class="ux-icon"
+              />
+            </button>
+          </div>
+        </div>
       </div>
     </main>
 
@@ -409,6 +436,5 @@
         </table>
       </div>
     </dialog>
-
   </body>
 </html>

@@ -303,8 +303,6 @@ function renderBlock(block) {
   }
 }
 
-/* ---- Editor wiring (CodeMirror) ---- */
-
 const dslTextarea = document.getElementById("dsl-input");
 const previewFrame = document.getElementById("html-preview");
 const codeContainer = document.getElementById("html-code");
@@ -333,21 +331,24 @@ cm.on("change", updateOutput);
 
 function switchTab(tab) {
   const darkToggleBtn = document.getElementById("toggle-dark-mode-btn");
+  const copyCodeBtn = document.getElementById("copy-code-btn");
 
   if (tab === "preview") {
     previewFrame.style.display = "block";
     codeContainer.style.display = "none";
     document.getElementById("tab-preview").classList.add("active");
     document.getElementById("tab-code").classList.remove("active");
-    
+
     if (darkToggleBtn) darkToggleBtn.style.display = "flex";
+    if (copyCodeBtn) copyCodeBtn.style.display = "none";
   } else {
     previewFrame.style.display = "none";
     codeContainer.style.display = "block";
     document.getElementById("tab-code").classList.add("active");
     document.getElementById("tab-preview").classList.remove("active");
-    
+
     if (darkToggleBtn) darkToggleBtn.style.display = "none";
+    if (copyCodeBtn) copyCodeBtn.style.display = "flex";
   }
 }
 
@@ -357,14 +358,11 @@ function downloadHTML() {
   // 1. Create a Blob object containing the compiled HTML
   const blob = new Blob([generatedHTML], { type: "text/html;charset=utf-8" });
 
-  // 2. Create a temporary invisible <a> download element
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
   
-  // 3. Name the downloaded file (e.g., email-template.html)
-  link.download = "email-template.html";
+  link.download = "quill-mail.html";
 
-  // 4. Trigger the download programmatically and clean up
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -375,12 +373,12 @@ function copyToClipboard() {
   if (!generatedHTML) return;
 
   navigator.clipboard.writeText(generatedHTML).then(() => {
-    const btn = document.getElementById("copy-btn");
-        btn.classList.add("is-copied");
-    
-    setTimeout(() => {
-      btn.classList.remove("is-copied");
-    }, 2000);
+    // Select whichever copy button is currently present/rendered
+    const btn = document.getElementById("copy-code-btn") || document.getElementById("copy-btn");
+    if (btn) {
+      btn.classList.add("is-copied");
+      setTimeout(() => btn.classList.remove("is-copied"), 2000);
+    }
   }).catch(err => {
     console.error("Failed to copy code: ", err);
   });
@@ -425,10 +423,6 @@ function applyDarkModeToIframe() {
         iframeDoc.head.appendChild(darkStyle);
       }
 
-      /* 
-        The exact mathematical inverse filter array for <img> tags
-        to restore native image colors inside the modified container:
-      */
       darkStyle.textContent = `
         img, [style*="background-image"] {
           filter: brightness(89%) contrast(122%) hue-rotate(180deg) invert(100%) !important;
@@ -446,10 +440,48 @@ function applyDarkModeToIframe() {
 }
 
 
-// Ensure dark mode filter is re-applied whenever output updates
 const originalUpdateOutput = updateOutput;
 updateOutput = function () {
   originalUpdateOutput();
-  // Small delay to ensure iframe DOM has loaded the srcdoc
+
   setTimeout(applyDarkModeToIframe, 50);
 };
+
+
+async function copyRenderedHTML() {
+  if (!generatedHTML) return;
+
+  try {
+    const htmlBlob = new Blob([generatedHTML], { type: "text/html" });
+    const textBlob = new Blob([generatedHTML], { type: "text/plain" });
+
+    await navigator.clipboard.write([
+      new ClipboardItem({
+        "text/html": htmlBlob,
+        "text/plain": textBlob,
+      }),
+    ]);
+
+    const btn = document.getElementById("copy-rendered-btn");
+    if (btn) {
+      btn.classList.add("is-copied");
+      setTimeout(() => btn.classList.remove("is-copied"), 2000);
+    }
+  } catch (err) {
+    console.error("Failed to copy rendered GUI: ", err);
+  }
+}
+
+function copyRawHTML() {
+  if (!generatedHTML) return;
+
+  navigator.clipboard.writeText(generatedHTML).then(() => {
+    const btn = document.getElementById("copy-code-btn");
+    if (btn) {
+      btn.classList.add("is-copied");
+      setTimeout(() => btn.classList.remove("is-copied"), 2000);
+    }
+  }).catch(err => {
+    console.error("Failed to copy raw HTML: ", err);
+  });
+}

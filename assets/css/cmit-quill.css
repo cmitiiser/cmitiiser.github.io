@@ -595,22 +595,19 @@ dialog#docs-modal::backdrop {
   border-left: 2px solid var(--ink, #1a1a1a);
 }
 
-
-
-
 #html-preview.ios-dark-mode {
   filter: invert(88%) hue-rotate(180deg) contrast(82%) brightness(112%);
   background-color: #1e1e1e !important;
   transition: filter 0.25s ease-in-out;
 }
 
-
 .preview-pane .pane-body {
   position: relative;
   overflow: hidden;
 }
 
-.floating-dark-toggle {
+.floating-dark-toggle,
+.floating-copy-code {
   position: absolute;
   bottom: 16px;
   right: 16px;
@@ -625,7 +622,7 @@ dialog#docs-modal::backdrop {
   cursor: pointer;
 }
 
-
-.floating-dark-toggle:active {
+.floating-dark-toggle:active,
+.floating-copy-code:active {
   transform: translateY(0);
 }
