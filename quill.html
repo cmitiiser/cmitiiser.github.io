@@ -3,12 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CMIT Email HTML Generator</title>
+    <title>CMIT's Quill</title>
 
-    <script src="/assets/js/preloader.js" defer></script>
-
-    <link rel="stylesheet" href="/assets/css/cmit-mailer.css" defer />
+    <link rel="stylesheet" href="/assets/css/cmit-quill.css" defer />
     <link rel="stylesheet" href="/assets/css/preloader.css" defer />
+    
+    <script src="/assets/js/preloader.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/mode/simple.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/selection/active-line.min.js" defer></script>
+    <script src="assets/js/cmit-dsl-mode.js" defer></script>
+    <script src="assets/js/mail-compiler.js" defer></script>
 
     <link
       rel="stylesheet"
@@ -61,7 +67,7 @@
       <div class="tool-header">
         <div>
           <p class="eyebrow">Web // <a href="index.html">CMIT</a></p>
-          <h1 class="tool-title">Email Builder</h1>
+          <h1 class="tool-title">Quill - Email Builder</h1>
         </div>
         <div class="tool-actions">
           <button class="btn-tool" id="docs-btn" type="button">
@@ -404,11 +410,5 @@
       </div>
     </dialog>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/mode/simple.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/selection/active-line.min.js"></script>
-    <script src="assets/js/cmit-dsl-mode.js"></script>
-    <script src="assets/js/mail-compiler.js"></script>
   </body>
 </html>

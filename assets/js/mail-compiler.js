@@ -11,42 +11,98 @@ fetch('./assets/template/template.html')
   })
   .catch(err => console.error('Error loading template:', err));
 
-const defaultDSL = `.title: Movie Screening: Good Will Hunting
+const defaultDSL = `
+// Global Directives
+.title: Feature Showcase & Integration Testing Guide
 
+// Banner / Header Image Block
+img {
+  https://picsum.photos/600/250
+}
+.width: 100%
+.align: center
+.alt: Feature Showcase Header Banner
+
+// Introductory Paragraph with Inline Formatting
 p {
-  Hey all,
+  Welcome to the **Email Builder DSL** test template! This script is designed as a *comprehensive boilerplate* to demonstrate every block type, modifier property, and text formatting option supported by the compiler.
 }
+.color: #2c3e50
+.font-size: 16px
+.line-height: 1.6
+.align: left
+.margin: 15px 0
 
-p {
-  CMIT is celebrating Pi Week, and we are kicking things off with an exciting start! A movie that brings together math, emotions, and a whole lot of life wisdom.
-}
-
-list {
-  1. **First step:** Arrive on time at 9 PM.
-  2. **Second step:** Grab your snacks.
-  3. **Third step:** Enjoy the movie!
-}
-
+// Horizontal Divider (Dashed)
 div {}
+.border-top: 1px dashed #0066cc
+.margin: 25px 0
 
+// Unordered List Block (Custom List Style & Spacing)
 list {
-  * **Movie:** Good Will Hunting
-  * **Date:** 22 March 2026 | Sunday
-  * **Time:** 9 PM
-  * **Venue:** PSB Seminar Hall
+  * **Global Directives:** Title assignment via .title: directive
+  * **Inline Formatting:** Supports **bold**, *italics*, and smart hyperlinking
+  * **Auto-prefixed Link:** Visit [IISER TVM CMIT](cmit.iisertvm.ac.in) for details
+  * **Explicit Web Link:** Check [Google](https://www.google.com) safely
+  * **Email Link Scheme:** Contact [Support Team](mailto:support@example.com) directly
+}
+.padding: 10px 0 10px 20px
+.margin: 10px 0
+.color: #34495e
+.font-size: 15px
+.line-height: 1.5
+
+// Secondary Divider (Solid Border)
+div {}
+.border-top: 2px solid #cccccc
+.margin: 20px 0
+
+// Ordered List Block (Step-by-Step Guide)
+ol {
+  1. **Configure Directives:** Set your global template variables at the top.
+  2. **Build Content:** Combine \`p\`, \`list\`, \`ul\`, \`ol\`, and \`img\` blocks.
+  3. **Apply Modifiers:** Add \`.property: value\` modifiers directly after closing braces \`}\`.
+  4. **Easy Compile:** Render clean, email-compliant HTML automatically!
+}
+.padding: 5px 0 5px 20px
+.margin: 15px 0
+.font-size: 14px
+.color: #27ae60
+
+// Paragraph Block with Preserved Formatting (.pre: true)
+p {
+  System Status Log:
+    - Block Compiler : OK
+    - Link Target    : target="_blank"
+    - Output Mode    : Email HTML Wrapped
+}
+.pre: true
+.color: #555555
+.font-size: 13px
+.line-height: 1.4
+.margin: 20px 0
+.padding: 12px
+.align: left
+
+// Unstyled Bullet List (list-style: none)
+ul {
+  * *Note:* This list demonstrates the \`.list-style: none\` modifier.
+  * Bullet symbols and default left padding are removed.
 }
 .list-style: none
 .padding: 0
-.margin: 20px 0
-.align: center
+.margin: 15px 0
+.color: #7f8c8d
+.font-size: 13px
 
-div {}
-.border-top: 1px dashed #0066cc
-.margin: 20px 0
-
+// Closing Paragraph
 p {
-  We hope to see you there!
-}`;
+  For more information or inquiries, feel free to reach out to the [CMIT Website Team](mailto:mathsclub@iisertvm.ac.in).
+}
+.align: center
+.color: #888888
+.font-size: 12px
+.margin: 30px 0 10px 0`;
 
 let generatedHTML = "";
 
