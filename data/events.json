@@ -1,0 +1,675 @@
+[
+  {
+    "semester": "VASANTH 2026",
+    "events": [
+      {
+        "date": "April 03",
+        "text": "CMIT Pi Week Talk Series: Talk by Prof. Nitin Saxena (IIT Kanpur) on Algebra Powers Computation"
+      },
+      {
+        "date": "March 30",
+        "text": "CMIT & Quizzing Society IISER TVM organize Pi-Uiz 7.0"
+      },
+      {
+        "date": "March 28",
+        "text": "CMIT Pi Week Talk Series: Talk by Prof. Vamsi Pingali (IISc Bangalore) on What is Differential Geometry, Geometric Analysis, and Mathematical Physics?"
+      },
+      {
+        "date": "March 27",
+        "text": "CMIT Pi Week Talk Series: Student Talk by Praveen K C on From Riemann to Henstock - Kurzweil: A Gauge Approach to Integration"
+      },
+      {
+        "date": "March 23",
+        "text": "CMIT Pi Week Cham-π-onships: Remembering 2π (π-bytes +) and Freehand Bourbaki Circle Drawing Competition"
+      },
+      {
+        "date": "March 22",
+        "text": "CMIT Screening Sessions: Good Will Hunting (1997)"
+      },
+      {
+        "date": "February 08",
+        "text": "CMIT Divergent Talk Series: Talk by Pranav M on Stock Market 101: An Introduction to the World of Uncertainty"
+      },
+      {
+        "date": "January 30",
+        "text": "CMIT Divergent Talk Series: Talk by Christopher Rao on Ring Theory Made \"Simple\": 9/10 Mathematicians Hate This One Trick"
+      },
+      {
+        "date": "January 10 ~ 11",
+        "text": "CMIT Divergent Talk Series: Two-part talk by Ajin Shaji Jose on Elementary Introduction to Grassmannians"
+      }
+    ]
+  },
+  {
+    "semester": "VARSHA 2025",
+    "events": [
+      {
+        "date": "November 11",
+        "text": "CMIT organizes MathWorks Research Session: Interactive Session on MATLAB and Simulink for Research and Innovation"
+      },
+      {
+        "date": "November 08",
+        "text": "CMIT Alumni Interactive Session"
+      },
+      {
+        "date": "November 03",
+        "text": "CMIT Game Night: Theorem Game & Strategy Board Games"
+      },
+      {
+        "date": "October 16",
+        "text": "CMIT Talk: Divergent Series - Where the mind escapes"
+      },
+      {
+        "date": "October 07",
+        "text": "CMIT Tangent Tuesdays (Season 2): Talk by Saad Moquim on Functional methods in quantum mechanics"
+      },
+      {
+        "date": "September 14",
+        "text": "CMIT S<sup>7</sup> Foundation Day Talks: Featuring Dr. Narayanan N (IIT Madras), Dr. M. Ashok Kumar (IIT Palakkad), and Prof. S. Kumaresan (MTTS)"
+      },
+      {
+        "date": "September 13",
+        "text": "CMIT S<sup>7</sup> Foundation Week: Panel Discussion on Cost of Knowledge with Dr. Bindusar Sahoo, Dr. Saptarshi Bej, Dr. Samya Kumar Ray, Dr. Ashutosh Pandey, Dr. Yashraj Chavhan, and Dr. Jerry A. Fereiro"
+      },
+      {
+        "date": "September 09",
+        "text": "CMIT Tangent Tuesdays (Season 2): Talk by Anvitha Bhat on Random matrix theory"
+      },
+      {
+        "date": "September 07",
+        "text": "CMIT S<sup>7</sup> outreach Program: Mathematical Talks by Prof. Viji Thomas (Collatz Conjecture) and Bharath Krishna (What is Mathematics?), GanitWiz Quiz, Chalk & Talk, and Rangoli"
+      },
+      {
+        "date": "September 07",
+        "text": "CMIT S<sup>7</sup> outreach Program for School Students",
+        "link": "/events/S7outreach/"
+      },
+      {
+        "date": "September 06",
+        "text": "CMIT Abel Talk"
+      },
+      {
+        "date": "September 02",
+        "text": "CMIT Tangent Tuesdays (Season 2): Talks by Supratik Saha on Fourier series and convergence, and Manit Kishor on Calculus of Variations"
+      },
+      {
+        "date": "August 26",
+        "text": "CMIT Tangent Tuesdays (Season 2 Kickoff): Talks by Nalin Philip Mathew on Nets and filters to Tychonoff theorem, and Christopher Rao on The algebraic world without commutativity"
+      }
+    ]
+  },
+  {
+    "semester": "VASANTH 2025",
+    "events": [
+      {
+        "date": "May 12",
+        "text": "CMIT organizes International Women in Mathematics Day Online Talks: Dr. Dharmatti Sheetal on Calculus of Variation, Optimal Control and Anecdote of Maria Colombo, and Dr. Kaneenika Sinha on Women in Mathematics"
+      },
+      {
+        "date": "May 05",
+        "text": "CMIT & SoM Special Screening (Women in Math Day Special): The Secret Genius of Modern Life (2022)"
+      },
+      {
+        "date": "April 18",
+        "text": "CMIT Talk Series: Talk by Subhradeep Ghosh on Bratteli Diagrams"
+      },
+      {
+        "date": "March 29",
+        "text": "CMIT Pi Week Celebrations: E-π-phany 5.0 (Online Math Treasure Hunt)"
+      },
+      {
+        "date": "March 18",
+        "text": "CMIT Screening Sessions: The Man Who Knew Infinity (2015)"
+      },
+      {
+        "date": "March 16",
+        "text": "CMIT & Quizzing Society IISER TVM organize Pi-Uiz 6.0"
+      },
+      {
+        "date": "March 15",
+        "text": "CMIT Pi Week Celebrations: Flash Talk on Math History"
+      },
+      {
+        "date": "March 14",
+        "text": "CMIT Pi Week Celebrations: Remembering π (π-bytes) and Freehand Bourbaki Circle Drawing Competition"
+      },
+      {
+        "date": "March 11",
+        "text": "CMIT Talk Series: Talk by Tanisha Mandar Talekar on Quiver representations and Gabriel's Theorem"
+      },
+      {
+        "date": "February 04 ~ 06",
+        "text": "CMIT Talk Series: Talks by Ashish Kujur on To infinity and beyond with ordinals, and Bharath Krishna S on The many dynamics on(f) the shift space"
+      }
+    ]
+  },
+  {
+    "semester": "VARSHA 2024",
+    "events": [
+      {
+        "date": "November 28",
+        "text": "CMIT S<sup>6</sup> Foundation Talk Series: Talk by Dr. Shailesh Shirali on Vignettes in Number Theory, Analysis and Ancient Indian Mathematics"
+      },
+      {
+        "date": "November 04",
+        "text": "CMIT & Quizzing Society IISER TVM organize Axiomática 4.0"
+      },
+      {
+        "date": "October 29",
+        "text": "CMIT Peer Discussion: Completeness of finite and infinite dimensional Normed Linear Spaces by Mukesh Mithun A D"
+      },
+      {
+        "date": "September 26",
+        "text": "CMIT organizes Meet-up with Alumni: Interactive Session with Kalin Krishna (Co-founder of CMIT)"
+      },
+      {
+        "date": "September 10",
+        "text": "CMIT Tangent Tuesdays: Talk by Subhradeep Ghosh on p-adic Fields"
+      },
+      {
+        "date": "September 03",
+        "text": "CMIT Screening Sessions: A Beautiful Mind (2001) & CMIT Orientation"
+      },
+      {
+        "date": "September 03",
+        "text": "CMIT Tangent Tuesdays: Talk by Arjun V Nair on Some secrets of the Helmholtz equation (Part 2)"
+      },
+      {
+        "date": "August 31",
+        "text": "CMIT & SoM organize Interactive Session & Discussion with SoM Alumni"
+      },
+      {
+        "date": "August 29",
+        "text": "CMIT Tangent Tuesdays: Talks by Visesh Jyothi A on Conformal Maps and the Riemann Mapping Theorem, and Arjun V Nair on Some secrets of the Helmholtz equation (Part 1)"
+      },
+      {
+        "date": "August 27",
+        "text": "CMIT Tangent Tuesdays: Talks by Yogesh Kumar KC on Large but finite N, and Soumyadip Niyogi on Analysis of dynamical systems in Cosmology"
+      },
+      {
+        "date": "August 22",
+        "text": "CMIT organizes Career Guidance Discussion on Internship and PhD opportunities"
+      },
+      {
+        "date": "August 20",
+        "text": "CMIT Tangent Tuesdays: Talks by Suhana Nujum on MicroRNA Regulation in Kidney Transplant Rejection, and Sinta Maria Siby on Optimising tissue network configurations"
+      },
+      {
+        "date": "August 13",
+        "text": "CMIT Tangent Tuesdays (Summer Project Talk Series): Talks by Aparna Bade on Dinitz problem, and Tanisha Talekar on Quiver me timbers"
+      }
+    ]
+  },
+  {
+    "semester": "VASANTH 2024",
+    "events": [
+      {
+        "date": "June 26 ~ 28",
+        "text": "Inter-IISER-NISER Mathematics Meet 2024 (IINMM'24)",
+        "link": "/events/IINMM/index.html"
+      },
+      {
+        "date": "April 10",
+        "text": "CMIT Peer Discussion: Riemann's theorem on conditionally convergent series by Mukesh Mithun A D"
+      },
+      {
+        "date": "March 31",
+        "text": "CMIT & Sci-Tech Council organize E-π-phany 4.0: Math-themed Treasure Hunt"
+      },
+      {
+        "date": "March 28 ~ April 10",
+        "text": "CMIT Pi Week Online Competitions: Meme Contest, Strokes (Hyperbolic Tessellation), and π-Liner"
+      },
+      {
+        "date": "March 26",
+        "text": "CMIT & Quizzing Society IISER TVM organize π-Uiz 5."
+      },
+      {
+        "date": "March 18",
+        "text": "CMIT Pi Week Celebrations: Pi-oximity"
+      },
+      {
+        "date": "March 17",
+        "text": "CMIT Screening Sessions: π (1998)"
+      },
+      {
+        "date": "March 16",
+        "text": "CMIT Pi Week Celebrations: Hands-on Graphing Session & Desmos Marbleslide Challenge by Christopher Rao"
+      },
+      {
+        "date": "March 15 ~ 19",
+        "text": "CMIT Student Talk (Part 1 & 2): A Remarkable Tale - The proof of FLT"
+      },
+      {
+        "date": "March 14",
+        "text": "CMIT Pi Week Celebrations: Remembering π (π-bytes) and Freehand Bourbaki Circle Drawing Competition"
+      },
+      {
+        "date": "February 20",
+        "text": "CMIT Screening Sessions: The Imitation Game (2014)"
+      },
+      {
+        "date": "February 14",
+        "text": "CMIT Peer Discussion: Exploring the margins of Fermat's book & Fermat's Last Theorem (n=4)"
+      },
+      {
+        "date": "February 10",
+        "text": "CMIT Screening Sessions: A Trip to Infinity (2022)"
+      },
+      {
+        "date": "February 11",
+        "text": "CMIT & Quizzing Society IISER TVM organize Axiomática 3.0"
+      },
+      {
+        "date": "February 08",
+        "text": "Seminar Talk by Prof. S. G. Dani on Dynamics of nonsingular integral transformations and Diophantine approximation"
+      },
+      {
+        "date": "February 02 ~ 04",
+        "text": "Frontier Symposium in Mathematics 2024",
+        "link": "/events/fsmath2024/index.html"
+      },
+      {
+        "date": "January 20",
+        "text": "CMIT & Placement Cell Online Career Guidance Session: Talk by G Ananthakrishna on Exploiting Schrodingers Cat; Experiences of a mathematician in industry after BS-MS"
+      },
+      {
+        "date": "January 15 ~ February 15",
+        "text": "School of Mathematics participates in Global Science Festival Kerala (GSFK)"
+      }
+    ]
+  },
+  {
+    "semester": "VARSHA 2023",
+    "events": [
+      {
+        "date": "December 14",
+        "text": "Talk by Dr. Akhilesh on About deterministic primality test"
+      },
+      {
+        "date": "December 14",
+        "text": "Talk by Prof. Michel Waldschmidt on Experience as a mathematician"
+      },
+      {
+        "date": "December 02 ~ 04",
+        "text": "CMIT Review Series for end-semester examinations"
+      },
+      {
+        "date": "November 08",
+        "text": "CMIT Screening Sessions: N Is a Number: A Portrait of Paul Erdos (1993)"
+      },
+      {
+        "date": "November 07",
+        "text": "CMIT P(r)ep Talk: Infinitude of Primes"
+      },
+      {
+        "date": "October 14",
+        "text": "CMIT S<sup>5</sup> Celebrations: Online Panel Discussion on What After Math?"
+      },
+      {
+        "date": "September 13",
+        "text": "Talk by Prof. Loic Merel on Number Theory and Romanticism"
+      },
+      {
+        "date": "September 10",
+        "text": "CMIT S<sup>5</sup> outreach Program for School Students",
+        "link": "/events/S5outreach/"
+      },
+      {
+        "date": "September 06",
+        "text": "CMIT organizes Anvesha Expo Project Discussion"
+      },
+      {
+        "date": "September 05",
+        "text": "CMIT Peer Discussion: From Realities to Abstractions: Deriving Mathematical Notions via Real Numbers by Amit Phogat"
+      },
+      {
+        "date": "August 22 ~ 30",
+        "text": "CMIT Peer Discussion (Part 1 & 2): The prime time show in the World of p-adics by Sunil Kumar Pasupulati, Bharat Krishna S, and Sathasivam K"
+      }
+    ]
+  },
+  {
+    "semester": "VASANTH 2023",
+    "events": [
+      {
+        "date": "April 11",
+        "text": "Phd Talk - Decoding the Mysteries of Binary Computations and Musical Harmony in Ancient India",
+        "link": "/talks/GaneshDharmadhikari.html"
+      },
+      {
+        "date": "February 17 ~ 19",
+        "text": "Frontier Symposium in Mathematics 2023",
+        "link": "/events/fsmath2023/index.html"
+      }
+    ]
+  },
+  {
+    "semester": "VARSHA 2022",
+    "events": [
+      {
+        "date": "December 10 ~ 11",
+        "text": "Mathematics Workshop for College Teachers",
+        "link": "/events/TMCworkshop/"
+      }
+    ]
+  },
+  {
+    "semester": "VASANTH 2022",
+    "events": [
+      {
+        "date": "September 18",
+        "text": "CMIT S<sup>4</sup> outreach Program for School Students",
+        "link": "/events/S4outreach/S4outreach.html"
+      },
+      {
+        "date": "September 10",
+        "text": "CMIT S<sup>3</sup> Student Talk by Shyam M on A Journey Towards Hyperbolic Geometry & Tessellations"
+      },
+      {
+        "date": "March 14 ~ 20",
+        "text": "CMIT celebrates International π Week 2022 > details",
+        "link": "/events/piday2022/index.html"
+      }
+    ]
+  },
+  {
+    "semester": "VARSHA 2021",
+    "events": [
+      {
+        "date": "December 20",
+        "text": "CMIT Screening Sessions (National Mathematics Day Special): The Man Who Knew Infinity (2015)"
+      },
+      {
+        "date": "December 07 ~ 10",
+        "text": "CMIT organizes the Fourth BRICS Mathematics Conference alongside School of Mathematics, IISER Thiruvananthapuram and BML Munjal University",
+        "link": "/events/brics2021/index.html"
+      },
+      {
+        "date": "November 30",
+        "text": "CMIT Screening Sessions: 21 (2008)"
+      },
+      {
+        "date": "November 15",
+        "text": "CMIT Screening Sessions: Good Will Hunting (1997)"
+      },
+      {
+        "date": "November 03",
+        "text": "Talk by Dr. Manjil Saikia on An Introduction to qq-Analysis > details"
+      },
+      {
+        "date": "November 01",
+        "text": "CMIT Screening Sessions: A Beautiful Mind (2001)"
+      },
+      {
+        "date": "October 27",
+        "text": "Two-part lecture series by Prof. Siddhartha Pratim Chakrabarty on Transitioning to a Decarbonized Economy: Quantifying the Carbon Transition Risk > details"
+      },
+      {
+        "date": "October 25",
+        "text": "Two-part lecture series by Prof. Siddhartha Pratim Chakrabarty on Financial Risk Management: A Commentary in the Paradigm of Basel Regulations > details"
+      },
+      {
+        "date": "October 17",
+        "text": "CMIT organizes Integration Bee (for real and complex funtions) at Anvesha > details"
+      },
+      {
+        "date": "October 14",
+        "text": "CMIT organizes Aficionados, the math exhibition event of Anvesha > details"
+      },
+      {
+        "date": "October 12",
+        "text": "CMIT Screening Sessions: The Imitation Game (2014)"
+      },
+      {
+        "date": "October 09",
+        "text": "CMIT S<sup>3</sup> Online Mini Symposium Day 02: Talk by Prof. Manil T. Mohan on Navier-Stokes equations: Existence, Uniqueness and Smoothness Problem > details"
+      },
+      {
+        "date": "October 06",
+        "text": "CMIT S<sup>3</sup> Online Mini Symposium Day 01: Talk by Prof. Saikat Chatterjee on Semi-direct product of categories and a Schur's lemma for categorical representations > details"
+      },
+      {
+        "date": "October 05",
+        "text": "CMIT S<sup>3</sup> Screenings: The Great Math Mystery (2015) > details"
+      },
+      {
+        "date": "October 04",
+        "text": "CMIT S<sup>3</sup> Screenings: Gifted (2017) > details"
+      },
+      {
+        "date": "October 03",
+        "text": "CMIT S<sup>3</sup> Celebrations: CMIT π-uiz 2.0 hosted online by Shivam Bhargava and Rohit Menon > details"
+      },
+      {
+        "date": "October 03",
+        "text": "CMIT S<sup>3</sup> Celebrations: Unveiling our new website and newsletter > details"
+      },
+      {
+        "date": "September 29",
+        "text": "Two-part lecture series by Prof. D. Yogeshwaran on Extremal Morse critical points of a random distance function > details"
+      },
+      {
+        "date": "September 27",
+        "text": "Two-part lecture series by Prof. D. Yogeshwaran on Topology of a space from a random data sample > details"
+      },
+      {
+        "date": "September 15",
+        "text": "Two-part lecture series by Prof. Ratna Pal on Short C<sup>2</sup> and their automorphism groups"
+      },
+      {
+        "date": "September 13",
+        "text": "Two-part lecture series by Prof. Ratna Pal on Short C<sup>2</sup> and their automorphism groups"
+      },
+      {
+        "date": "September 06",
+        "text": "Talk by Kalin Krishna on Some (Co)concepts in Category Theory"
+      },
+      {
+        "date": "August 28",
+        "text": "Talk by Chaitanya Joglekar on A Proof of Tychonoff Theorem"
+      },
+      {
+        "date": "August 25",
+        "text": "Two-part lecture series by Prof. Jayanta Manoharmayum on The foray into Non-Associativity"
+      },
+      {
+        "date": "August 23",
+        "text": "Two-part lecture series by Prof. Jayanta Manoharmayum on Euler, Heuristics and Zeta"
+      },
+      {
+        "date": "August 16",
+        "text": "Talk by Dr Prasanta Kumar Barik on A Mathematical Study to the Continuous Coagulation-Fragmentation Models"
+      },
+      {
+        "date": "August 13",
+        "text": "Linear Algebra sessions for first years by Aakash Gupta"
+      },
+      {
+        "date": "August 13",
+        "text": "Talk by Dr Arati Shashi on Orthonormality of wavelet system on the Heisenberg group"
+      },
+      {
+        "date": "August 11",
+        "text": "Linear Algebra sessions for first years by Sathasivam"
+      },
+      {
+        "date": "August 10",
+        "text": "Linear Algebra sessions for first years by Soundarya and Sangeeta"
+      },
+      {
+        "date": "August 10",
+        "text": "Talk by Ramkrishna Biswas on Prime numbers and Irreducible polynomials"
+      },
+      {
+        "date": "August 05",
+        "text": "Two-part lecture series by Dr R. Venkatesh on Graph Polynomials from Lie Algebras"
+      },
+      {
+        "date": "August 02",
+        "text": "Two-part lecture series by Dr R. Venkatesh on Graph Polynomials"
+      }
+    ]
+  },
+  {
+    "semester": "VASANTH 2021",
+    "events": [
+      {
+        "date": "July 30",
+        "text": "Talk by Aakash Gupta on A Glimpse of Nets"
+      },
+      {
+        "date": "June 12",
+        "text": "Talk by Aakash Gupta on An introduction to Real Dynamics"
+      },
+      {
+        "date": "June 05",
+        "text": "Talk by Manika Bag on Necessary condition for an extremum of functional"
+      },
+      {
+        "date": "May 26",
+        "text": "Talk by Kalin Krishna on Category theory for beginners: Yoneda Lemma"
+      },
+      {
+        "date": "March 19",
+        "text": "Talk by Dr Mano Vikash Janardhanan on Graph Verification with a Betweenness Oracle"
+      },
+      {
+        "date": "March 14",
+        "text": "'π-uiz' competition as a part of π-day celebration. Hosted by Shivam Bhargava"
+      },
+      {
+        "date": "January 16",
+        "text": "Talk by Prof. Preda V. Mihăilescu on Diophantine equations that moved mathematics. In association with Project Spiral, the Mathematics Club at IISER Berhampur"
+      },
+      {
+        "date": "January 07",
+        "text": "Talk by Dr Dhanya Rajendran on an introduction to the Theory of nonlinear elliptic problems"
+      }
+    ]
+  },
+  {
+    "semester": "VARSHA 2020",
+    "events": [
+      {
+        "date": "November 20",
+        "text": "Talk by Prof. Neil Dummigan on Some applications of cube roots of one"
+      },
+      {
+        "date": "October 24",
+        "text": "Abel prize talk (in association with Science and Technology Council, IISERTVM) by Dr Nikita Agarwal"
+      },
+      {
+        "date": "September 27",
+        "text": "CMIT S<sup>2</sup> Symposium Day 02: Student talks by",
+        "sublist": [
+          "G Ananthakrishana on The Martingale: Gambling eternally",
+          "Sagnik Saha on Knots are noticeable in not-so-obvious places",
+          "Sunil Kumar Pasupulati on A walk through the irreducibility of polynomials in light of Newton polygon"
+        ]
+      },
+      {
+        "date": "September 26",
+        "text": "CMIT S<sup>2</sup> Symposium Day 01: Faculty talks by",
+        "sublist": [
+          "Dr Shrihari Sridharan on Arbitrarily long arithmetic progressions",
+          "Dr Viji Thomas on Maximal implies prime principle",
+          "Prof. Kalyan Chakraborty on Cryptography: The science of information technology"
+        ]
+      },
+      {
+        "date": "August 29",
+        "text": "Talk by Kalin Krishna on Category theory for beginners"
+      },
+      {
+        "date": "August 17",
+        "text": "Talk by Hitha PR on Sudoku squares"
+      }
+    ]
+  },
+  {
+    "semester": "VASANTH 2020",
+    "events": [
+      {
+        "date": "June 13",
+        "text": "Talk by Dr. Srilakshmi K on Finding solutions to mathematical equations"
+      },
+      {
+        "date": "May 12",
+        "text": "'Celebrating Women Mathematics' in association with womeninmaths.org"
+      },
+      {
+        "date": "March 14",
+        "text": "Launch of CMIT Social Media. Announcement of online competitions:",
+        "sublist": [
+          "'Chasing the radii', a photography competition",
+          "'Freehand bourbakis!', a freehand circle-drawing competition",
+          "'π - liners', a pun-making competiton"
+        ]
+      },
+      {
+        "date": "January 28",
+        "text": "Talk by Dr. Chandan Singh Dalawat on Two footnotes to Galois's Memoirs"
+      }
+    ]
+  },
+  {
+    "semester": "VARSHA 2019",
+    "events": [
+      {
+        "date": "November 06",
+        "text": "Talk by Joyentanuj Das on Turan's Theorem"
+      },
+      {
+        "date": "November 05",
+        "text": "Live stream of Public lecture by Prof. Bruce C. Berndt"
+      },
+      {
+        "date": "October 26",
+        "text": "Anvesha Aficionados 2019: Math Expo conducted by CMIT"
+      },
+      {
+        "date": "September 20",
+        "text": "Integration Bee competition in association with Science and Technology Council, IISERTVM"
+      },
+      {
+        "date": "August 17",
+        "text": "Review Series for second year undergraduates and new math majors/minors"
+      }
+    ]
+  },
+  {
+    "semester": "VASANTH 2019",
+    "events": [
+      {
+        "date": "March 16",
+        "text": "Epiphany: The CMIT Mathematics Tournament"
+      },
+      {
+        "date": "February 14",
+        "text": "Talk by Akshay PR on A few problems from Mathematical Journals"
+      },
+      {
+        "date": "January 18",
+        "text": "Talk by Joyentanuj Das on Catalan Garden"
+      }
+    ]
+  },
+  {
+    "semester": "VARSHA 2018",
+    "events": [
+      {
+        "date": "November 01",
+        "text": "Talk by Joyentanuj Das on An Introduction to Combinatorial Designs"
+      },
+      {
+        "date": "October 22",
+        "text": "Talk by Akshay PR on the Euler's pentagonal number theorem"
+      },
+      {
+        "date": "September 28",
+        "text": "Foundation of CMIT: Introductory session and problem discussion"
+      }
+    ]
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "id": 5,
+    "title": "CMIT Donut, Fifth Issue",
+    "cover_image": "https://raw.githubusercontent.com/cmitiiser/cmitiiser.github.io/refs/heads/main/img/CMIT_Donut_Cover_07.26.jpg",
+    "pdf_link": "./assets/donuts/CMIT_DONUT5_07.26.pdf",
+    "writeup": [
+      "Our first dark-paged magazine ever! Designed as an experiment, since we acknowledge all the nocturnal readers out there, this issue is a special one as we celebrate the Seventh Foundation Anniversary of CMIT, highlighted by a big hand-painted donut, depicted on our cover page. We know we are out of schedule, but we are hoping to get right on track with the upcoming issues.",
+      "In this edition, we cover all the events we usually cover, which includes Pi-week celebrations, Frontier Symposium '25, and Anvesha projects too! This is an overall exciting version, both to the designers, and hopefully to the readers as well.",
+      "We hope you enjoy this issue and appreciate your patience and support. We value your feedback and submissions for future editions."
+    ],
+    "feedback_link": "",
+    "submit_link": ""
+  },
+  {
+    "id": 4,
+    "title": "CMIT Donut, Fourth Issue",
+    "cover_image": "https://raw.githubusercontent.com/cmitiiser/cmitiiser.github.io/refs/heads/main/img/CMIT_Donut_Cover_07.24.png",
+    "pdf_link": "https://drive.google.com/file/d/1OYYgvC3R2hd-oZVZ1XtOMkc-Ct90bCer/view",
+    "writeup": [
+      "After a brief hiatus of 1.5 years, we are thrilled to bring you the fourth edition of our quarterly newsletter, Donut! This issue is special as we celebrate the Fifth Foundation Anniversary of CMIT, highlighted by a major breakthrough with Ramsey's theorem R(3,3) = 6, depicted on our cover page.",
+      "In this edition, we cover exciting new events such as the Pi Week celebrations, including Pi-oximity, Pi-uiz 5.0, and the Marble Sliding Competition, along with insights from Frontier Symposium '24.",
+      "We hope you enjoy this issue and appreciate your patience and support. We value your feedback and submissions for future editions."
+    ],
+    "feedback_link": "",
+    "submit_link": ""
+  },
+  {
+    "id": 3,
+    "title": "CMIT Donut, Third Issue",
+    "cover_image": "https://raw.githubusercontent.com/cmitiiser/cmitiiser.github.io/refs/heads/main/img/CMIT_Donut_Cover_11.22.png",
+    "pdf_link": "https://drive.google.com/file/d/1mKeLh08OIEqaGY08vtu7XJiDrFeJ-nNZ/view",
+    "writeup": [
+      "The third issue of our quarterly newsletter, Donut, features the events organized by CMIT, including the fun events in accordance with Pi Week celebrations, the Abel prize talk and the very many peer discussions that we have had. This is also our third and final part of mathomic series. Dive into their conversation to know the latest news in the field of Mathematics.",
+      "Glazed or red and white sprinkles? We have got you covered.",
+      "We hope you enjoy this issue as we continue to bring regular editions in the future. We would love to have your feedback and submissions for future issues."
+    ],
+    "feedback_link": "",
+    "submit_link": ""
+  },
+  {
+    "id": 2,
+    "title": "CMIT Donut, Second Issue",
+    "cover_image": "https://raw.githubusercontent.com/cmitiiser/cmitiiser.github.io/refs/heads/main/img/CMIT_Donut_Cover_02.22.png",
+    "pdf_link": "https://drive.google.com/file/d/197W7mzpN8kQJTXdUfzoBDmbuoNWHgmyy/view",
+    "writeup": [
+      "The second issue of our quarterly newsletter, Donut features recent significant events at CMIT, including the Fourth BRICS Mathematics Conference, events from the Third Foundation Anniversary celebration, collaborations with the Science and Technology Council during the Anvesha season, and a special Math-Omic.",
+      "We hope you enjoy this issue as we continue to bring regular editions in the future. We would love to have your feedback and submissions for future issues."
+    ],
+    "feedback_link": "",
+    "submit_link": ""
+  },
+  {
+    "id": 1,
+    "title": "CMIT Donut, Inaugural Issue",
+    "cover_image": "https://raw.githubusercontent.com/cmitiiser/cmitiiser.github.io/refs/heads/main/img/CMIT_Donut_Cover_10.21.png",
+    "pdf_link": "https://drive.google.com/file/d/1j4RKWeukUq9bxuQuNPAvfFQMrSSxi9uy/view",
+    "writeup": [
+      "On the occasion of the third foundation anniversary of the club, we bring to you the first issue of our newsletter. We have been fervently greeted with an influx of articles from the students, and our designers and editors worked their best to make this a reality. Know more about this issue's designers and editors on our about page.",
+      "We hope you enjoy the inaugural issue as we continue to bring regular editions in the future. We would love to have your feedback and submissions for future issues."
+    ],
+    "feedback_link": "",
+    "submit_link": ""
+  }
+]

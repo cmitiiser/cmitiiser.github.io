@@ -369,6 +369,18 @@ a:hover {
   margin: 0;
 }
 
+.secret-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: default;
+}
+
+.secret-link:hover {
+  color: inherit;
+  text-decoration: none;
+  cursor: default;
+} 
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .footer-top {

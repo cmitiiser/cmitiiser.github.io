@@ -1,0 +1,502 @@
+@import url('general.css');
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+
+.cmit-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+.cmit-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(38, 42, 46, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 42, 46, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at 30% 20%, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at 30% 20%,
+    black 45%,
+    transparent 85%
+  );
+}
+
+.cmit-hero-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.cmit-hero-copy {
+  flex: 1 1 420px;
+}
+
+.cmit-hero-figure {
+  flex: 1 1 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.cmit-hero-logo {
+  max-width: 400px;
+}
+
+.cmit-eyebrow {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--moss-deep);
+  margin-bottom: 0.4rem;
+}
+
+.cmit-hero-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.cmit-hero-title em {
+  font-weight: 1000;
+  font-style: normal;
+  color: var(--logo-gray);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.cmit-hero-sub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.cmit-hero-text {
+  max-width: 80vw;
+  margin-bottom: 1.5rem;
+}
+
+.cmit-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+
+.cmit-link-arrow {
+  color: var(--moss-deep);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+
+.cmit-link-arrow:hover {
+  color: var(--moss);
+  border-bottom-color: var(--moss);
+}
+
+.cmit-link-arrow::after {
+  content: "\00a0\2192";
+}
+
+/* ==========================================================================
+   2. NOTICES & TICKERS
+   ========================================================================== */
+
+.cmit-notices-wrap {
+  padding-bottom: 3rem;
+}
+
+.cmit-notices {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--moss);
+  border-radius: 2px;
+  padding: 1.25rem 1.75rem;
+}
+
+.cmit-notices-label {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.cmit-notices-list li {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.5rem 0;
+}
+
+.cmit-notices-list li + li {
+  border-top: 1px solid var(--line);
+}
+
+.cmit-notice-index {
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+  color: var(--moss-deep);
+}
+
+.cmit-notices-list a {
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+}
+
+.cmit-notices-list a:hover {
+  text-decoration-color: var(--moss);
+}
+
+/* ==========================================================================
+   3. NEWSLETTER CARDS & ARCHIVE
+   ========================================================================== */
+
+.cmit-newsletter-wrap {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.cmit-issue-card {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+  margin-bottom: 3.5rem;
+}
+
+.cmit-issue-cover {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cmit-issue-cover a {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cmit-issue-cover a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cmit-issue-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cmit-issue-content {
+  max-width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--ink, #1a1a1a);
+  line-height: 1.6;
+}
+
+.cmit-issue-content p {
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+.cmit-issue-meta {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--line, #e0e0e0);
+}
+
+.cmit-issue-meta h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem 0;
+  color: var(--card, #2c4a3e);
+}
+
+.cmit-issue-meta .cmit-read-link {
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  gap: 0.25rem;
+}
+
+.cmit-issue-meta .cmit-read-link:hover {
+  text-decoration: underline;
+}
+
+.cmit-issue-divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--line, #e0e0e0);
+  margin: 3.5rem 0;
+}
+
+.cmit-issue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   4. BUTTONS
+   ========================================================================== */
+
+.cmit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--moss-deep);
+  color: var(--card, #fff);
+  font-family: 'STIX Two Text', Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.55rem 1.15rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.cmit-btn:hover {
+  transform: translateY(-1px);
+}
+
+.cmit-btn:active {
+  transform: translateY(0);
+}
+
+.cmit-btn:disabled {
+  background-color: var(--muted, #888);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==========================================================================
+   5. ADMIN DASHBOARD & CONTROLS
+   ========================================================================== */
+
+.cmit-admin-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+}
+
+.cmit-admin-panel {
+  background-color: var(--card, #fff);
+  border: 1px solid var(--line, #e0e0e0);
+  border-radius: 4px;
+  padding: 2.2rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.cmit-auth-box {
+  background: #f9fbf9;
+  border: 1px dashed var(--moss, #4a7c59);
+  padding: 1.25rem 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.cmit-admin-nav {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--line, #e0e0e0);
+  margin-bottom: 2rem;
+}
+
+.cmit-tab-trigger {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.75rem 1.25rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--muted, #666);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cmit-tab-trigger.active {
+  color: var(--moss-deep, #2c4a3e);
+  border-bottom-color: var(--moss-deep, #2c4a3e);
+}
+
+.cmit-tab-content {
+  display: none;
+}
+
+.cmit-tab-content.active {
+  display: block;
+}
+
+.cmit-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.4rem;
+}
+
+
+
+
+.cmit-field-group input::placeholder,
+.cmit-field-group textarea::placeholder {
+  /* font-style: italic; */
+  color: var(--muted, #666);
+  opacity: 0.45;
+}
+
+.cmit-field-group input::-webkit-input-placeholder,
+.cmit-field-group textarea::-webkit-input-placeholder {
+  color: var(--muted, #666);
+  opacity: 0.45;
+}
+
+.cmit-field-group input::-moz-placeholder,
+.cmit-field-group textarea::-moz-placeholder {
+  color: var(--muted, #666);
+  opacity: 0.45;
+}
+
+
+
+
+.cmit-field-group label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted, #444);
+}
+
+.cmit-field-group input,
+.cmit-field-group textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--line, #ccc);
+  border-radius: 4px;
+  background: #fafafa;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.cmit-field-group input:focus,
+.cmit-field-group textarea:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--moss, #4a7c59);
+}
+
+.cmit-field-hint {
+  font-size: 0.78rem;
+  color: var(--muted, #777);
+}
+
+.cmit-markdown-preview {
+  background: #fdfdfd;
+  border-left: 3px solid var(--moss, #4a7c59);
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--line, #eee);
+  margin-top: 0.5rem;
+  min-height: 44px;
+  font-size: 0.95rem;
+}
+
+.cmit-status-banner {
+  padding: 0.85rem 1.2rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  display: none;
+  font-size: 0.9rem;
+}
+
+.cmit-status-banner.success {
+  background: #edf7ed;
+  color: #1e4620;
+  border: 1px solid #c8e6c9;
+}
+
+.cmit-status-banner.error {
+  background: #fdecea;
+  color: #611a15;
+  border: 1px solid #f5c6cb;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1000px) {
+  .cmit-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .cmit-hero-copy {
+    flex: 1 1 100%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .cmit-hero-text {
+    align-items: center;
+    margin: 40px auto;
+  }
+
+  .cmit-hero-cta {
+    justify-content: center;
+  }
+
+  .cmit-hero-sub {
+    max-width: 47ch;
+    margin: 1.25rem auto;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 768px) {
+  .cmit-issue-card {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .cmit-issue-cover a {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .cmit-issue-content p {
+    text-align: center;
+  }
+
+  .cmit-issue-meta {
+    text-align: center;
+  }
+
+  .cmit-issue-actions {
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .cmit-admin-panel {
+    padding: 1.5rem;
+  }
+}
