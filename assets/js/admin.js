@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const REPO_OWNER = "cmit-iisertvm";
-  const REPO_NAME = "cmit-iisertvm.github.io";
+  const REPO_OWNER = "cmitiiser";
+  const REPO_NAME = "cmitiiser.github.io";
   const BRANCH = "main";
 
   const EVENTS_FILE_PATH = "../data/events.json";
