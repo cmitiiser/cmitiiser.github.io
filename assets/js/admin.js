@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const REPO_NAME = "cmitiiser.github.io";
   const BRANCH = "main";
 
-  const EVENTS_FILE_PATH = "../data/events.json";
+  const EVENTS_FILE_PATH = "data/events.json";
   const NEWSLETTERS_FILE_PATH = "data/newsletters.json";
   const NOTICES_FILE_PATH = "data/notices.json";
 
