@@ -1,6 +1,16 @@
 @import url('general.css');
 
 /* ==========================================================================
+   GLOBAL BOX SIZING RESET FOR FORMS
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
    1. HERO SECTION
    ========================================================================== */
 
@@ -35,16 +45,19 @@
 
 .cmit-hero-copy {
   flex: 1 1 420px;
+  min-width: 0;
 }
 
 .cmit-hero-figure {
   flex: 1 1 280px;
   display: flex;
   justify-content: center;
+  min-width: 0;
 }
 
 .cmit-hero-logo {
-  max-width: 400px;
+  max-width: 100%;
+  height: auto;
 }
 
 .cmit-eyebrow {
@@ -59,6 +72,7 @@
   font-size: 3rem;
   line-height: 1.1;
   margin-bottom: 1.5rem;
+  word-break: break-word;
 }
 
 .cmit-hero-title em {
@@ -77,7 +91,7 @@
 }
 
 .cmit-hero-text {
-  max-width: 80vw;
+  max-width: 100%;
   margin-bottom: 1.5rem;
 }
 
@@ -130,6 +144,7 @@
   display: flex;
   gap: 0.85rem;
   padding: 0.5rem 0;
+  overflow-wrap: anywhere;
 }
 
 .cmit-notices-list li + li {
@@ -140,6 +155,7 @@
   font-family: ui-monospace, monospace;
   font-size: 0.8rem;
   color: var(--moss-deep);
+  flex-shrink: 0;
 }
 
 .cmit-notices-list a {
@@ -172,6 +188,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  min-width: 0;
 }
 
 .cmit-issue-cover a {
@@ -197,13 +214,15 @@
 }
 
 .cmit-issue-content {
-  max-width: 85%;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   color: var(--ink, #1a1a1a);
   line-height: 1.6;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .cmit-issue-content p {
@@ -272,6 +291,7 @@
   cursor: pointer;
   text-decoration: none !important;
   transition: transform 0.15s ease, background-color 0.15s ease;
+  max-width: 100%;
 }
 
 .cmit-btn:hover {
@@ -293,17 +313,22 @@
    ========================================================================== */
 
 .cmit-admin-wrap {
+  width: 100%;
   max-width: 820px;
   margin: 0 auto;
   padding-bottom: 5rem;
+  box-sizing: border-box;
 }
 
 .cmit-admin-panel {
+  width: 100%;
+  max-width: 100%;
   background-color: var(--card, #fff);
   border: 1px solid var(--line, #e0e0e0);
   border-radius: 4px;
   padding: 2.2rem;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
 }
 
 .cmit-auth-box {
@@ -312,6 +337,7 @@
   padding: 1.25rem 1.5rem;
   border-radius: 4px;
   margin-bottom: 2rem;
+  box-sizing: border-box;
 }
 
 .cmit-admin-nav {
@@ -319,6 +345,8 @@
   gap: 0.5rem;
   border-bottom: 1px solid var(--line, #e0e0e0);
   margin-bottom: 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .cmit-tab-trigger {
@@ -331,6 +359,7 @@
   font-weight: 500;
   color: var(--muted, #666);
   cursor: pointer;
+  white-space: nowrap;
   transition: all 0.2s ease;
 }
 
@@ -341,6 +370,8 @@
 
 .cmit-tab-content {
   display: none;
+  width: 100%;
+  max-width: 100%;
 }
 
 .cmit-tab-content.active {
@@ -352,14 +383,33 @@
   flex-direction: column;
   gap: 0.4rem;
   margin-bottom: 1.4rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
+.cmit-field-group input,
+.cmit-field-group textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--line, #ccc);
+  border-radius: 4px;
+  background: #fafafa;
+  transition: border 0.2s ease, background 0.2s ease;
+}
 
-
+.cmit-field-group textarea {
+  resize: vertical;
+}
 
 .cmit-field-group input::placeholder,
 .cmit-field-group textarea::placeholder {
-  /* font-style: italic; */
   color: var(--muted, #666);
   opacity: 0.45;
 }
@@ -376,25 +426,11 @@
   opacity: 0.45;
 }
 
-
-
-
 .cmit-field-group label {
   font-family: 'Roboto', sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--muted, #444);
-}
-
-.cmit-field-group input,
-.cmit-field-group textarea {
-  font-family: inherit;
-  font-size: 0.95rem;
-  padding: 0.65rem 0.85rem;
-  border: 1px solid var(--line, #ccc);
-  border-radius: 4px;
-  background: #fafafa;
-  transition: border 0.2s ease, background 0.2s ease;
 }
 
 .cmit-field-group input:focus,
@@ -407,9 +443,13 @@
 .cmit-field-hint {
   font-size: 0.78rem;
   color: var(--muted, #777);
+  word-break: break-word;
 }
 
 .cmit-markdown-preview {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   background: #fdfdfd;
   border-left: 3px solid var(--moss, #4a7c59);
   padding: 0.8rem 1.2rem;
@@ -417,14 +457,18 @@
   margin-top: 0.5rem;
   min-height: 44px;
   font-size: 0.95rem;
+  overflow-wrap: anywhere;
 }
 
 .cmit-status-banner {
+  width: 100%;
+  box-sizing: border-box;
   padding: 0.85rem 1.2rem;
   border-radius: 4px;
   margin-bottom: 1.5rem;
   display: none;
   font-size: 0.9rem;
+  word-break: break-word;
 }
 
 .cmit-status-banner.success {
@@ -497,6 +541,10 @@
   }
 
   .cmit-admin-panel {
-    padding: 1.5rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .cmit-auth-box {
+    padding: 1rem;
   }
 }
