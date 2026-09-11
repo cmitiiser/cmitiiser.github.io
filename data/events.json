@@ -3,12 +3,12 @@
     "semester": "VARSHA 2026",
     "events": [
       {
-        "date": "August 11",
-        "text": "CMIT Tangent Tuesdays 3.0: A talk by Rithik Menon on Anatomy of Groups, Composition Series and the Jordan-Hölder Theorem"
-      },
-      {
         "date": "August 18",
         "text": "CMIT Tangent Tuesdays 3.0: A talk by Anushka Roy on Mysteries of Solar Neutrinos"
+      },
+      {
+        "date": "August 11",
+        "text": "CMIT Tangent Tuesdays 3.0: A talk by Rithik Menon on Anatomy of Groups, Composition Series and the Jordan-Hölder Theorem"
       }
     ]
   },
