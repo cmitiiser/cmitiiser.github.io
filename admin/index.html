@@ -403,72 +403,33 @@
           </form>
         </section>
 
+
+
+
         <!-- PANE 4: MEDIA UPLOAD -->
         <section id="pane-media" class="cmit-tab-content">
           <div class="cmit-media-container">
+            <!-- Full Dropzone Surface -->
             <div class="cmit-media-dropzone" id="media-dropzone">
               <div class="cmit-media-drop-icon" aria-hidden="true">&darr;</div>
-              <p class="cmit-media-drop-title">Drop files here</p>
-              <p class="cmit-media-drop-sub">
-                or <span class="cmit-media-browse-link">browse</span>
-              </p>
-              <input
-                type="file"
-                id="media-file-input"
-                class="cmit-file-hidden"
-              />
+              <p class="cmit-media-drop-title">Drag &amp; Drop</p>
+              <p class="cmit-media-drop-sub">or <span class="cmit-media-browse-link">browse</span></p>
+              <input type="file" id="media-file-input" class="cmit-file-hidden" multiple />
             </div>
 
-            <div
-              id="media-staged-info"
-              class="cmit-media-staged"
-              style="display: none"
-            >
-              <div class="cmit-media-staged-row">
-                <span class="cmit-media-staged-name" id="staged-file-name"
-                  >filename.jpg</span
-                >
-                <span class="cmit-media-target-path" id="staged-file-path"
-                  >img/26-oct/filename.jpg</span
-                >
-              </div>
-            </div>
-
+            <!-- Action Bar -->
             <div class="cmit-form-actions-split">
-              <button
-                type="button"
-                class="cmit-btn"
-                id="btn-commit-media"
-                disabled
-              >
-                Upload Media
+              <!-- Left: Review & Commit Trigger -->
+              <button type="button" class="cmit-btn" id="btn-review-media" disabled>
+                <span>Review &amp; Commit</span>
+                <span class="cmit-badge-counter" id="media-count-badge">0</span>
               </button>
 
-              <a
-                href="#"
-                class="cmit-status-btn idle"
-                id="btn-media-status"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="cmit-status-dot"></span>
-                <span id="media-status-text">No File Staged</span>
-              </a>
-            </div>
-
-            <div
-              id="media-link-container"
-              class="cmit-link-output"
-              style="display: none"
-            >
-              <input
-                type="text"
-                id="media-raw-link-input"
-                class="cmit-link-input"
-                readonly
-              />
-              <button type="button" class="cmit-btn" id="btn-copy-media-link">
-                Copy Link
+              <!-- Right: Interactive Status & History Button -->
+              <button type="button" class="cmit-status-btn idle" id="btn-media-status">
+                <!-- <span class="cmit-status-dot"></span> -->
+                <span id="media-status-text">Files</span>
+                <span class="cmit-badge-counter cmit-status-counter" id="media-history-badge">0</span>
               </button>
             </div>
           </div>
@@ -476,6 +437,48 @@
       </div>
     </main>
 
+    <!-- MODAL 1: REVIEW & COMMIT -->
+    <div id="media-modal" class="cmit-modal-backdrop" aria-hidden="true">
+      <div class="cmit-modal-dialog">
+        <div class="cmit-modal-header">
+          <h3 class="cmit-modal-title">Review Staged Media</h3>
+          <button type="button" class="cmit-modal-close" id="btn-modal-close" aria-label="Close modal">&times;</button>
+        </div>
+
+        <div class="cmit-modal-body">
+          <p class="cmit-modal-desc">These files will be committed to <code>cmitiiser/mailmedia</code> in their designated folders.</p>
+          <div id="modal-files-list" class="cmit-modal-files-list"></div>
+        </div>
+
+        <div class="cmit-modal-footer">
+          <button type="button" class="cmit-btn-secondary" id="btn-modal-cancel">Cancel</button>
+          <button type="button" class="cmit-btn" id="btn-modal-commit">Push to Git</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 2: STATUS & DISPATCH LOG (NEW) -->
+    <div id="status-modal" class="cmit-modal-backdrop" aria-hidden="true">
+      <div class="cmit-modal-dialog">
+        <div class="cmit-modal-header">
+          <h3 class="cmit-modal-title">Commit Status &amp; Links</h3>
+          <button type="button" class="cmit-modal-close" id="btn-status-modal-close" aria-label="Close modal">&times;</button>
+        </div>
+
+        <div class="cmit-modal-body">
+          <!-- <p class="cmit-modal-desc">Recent uploads, status reports, and CDN raw links for direct embedding.</p> -->
+          <div id="status-modal-list" class="cmit-modal-files-list">
+            <p class="cmit-empty-notice">No commits dispatched yet in this session.</p>
+          </div>
+        </div>
+
+        <div class="cmit-modal-footer">
+          <button type="button" class="cmit-btn" id="btn-status-modal-done">Done</button>
+        </div>
+      </div>
+    </div>
+
     <footer id="site-footer" class="site-footer"></footer>
+
   </body>
 </html>

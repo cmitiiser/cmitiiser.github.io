@@ -1,7 +1,7 @@
 @import url('general.css');
 
 /* ==========================================================================
-   GLOBAL BOX SIZING RESET FOR FORMS
+   GLOBAL BOX SIZING & RESETS
    ========================================================================== */
 
 *,
@@ -273,7 +273,7 @@
 }
 
 /* ==========================================================================
-   4. BUTTONS
+   4. BUTTONS & GENERAL CONTROLS
    ========================================================================== */
 
 .cmit-btn {
@@ -303,13 +303,24 @@
 }
 
 .cmit-btn:disabled {
-  background-color: var(--muted, #888);
-  cursor: not-allowed;
-  transform: none;
+  background-color: #d1d5db !important;
+  color: #6b7280 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.cmit-req {
+  color: #c0392b;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-left: 2px;
+  vertical-align: middle;
 }
 
 /* ==========================================================================
-   5. ADMIN DASHBOARD & CONTROLS
+   5. ADMIN DASHBOARD & PANELS
    ========================================================================== */
 
 .cmit-admin-wrap {
@@ -357,7 +368,7 @@
   background: transparent;
   border: none;
   border-bottom: 3px solid transparent;
-  margin-bottom: -2px; /* aligns active border cleanly over the line */
+  margin-bottom: -2px;
   padding: 0.75rem 0.5rem;
   font-family: 'Roboto', sans-serif;
   font-size: 0.95rem;
@@ -378,7 +389,6 @@
   font-weight: 700;
   border-bottom-color: var(--moss-deep, #2c4a3e);
 }
-
 
 .cmit-tab-content {
   display: none;
@@ -495,10 +505,8 @@
   border: 1px solid #f5c6cb;
 }
 
-
-
 /* ==========================================================================
-   6. MEDIA UPLOADER TAB & DUAL STATUS BUTTON
+   6. MEDIA UPLOADER & ACTION CONTROLS
    ========================================================================== */
 
 .cmit-media-container {
@@ -553,37 +561,6 @@
   display: none;
 }
 
-.cmit-media-staged {
-  background: #fdfdfc;
-  border: 1px solid var(--line, #e0e0e0);
-  border-radius: 4px;
-  padding: 0.8rem 1rem;
-}
-
-.cmit-media-staged-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  font-size: 0.88rem;
-}
-
-.cmit-media-staged-name {
-  font-weight: 600;
-  color: var(--ink, #222);
-}
-
-.cmit-media-target-path {
-  font-family: monospace;
-  font-size: 0.8rem;
-  color: var(--moss-deep, #2c4a3e);
-  background: #eef4ee;
-  padding: 0.2rem 0.4rem;
-  border-radius: 3px;
-}
-
-/* Dual-Action Button Row (Left: Commit, Right: Media Status) */
 .cmit-form-actions-split {
   display: flex;
   justify-content: space-between;
@@ -594,16 +571,25 @@
 }
 
 .cmit-status-btn {
+  cursor: pointer;
+  pointer-events: auto !important;
+  user-select: none;
+  border: 1px solid transparent;
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
   padding: 0.55rem 1.15rem;
   border-radius: 6px;
+  font-family: 'STIX Two Text', Georgia, serif;
   font-size: 0.88rem;
   font-weight: 500;
   text-decoration: none !important;
   transition: all 0.2s ease;
-  pointer-events: none;
+}
+
+.cmit-status-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.97);
 }
 
 .cmit-status-dot {
@@ -613,62 +599,56 @@
   display: inline-block;
 }
 
-/* Idle State */
 .cmit-status-btn.idle {
   background: #f0f0f0;
   color: #777;
-  border: 1px solid #ddd;
+  border-color: #ddd;
 }
 .cmit-status-btn.idle .cmit-status-dot {
   background: #bbb;
 }
 
-/* Ready State */
 .cmit-status-btn.ready {
   background: #eef4fa;
   color: #1a568c;
-  border: 1px solid #bde0fe;
+  border-color: #bde0fe;
 }
 .cmit-status-btn.ready .cmit-status-dot {
   background: #1a568c;
 }
 
-/* Uploading State */
 .cmit-status-btn.uploading {
   background: #fff8e6;
   color: #945900;
-  border: 1px solid #fed7aa;
+  border-color: #fed7aa;
 }
 .cmit-status-btn.uploading .cmit-status-dot {
   background: #f59e0b;
 }
 
-/* Success State (Link Active) */
 .cmit-status-btn.success {
   background: #2c4a3e;
   color: #ffffff;
-  border: 1px solid #2c4a3e;
-  cursor: pointer;
+  border-color: #2c4a3e;
 }
 .cmit-status-btn.success .cmit-status-dot {
   background: #4ade80;
 }
-.cmit-status-btn.success:hover {
-  background: #3b6353;
-  transform: translateY(-1px);
-}
 
-/* Error State */
 .cmit-status-btn.error {
   background: #fdecea;
   color: #b33939;
-  border: 1px solid #f8d7da;
+  border-color: #f8d7da;
 }
 .cmit-status-btn.error .cmit-status-dot {
   background: #b33939;
 }
 
-/* Link Output Box */
+.cmit-status-counter {
+  background: rgba(0, 0, 0, 0.12) !important;
+  color: inherit !important;
+}
+
 .cmit-link-output {
   display: flex;
   gap: 0.5rem;
@@ -686,32 +666,317 @@
   background: #fff;
 }
 
-
-
-/* Mandatory field indicator */
-.cmit-req {
-  color: #c0392b;
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-left: 2px;
-  vertical-align: middle;
+.cmit-copy-btn {
+  background: var(--moss-deep, #2c4a3e);
+  color: #fff;
+  border: none;
+  padding: 0 0.85rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
-/* Clear disabled button state */
-.cmit-btn:disabled {
-  background-color: #d1d5db !important;
-  color: #6b7280 !important;
-  cursor: not-allowed !important;
-  box-shadow: none !important;
-  transform: none !important;
-  border: 1px solid #d1d5db !important;
+.cmit-copy-btn:hover {
+  background: var(--moss, #4a7c59);
 }
 
+.cmit-delay-warning {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: #945900;
+  line-height: 1.4;
+}
 
-
+.cmit-error-msg {
+  color: #b33939;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
 
 /* ==========================================================================
-   7. RESPONSIVE BREAKPOINTS
+   7. MODAL DIALOGS & POPUPS
+   ========================================================================== */
+
+.cmit-badge-counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 999px;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.35rem;
+  margin-left: 0.4rem;
+}
+
+.cmit-btn:disabled .cmit-badge-counter {
+  background: #bbb;
+  color: #fff;
+}
+
+.cmit-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.cmit-modal-backdrop.is-open {
+  display: flex;
+}
+
+.cmit-modal-dialog {
+  background: #ffffff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 540px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.cmit-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid var(--line, #e0e0e0);
+}
+
+.cmit-modal-title {
+  font-family: var(--font-head, 'STIX Two Text', serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cmit-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #888;
+  cursor: pointer;
+}
+
+.cmit-modal-close:hover {
+  color: #111;
+}
+
+.cmit-modal-body {
+  padding: 1.25rem 1.4rem;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+
+.cmit-modal-desc {
+  font-size: 0.85rem;
+  color: var(--muted, #666);
+  margin-bottom: 1rem;
+}
+
+.cmit-modal-desc code {
+  background: #f0eee6;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+.cmit-modal-files-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cmit-modal-file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafaf8;
+  border: 1px solid var(--line, #e3e0d8);
+  padding: 0.65rem 0.85rem;
+  border-radius: 4px;
+}
+
+.cmit-modal-file-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.cmit-modal-thumb-wrap {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--line, #e0e0e0);
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cmit-modal-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cmit-modal-thumb-doc {
+  background: #eef4ee;
+  color: var(--moss-deep, #2c4a3e);
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cmit-modal-file-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+  overflow: hidden;
+  flex: 1;
+}
+
+.cmit-modal-filename {
+  font-size: 0.88rem;
+  color: var(--ink, #111);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cmit-modal-filepath {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--moss-deep, #2c4a3e);
+}
+
+.cmit-modal-del-btn {
+  background: transparent;
+  border: none;
+  color: #b33939;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0 0.4rem;
+  line-height: 1;
+}
+
+.cmit-modal-del-btn:hover {
+  color: #721c24;
+}
+
+.cmit-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.4rem;
+  border-top: 1px solid var(--line, #e0e0e0);
+  background: #faf9f6;
+}
+
+.cmit-btn-secondary {
+  background: transparent;
+  border: 1px solid var(--line, #ccc);
+  color: var(--muted, #666);
+  padding: 0.55rem 1.15rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.cmit-btn-secondary:hover {
+  background: #f0f0f0;
+  color: #111;
+}
+
+.cmit-empty-notice {
+  color: var(--muted, #777);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 2rem 0;
+  margin: 0;
+}
+
+.cmit-status-card {
+  background: #fafaf8;
+  border: 1px solid var(--line, #e3e0d8);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cmit-status-card.uploading {
+  border-left: 4px solid #cc8e35;
+}
+
+.cmit-status-card.success {
+  border-left: 4px solid var(--moss, #4a7c59);
+}
+
+.cmit-status-card.error {
+  border-left: 4px solid var(--danger, #b33939);
+}
+
+.cmit-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+}
+
+.cmit-tag.uploading {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.cmit-tag.success {
+  background: #eef4ee;
+  color: var(--moss-deep, #2c4a3e);
+}
+
+.cmit-tag.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.cmit-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE BREAKPOINTS
    ========================================================================== */
 
 @media (max-width: 1000px) {
@@ -779,7 +1044,7 @@
 @media (max-width: 600px) {
   .cmit-admin-nav {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr) !important;
     gap: 0.35rem;
     border-bottom: none;
     background: #f0eee6;
@@ -800,14 +1065,9 @@
   }
 
   .cmit-tab-trigger.active {
-    /* background: var(--card, #fff); */
+    background: var(--card, #fff);
     color: var(--moss-deep, #2c4a3e);
-    border: var(--moss-deep) 1px solid;
-    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); */
-  }
-
-  .cmit-admin-nav {
-    grid-template-columns: repeat(4, 1fr) !important;
+    border: 1px solid var(--moss-deep, #2c4a3e);
   }
 
   .cmit-form-actions-split {
