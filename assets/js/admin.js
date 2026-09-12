@@ -31,14 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  function notify(msg, type = "success") {
-    const bar = document.getElementById("status-bar");
-    if (!bar) return;
-    bar.textContent = msg;
-    bar.className = `cmit-status-banner ${type}`;
-    bar.style.display = "block";
-    window.scrollTo({ top: 180, behavior: "smooth" });
-  }
+  // Global simple text status (exported to window so media uploader shares it)
+  window.setGlobalStatus = function (msg, isError = false) {
+    const el = document.getElementById("global-status");
+    if (!el) return;
+    el.textContent = msg;
+    el.className = isError ? "cmit-global-status error" : "cmit-global-status";
+  };
 
   function parseMarkdown(str) {
     if (!str) return "";
@@ -214,6 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         btn.textContent = "Committing to Git...";
         btn.disabled = true;
+        window.setGlobalStatus("Committing event to repository...");
 
         const { sha, data } = await fetchFile(EVENTS_FILE_PATH);
         const semesters = Array.isArray(data) ? data : [];
@@ -223,13 +223,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const textVal = document.getElementById("event-subject").value.trim();
         const linkVal = document.getElementById("event-link").value.trim();
 
-        const newEntry = {
-          date: dateVal,
-          text: textVal,
-        };
-        if (linkVal) {
-          newEntry.link = linkVal;
-        }
+        const newEntry = { date: dateVal, text: textVal };
+        if (linkVal) newEntry.link = linkVal;
 
         let semGroup = semesters.find(
           (s) => s.semester.toLowerCase() === targetSem.toLowerCase(),
@@ -251,13 +246,11 @@ document.addEventListener("DOMContentLoaded", () => {
           `Add event under ${targetSem}: "${textVal.slice(0, 40)}..."`,
         );
 
-        notify(`Event added under "${targetSem}" and pushed to Git!`);
+        window.setGlobalStatus(`Event committed under ${targetSem}.`);
         formEvent.reset();
-        if (eventPreview) {
-          eventPreview.innerHTML = "<em>Preview will appear here...</em>";
-        }
+        if (eventPreview) eventPreview.innerHTML = "<em>Preview will appear here...</em>";
       } catch (err) {
-        notify(err.message, "error");
+        window.setGlobalStatus(err.message, true);
       } finally {
         btn.textContent = "Commit Event to Git";
         setupFormValidation("form-event", "btn-event");
@@ -274,9 +267,9 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         btn.textContent = "Committing to Git...";
         btn.disabled = true;
+        window.setGlobalStatus("Publishing newsletter issue...");
 
         const coverUrl = document.getElementById("nl-cover").value.trim();
-
         const { sha, data } = await fetchFile(NEWSLETTERS_FILE_PATH);
         const issues = Array.isArray(data) ? data : [];
 
@@ -305,15 +298,11 @@ document.addEventListener("DOMContentLoaded", () => {
           `Publish newsletter issue: ${issueTitle}`,
         );
 
-        notify(
-          `Newsletter "${issueTitle}" published and prepended to ${NEWSLETTERS_FILE_PATH}!`,
-        );
+        window.setGlobalStatus(`Newsletter "${issueTitle}" published.`);
         formNewsletter.reset();
-        if (nlPreview) {
-          nlPreview.innerHTML = "<em>Preview will appear here...</em>";
-        }
+        if (nlPreview) nlPreview.innerHTML = "<em>Preview will appear here...</em>";
       } catch (err) {
-        notify(err.message, "error");
+        window.setGlobalStatus(err.message, true);
       } finally {
         btn.textContent = "Publish Edition";
         setupFormValidation("form-newsletter", "btn-newsletter");
@@ -329,6 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         btn.textContent = "Pushing Notice...";
         btn.disabled = true;
+        window.setGlobalStatus("Pushing notice to repository...");
 
         const { sha, data } = await fetchFile(NOTICES_FILE_PATH);
         const notices = Array.isArray(data) ? data : [];
@@ -343,13 +333,11 @@ document.addEventListener("DOMContentLoaded", () => {
           sha,
           "Add notice via admin dashboard",
         );
-        notify(`Notice committed to ${NOTICES_FILE_PATH}!`);
+        window.setGlobalStatus("Notice committed.");
         formNotice.reset();
-        if (noticePreview) {
-          noticePreview.innerHTML = "<em>Preview will appear here...</em>";
-        }
+        if (noticePreview) noticePreview.innerHTML = "<em>Preview will appear here...</em>";
       } catch (err) {
-        notify(err.message, "error");
+        window.setGlobalStatus(err.message, true);
       } finally {
         btn.textContent = "Push Notice";
         setupFormValidation("form-notice", "btn-notice");

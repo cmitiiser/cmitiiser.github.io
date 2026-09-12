@@ -92,8 +92,6 @@
 
     <!-- Admin Operations Area -->
     <main class="wrap cmit-admin-wrap">
-      <div id="status-bar" class="cmit-status-banner"></div>
-
       <!-- Authentication Field -->
       <div class="cmit-auth-box">
         <div class="cmit-field-group">
@@ -120,81 +118,23 @@
       <div class="cmit-admin-panel">
         <!-- Navigation Tabs -->
         <nav class="cmit-admin-nav" aria-label="Admin Sections">
-          <button
-            type="button"
-            class="cmit-tab-trigger active"
-            data-tab="events"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
+          <button type="button" class="cmit-tab-trigger active" data-tab="events">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
             <span>Events</span>
           </button>
-
+          
           <button type="button" class="cmit-tab-trigger" data-tab="newsletter">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path
-                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-              ></path>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
             <span>Newsletter</span>
           </button>
-
+          
           <button type="button" class="cmit-tab-trigger" data-tab="notices">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="8" x2="12" y2="12"></line>
-              <line x1="12" y1="16" x2="12.01" y2="16"></line>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
             <span>Notices</span>
           </button>
 
           <button type="button" class="cmit-tab-trigger" data-tab="media">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             <span>Media</span>
           </button>
         </nav>
@@ -203,56 +143,25 @@
         <section id="pane-events" class="cmit-tab-content active">
           <form id="form-event">
             <div class="cmit-field-group">
-              <label for="event-sem"
-                >Semester Group
-                <span class="cmit-req" title="Required">*</span></label
-              >
-              <input
-                type="text"
-                id="event-sem"
-                placeholder="e.g. VASANTH 2026 or VARSHA 2026"
-                required
-                list="sem-suggestions"
-              />
+              <label for="event-sem">Semester Group <span class="cmit-req" title="Required">*</span></label>
+              <input type="text" id="event-sem" placeholder="e.g. VASANTH 2026 or VARSHA 2026" required list="sem-suggestions" />
               <datalist id="sem-suggestions">
                 <option value="VASANTH 2026"></option>
                 <option value="VARSHA 2026"></option>
                 <option value="VASANTH 2027"></option>
               </datalist>
-              <span class="cmit-field-hint"
-                >If this semester doesn't exist yet, it will be created at the
-                top.</span
-              >
+              <span class="cmit-field-hint">If this semester doesn't exist yet, it will be created at the top.</span>
             </div>
 
             <div class="cmit-field-group">
-              <label for="event-date"
-                >Display Date
-                <span class="cmit-req" title="Required">*</span></label
-              >
-              <input
-                type="text"
-                id="event-date"
-                placeholder="e.g. April 03 or March 14 ~ 20"
-                required
-              />
+              <label for="event-date">Display Date <span class="cmit-req" title="Required">*</span></label>
+              <input type="text" id="event-date" placeholder="e.g. April 03 or March 14 ~ 20" required />
             </div>
 
             <div class="cmit-field-group">
-              <label for="event-subject"
-                >Event Details / Description (Markdown)
-                <span class="cmit-req" title="Required">*</span></label
-              >
-              <textarea
-                id="event-subject"
-                rows="3"
-                placeholder="e.g. Talk by Prof. Nitin Saxena on Algebra Powers Computation: $x^2 + y_1$"
-                required
-              ></textarea>
-              <span class="cmit-field-hint"
-                >Supports **bold**, *italic*, ^superscript^, ~subscript~, and
-                standard markdown.</span
-              >
+              <label for="event-subject">Event Details / Description (Markdown) <span class="cmit-req" title="Required">*</span></label>
+              <textarea id="event-subject" rows="3" placeholder="e.g. Talk by Prof. Nitin Saxena on Algebra Powers Computation" required></textarea>
+              <span class="cmit-field-hint">Supports **bold**, *italic*, ^superscript^, ~subscript~, and standard markdown.</span>
             </div>
 
             <div class="cmit-field-group">
@@ -262,21 +171,17 @@
                 id="event-link"
                 placeholder="e.g. /events/S7outreach/ or https://..."
               />
-              <span class="cmit-field-hint"
-                >Ask your website incharge for the correct link.</span
-              >
+              <span class="cmit-field-hint">Ask your website incharge for the correct link.</span>
             </div>
 
             <div class="cmit-field-group">
               <label>Event Preview</label>
               <div id="event-preview" class="cmit-markdown-preview">
-                <em>Preview will appear here</em>
+                <em>Preview will appear here...</em>
               </div>
             </div>
 
-            <button type="submit" class="cmit-btn" id="btn-event" disabled>
-              Commit Event to Git
-            </button>
+            <button type="submit" class="cmit-btn" id="btn-event" disabled>Commit Event</button>
           </form>
         </section>
 
@@ -284,90 +189,43 @@
         <section id="pane-newsletter" class="cmit-tab-content">
           <form id="form-newsletter">
             <div class="cmit-field-group">
-              <label for="nl-title"
-                >Issue Title & Edition
-                <span class="cmit-req" title="Required">*</span></label
-              >
-              <input
-                type="text"
-                id="nl-title"
-                placeholder="e.g. CMIT Donut, Sixth Issue"
-                required
-              />
+              <label for="nl-title">Issue Title & Edition <span class="cmit-req" title="Required">*</span></label>
+              <input type="text" id="nl-title" placeholder="e.g. CMIT Donut, Sixth Issue" required />
             </div>
 
             <div class="cmit-field-group">
-              <label for="nl-pdf"
-                >PDF Document Link
-                <span class="cmit-req" title="Required">*</span></label
-              >
-              <input
-                type="text"
-                id="nl-pdf"
-                placeholder="e.g. ./assets/donuts/CMIT_DONUT6_09.26.pdf or Drive Link"
-                required
-              />
+              <label for="nl-pdf">PDF Document Link <span class="cmit-req" title="Required">*</span></label>
+              <input type="text" id="nl-pdf" placeholder="e.g. ./assets/donuts/CMIT_DONUT6_09.26.pdf or Drive Link" required />
             </div>
 
             <div class="cmit-field-group">
-              <label for="nl-cover"
-                >Cover Image Link (Ask Site Incharge)
-                <span class="cmit-req" title="Required">*</span></label
-              >
-              <input
-                type="text"
-                id="nl-cover"
-                placeholder="e.g. ./img/CMIT_Donut_Cover_07.26.jpg or https://..."
-                required
-              />
+              <label for="nl-cover">Cover Image Link (Ask Site Incharge) <span class="cmit-req" title="Required">*</span></label>
+              <input type="text" id="nl-cover" placeholder="e.g. ./img/CMIT_Donut_Cover_07.26.jpg or https://..." required />
             </div>
 
             <div class="cmit-field-group">
               <label for="nl-feedback">Feedback Form Link (Optional)</label>
-              <input
-                type="url"
-                id="nl-feedback"
-                placeholder="Leave empty to use default Google Form"
-              />
+              <input type="url" id="nl-feedback" placeholder="Leave empty to use default Google Form" />
             </div>
 
             <div class="cmit-field-group">
-              <label for="nl-submit"
-                >Submit Content Link / Email (Optional)</label
-              >
-              <input
-                type="text"
-                id="nl-submit"
-                placeholder="Leave empty to use default (mathsclub@iisertvm.ac.in)"
-              />
+              <label for="nl-submit">Submit Content Link / Email (Optional)</label>
+              <input type="text" id="nl-submit" placeholder="Leave empty to use default (mathsclub@iisertvm.ac.in)" />
             </div>
 
             <div class="cmit-field-group">
-              <label for="nl-writeup"
-                >Editorial Note (Markdown)
-                <span class="cmit-req" title="Required">*</span></label
-              >
-              <textarea
-                id="nl-writeup"
-                rows="6"
-                placeholder="Use **bold**, *italic*, ^superscript^, ~subscript~, or <sup>/<sub> tags..."
-                required
-              ></textarea>
+              <label for="nl-writeup">Editorial Note (Markdown) <span class="cmit-req" title="Required">*</span></label>
+              <textarea id="nl-writeup" rows="6" placeholder="Use **bold**, *italic*, ^superscript^, ~subscript~, or <sup>/<sub> tags..." required></textarea>
             </div>
 
             <div class="cmit-field-group">
               <label>Writeup Preview</label>
-              <div
-                id="nl-preview"
-                class="cmit-markdown-preview cmit-issue-content"
-              >
-                <em>Preview will appear here</em>
+              <div id="nl-preview" class="cmit-markdown-preview cmit-issue-content">
+                <em>Preview will appear here...</em>
               </div>
             </div>
 
-            <button type="submit" class="cmit-btn" id="btn-newsletter" disabled>
-              Publish Edition
-            </button>
+            <button type="submit" class="cmit-btn" id="btn-newsletter" disabled>Commit Newsletter</button>
           </form>
         </section>
 
@@ -375,66 +233,46 @@
         <section id="pane-notices" class="cmit-tab-content">
           <form id="form-notice">
             <div class="cmit-field-group">
-              <label for="notice-text"
-                >Notice Text (Markdown)
-                <span class="cmit-req" title="Required">*</span></label
-              >
-              <textarea
-                id="notice-text"
-                rows="4"
-                placeholder="e.g. Submissions open for **Issue 6**! Fill out the [form](https://forms.gle/...) before Friday."
-                required
-              ></textarea>
+              <label for="notice-text">Notice Text (Markdown) <span class="cmit-req" title="Required">*</span></label>
+              <textarea id="notice-text" rows="4" placeholder="e.g. Submissions open for **Issue 6**! Fill out the [form](https://forms.gle/...) before Friday." required></textarea>
             </div>
 
             <div class="cmit-field-group">
               <label>Live Preview</label>
-              <div
-                id="notice-preview"
-                class="cmit-markdown-preview cmit-notices-list"
-              >
-                <em>Preview will appear here</em>
+              <div id="notice-preview" class="cmit-markdown-preview cmit-notices-list">
+                <em>Preview will appear here...</em>
               </div>
             </div>
 
-            <button type="submit" class="cmit-btn" id="btn-notice" disabled>
-              Push Notice
-            </button>
+            <button type="submit" class="cmit-btn" id="btn-notice" disabled>Commit Notice</button>
           </form>
         </section>
-
-
-
 
         <!-- PANE 4: MEDIA UPLOAD -->
         <section id="pane-media" class="cmit-tab-content">
           <div class="cmit-media-container">
-            <!-- Full Dropzone Surface -->
             <div class="cmit-media-dropzone" id="media-dropzone">
               <div class="cmit-media-drop-icon" aria-hidden="true">&darr;</div>
-              <p class="cmit-media-drop-title">Drag &amp; Drop</p>
+              <p class="cmit-media-drop-title">Drop files here</p>
               <p class="cmit-media-drop-sub">or <span class="cmit-media-browse-link">browse</span></p>
               <input type="file" id="media-file-input" class="cmit-file-hidden" multiple />
             </div>
 
-            <!-- Action Bar -->
             <div class="cmit-form-actions-split">
-              <!-- Left: Review & Commit Trigger -->
               <button type="button" class="cmit-btn" id="btn-review-media" disabled>
-                <span>Review &amp; Commit</span>
-                <span class="cmit-badge-counter" id="media-count-badge">0</span>
+                Review &amp; Commit (<span id="media-count-badge">0</span>)
               </button>
 
-              <!-- Right: Interactive Status & History Button -->
-              <button type="button" class="cmit-status-btn idle" id="btn-media-status">
-                <!-- <span class="cmit-status-dot"></span> -->
-                <span id="media-status-text">Files</span>
-                <span class="cmit-badge-counter cmit-status-counter" id="media-history-badge">0</span>
+              <button type="button" class="cmit-btn-secondary" id="btn-media-history">
+                Files (<span id="media-history-badge">0</span>)
               </button>
             </div>
           </div>
         </section>
       </div>
+
+      <!-- Single Global Text Status Line (Below Container) -->
+      <p id="global-status" class="cmit-global-status"></p>
     </main>
 
     <!-- MODAL 1: REVIEW & COMMIT -->
@@ -457,18 +295,17 @@
       </div>
     </div>
 
-    <!-- MODAL 2: STATUS & DISPATCH LOG (NEW) -->
+    <!-- MODAL 2: DISPATCHED FILES -->
     <div id="status-modal" class="cmit-modal-backdrop" aria-hidden="true">
       <div class="cmit-modal-dialog">
         <div class="cmit-modal-header">
-          <h3 class="cmit-modal-title">Commit Status &amp; Links</h3>
+          <h3 class="cmit-modal-title">Files</h3>
           <button type="button" class="cmit-modal-close" id="btn-status-modal-close" aria-label="Close modal">&times;</button>
         </div>
 
         <div class="cmit-modal-body">
-          <!-- <p class="cmit-modal-desc">Recent uploads, status reports, and CDN raw links for direct embedding.</p> -->
           <div id="status-modal-list" class="cmit-modal-files-list">
-            <p class="cmit-empty-notice">No commits dispatched yet in this session.</p>
+            <p class="cmit-empty-notice">No files yet.</p>
           </div>
         </div>
 
@@ -479,6 +316,5 @@
     </div>
 
     <footer id="site-footer" class="site-footer"></footer>
-
   </body>
 </html>

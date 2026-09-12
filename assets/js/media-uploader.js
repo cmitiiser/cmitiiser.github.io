@@ -11,25 +11,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const fileInput = document.getElementById("media-file-input");
   const reviewBtn = document.getElementById("btn-review-media");
   const countBadge = document.getElementById("media-count-badge");
-  const statusBtn = document.getElementById("btn-media-status");
-  const statusText = document.getElementById("media-status-text");
+  const historyBtn = document.getElementById("btn-media-history");
   const historyBadge = document.getElementById("media-history-badge");
 
-  // Review Modal Elements
+  // Modals
   const reviewModal = document.getElementById("media-modal");
   const reviewCloseBtn = document.getElementById("btn-modal-close");
   const reviewCancelBtn = document.getElementById("btn-modal-cancel");
   const reviewCommitBtn = document.getElementById("btn-modal-commit");
   const reviewFilesList = document.getElementById("modal-files-list");
 
-  // Status Modal Elements
-  const statusModal = document.getElementById("status-modal");
-  const statusCloseBtn = document.getElementById("btn-status-modal-close");
-  const statusDoneBtn = document.getElementById("btn-status-modal-done");
-  const statusModalList = document.getElementById("status-modal-list");
+  const historyModal = document.getElementById("status-modal");
+  const historyCloseBtn = document.getElementById("btn-status-modal-close");
+  const historyDoneBtn = document.getElementById("btn-status-modal-done");
+  const historyModalList = document.getElementById("status-modal-list");
 
   let stagedFiles = [];
-  let uploadHistory = []; // Tracks { id, name, file, path, status, error, rawUrl }
+  let uploadHistory = []; // { id, name, file, path, status, error, rawUrl, viewUrl }
 
   function getAuthToken() {
     const tokenInput = document.getElementById("gh-token");
@@ -52,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return `${categoryFolder}/${dateFolder}/${sanitizedName}`;
   }
 
-  function updateStatusButtonState() {
+  function updateCounts() {
     const token = getAuthToken();
     const stagedCount = stagedFiles.length;
     const historyCount = uploadHistory.length;
@@ -60,29 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (countBadge) countBadge.textContent = stagedCount;
     if (historyBadge) historyBadge.textContent = historyCount;
 
-    // Determine left Review & Commit state
-    reviewBtn.disabled = !(stagedCount > 0 && token);
-
-    // Determine right Status Button appearance
-    const isUploading = uploadHistory.some((h) => h.status === "uploading");
-    const hasError = uploadHistory.some((h) => h.status === "error");
-
-    if (isUploading) {
-      statusBtn.className = "cmit-status-btn uploading";
-      statusText.textContent = "Committing...";
-    } else if (hasError) {
-      statusBtn.className = "cmit-status-btn error";
-      statusText.textContent = "Dispatches (Errors)";
-    } else if (historyCount > 0) {
-      statusBtn.className = "cmit-status-btn success";
-      statusText.textContent = "Dispatches";
-    } else {
-      statusBtn.className = "cmit-status-btn idle";
-      statusText.textContent = stagedCount > 0 ? `${stagedCount} Staged` : "Dispatch History";
+    if (reviewBtn) {
+      reviewBtn.disabled = !(stagedCount > 0 && token);
     }
   }
 
-  // Add files to stage
   function stageFiles(files) {
     if (!files || !files.length) return;
     for (const file of files) {
@@ -90,10 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
         stagedFiles.push(file);
       }
     }
-    updateStatusButtonState();
+    updateCounts();
   }
 
-  // Browse file trigger
   if (dropZone && fileInput) {
     dropZone.addEventListener("click", () => fileInput.click());
     fileInput.addEventListener("change", (e) => {
@@ -123,10 +102,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tokenInput = document.getElementById("gh-token");
   if (tokenInput) {
-    tokenInput.addEventListener("input", updateStatusButtonState);
+    tokenInput.addEventListener("input", updateCounts);
   }
 
-  // Render Review Modal with Thumbnails
+  // Modal 1: Review Staged Files
   function renderReviewQueue() {
     reviewFilesList.innerHTML = "";
 
@@ -169,17 +148,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const idx = parseInt(e.target.dataset.index, 10);
         stagedFiles.splice(idx, 1);
         renderReviewQueue();
-        updateStatusButtonState();
+        updateCounts();
       });
     });
   }
 
-  // Render Status & History Modal
-  function renderStatusModal() {
-    statusModalList.innerHTML = "";
+  // Modal 2: Dispatched Files & File-Specific Statuses
+  function renderHistoryModal() {
+    historyModalList.innerHTML = "";
 
     if (!uploadHistory.length) {
-      statusModalList.innerHTML = '<p class="cmit-empty-notice">No commits dispatched yet in this session.</p>';
+      historyModalList.innerHTML = '<p class="cmit-empty-notice">No files dispatched yet in this session.</p>';
       return;
     }
 
@@ -187,29 +166,29 @@ document.addEventListener("DOMContentLoaded", () => {
       const ext = item.name.split(".").pop().toLowerCase();
       const isImg = IMAGE_EXTENSIONS.includes(ext);
       const card = document.createElement("div");
-      card.className = `cmit-status-card ${item.status}`;
+      card.className = "cmit-file-record";
 
       const thumbHtml = isImg && item.file
         ? `<div class="cmit-modal-thumb-wrap"><img src="${URL.createObjectURL(item.file)}" alt="Preview" class="cmit-modal-thumb" /></div>`
         : `<div class="cmit-modal-thumb-wrap cmit-modal-thumb-doc"><span>${ext.toUpperCase()}</span></div>`;
 
-      let statusBadge = "";
-      let actionArea = "";
+      let stateText = "";
+      let detailHtml = "";
 
       if (item.status === "uploading") {
-        statusBadge = '<span class="cmit-tag uploading">Committing...</span>';
+        stateText = "Uploading...";
       } else if (item.status === "success") {
-        statusBadge = '<span class="cmit-tag success">&check; Committed</span>';
-        actionArea = `
+        stateText = "Committed";
+        detailHtml = `
           <div class="cmit-link-output">
             <input type="text" class="cmit-link-input" value="${item.rawUrl}" readonly />
-            <button type="button" class="cmit-copy-btn">Copy Link</button>
+            <button type="button" class="cmit-copy-btn" data-copy="${item.rawUrl}">Copy Raw</button>
           </div>
-          <p class="cmit-delay-warning">&#9888; CDN propagation may take 2&ndash;5 min.</p>
+          <a href="${item.viewUrl}" target="_blank" rel="noopener" class="cmit-view-link">Open in GitHub Viewer &rarr;</a>
         `;
       } else {
-        statusBadge = '<span class="cmit-tag error">&cross; Failed</span>';
-        actionArea = `<p class="cmit-error-msg">${item.error || "Failed to commit."}</p>`;
+        stateText = "Failed";
+        detailHtml = `<p class="cmit-error-msg">${item.error || "Failed to commit."}</p>`;
       }
 
       card.innerHTML = `
@@ -218,30 +197,26 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="cmit-modal-file-info">
             <div class="cmit-card-header">
               <strong class="cmit-modal-filename" title="${item.name}">${item.name}</strong>
-              ${statusBadge}
+              <span class="cmit-file-state-text">${stateText}</span>
             </div>
             <span class="cmit-modal-filepath">/${item.path}</span>
           </div>
         </div>
-        ${actionArea}
+        ${detailHtml}
       `;
 
-      const copyBtn = card.querySelector(".cmit-copy-btn");
-      const linkInput = card.querySelector(".cmit-link-input");
-      if (copyBtn && linkInput) {
-        copyBtn.addEventListener("click", () => {
-          linkInput.select();
-          navigator.clipboard.writeText(item.rawUrl);
-          copyBtn.textContent = "Copied!";
-          setTimeout(() => (copyBtn.textContent = "Copy Link"), 2000);
+      card.querySelectorAll(".cmit-copy-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          navigator.clipboard.writeText(btn.dataset.copy);
+          btn.textContent = "Copied!";
+          setTimeout(() => (btn.textContent = "Copy Raw"), 2000);
         });
-      }
+      });
 
-      statusModalList.appendChild(card);
+      historyModalList.appendChild(card);
     });
   }
 
-  // Modal Open/Close Controls
   function openModal(modalEl, renderFn) {
     if (renderFn) renderFn();
     modalEl.classList.add("is-open");
@@ -257,13 +232,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (reviewCloseBtn) reviewCloseBtn.addEventListener("click", () => closeModal(reviewModal));
   if (reviewCancelBtn) reviewCancelBtn.addEventListener("click", () => closeModal(reviewModal));
 
-  if (statusBtn) statusBtn.addEventListener("click", () => openModal(statusModal, renderStatusModal));
-  if (statusCloseBtn) statusCloseBtn.addEventListener("click", () => closeModal(statusModal));
-  if (statusDoneBtn) statusDoneBtn.addEventListener("click", () => closeModal(statusModal));
+  if (historyBtn) historyBtn.addEventListener("click", () => openModal(historyModal, renderHistoryModal));
+  if (historyCloseBtn) historyCloseBtn.addEventListener("click", () => closeModal(historyModal));
+  if (historyDoneBtn) historyDoneBtn.addEventListener("click", () => closeModal(historyModal));
 
   window.addEventListener("click", (e) => {
     if (e.target === reviewModal) closeModal(reviewModal);
-    if (e.target === statusModal) closeModal(statusModal);
+    if (e.target === historyModal) closeModal(historyModal);
   });
 
   function toBase64(file) {
@@ -275,7 +250,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Commit Execution
   if (reviewCommitBtn) {
     reviewCommitBtn.addEventListener("click", async () => {
       const token = getAuthToken();
@@ -289,22 +263,38 @@ document.addEventListener("DOMContentLoaded", () => {
       stagedFiles = [];
       closeModal(reviewModal);
 
-      // Pre-populate History records
-      const newItems = queue.map((file) => ({
-        id: Math.random().toString(36).substring(2, 9),
-        name: file.name,
-        file: file,
-        path: resolvePathForFile(file.name),
-        status: "uploading",
-        error: null,
-        rawUrl: null,
-      }));
+      const newItems = queue.map((file) => {
+        const path = resolvePathForFile(file.name);
+        return {
+          id: Math.random().toString(36).substring(2, 9),
+          name: file.name,
+          file: file,
+          path: path,
+          status: "uploading",
+          error: null,
+          rawUrl: `https://raw.githubusercontent.com/${MEDIA_REPO_OWNER}/${MEDIA_REPO_NAME}/${MEDIA_BRANCH}/${path}`,
+          viewUrl: `https://github.com/${MEDIA_REPO_OWNER}/${MEDIA_REPO_NAME}/blob/${MEDIA_BRANCH}/${path}`,
+        };
+      });
 
       uploadHistory.unshift(...newItems);
-      updateStatusButtonState();
+      updateCounts();
+
+      if (window.setGlobalStatus) {
+        window.setGlobalStatus(`Committing ${newItems.length} file(s) to mailmedia...`);
+      }
 
       for (const item of newItems) {
         await commitItemToGit(item, token);
+      }
+
+      const anyError = uploadHistory.some((h) => h.status === "error");
+      if (window.setGlobalStatus) {
+        if (anyError) {
+          window.setGlobalStatus("Some files failed to commit. Check Dispatched Files.", true);
+        } else {
+          window.setGlobalStatus(`All files committed to mailmedia.`);
+        }
       }
     });
   }
@@ -313,7 +303,6 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const base64Content = await toBase64(item.file);
 
-      // Check SHA for overwrite
       let sha = null;
       const getRes = await fetch(
         `https://api.github.com/repos/${MEDIA_REPO_OWNER}/${MEDIA_REPO_NAME}/contents/${item.path}`,
@@ -356,15 +345,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       item.status = "success";
-      item.rawUrl = `https://raw.githubusercontent.com/${MEDIA_REPO_OWNER}/${MEDIA_REPO_NAME}/${MEDIA_BRANCH}/${item.path}`;
     } catch (err) {
       item.status = "error";
       item.error = err.message;
     } finally {
-      updateStatusButtonState();
-      // Auto-update modal if open
-      if (statusModal.classList.contains("is-open")) {
-        renderStatusModal();
+      updateCounts();
+      if (historyModal.classList.contains("is-open")) {
+        renderHistoryModal();
       }
     }
   }
