@@ -3,6 +3,10 @@
     "semester": "VARSHA 2026",
     "events": [
       {
+        "date": "September 12",
+        "text": "This is a test message."
+      },
+      {
         "date": "September 01",
         "text": "A talk by Nalin on Whitney Embedding Theorem and Sard's Theorem"
       },
