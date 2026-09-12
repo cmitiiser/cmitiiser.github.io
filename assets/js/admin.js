@@ -84,7 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
       parsedSubject = `<a href="${linkVal}" target="_blank" rel="noopener">${parsedSubject}</a>`;
     }
 
-    const formattedDate = dateVal ? `<strong>${parseMarkdown(dateVal)}</strong>: ` : "";
+    const formattedDate = dateVal
+      ? `<strong>${parseMarkdown(dateVal)}</strong>: `
+      : "";
     eventPreview.innerHTML = `${formattedDate}${parsedSubject}`;
   }
 
@@ -145,7 +147,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (res.status === 404) return { sha: null, data: null };
     if (!res.ok) {
       const err = await res.json();
-      throw new Error(err.message || `Could not access repository path: ${path}`);
+      throw new Error(
+        err.message || `Could not access repository path: ${path}`,
+      );
     }
     const json = await res.json();
     const content = decodeURIComponent(escape(atob(json.content)));
@@ -186,7 +190,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkFormValidity = () => {
       const hasToken = tokenInput && tokenInput.value.trim().length > 0;
       const requiredInputs = Array.from(form.querySelectorAll("[required]"));
-      const allRequiredFilled = requiredInputs.every((input) => input.value.trim().length > 0);
+      const allRequiredFilled = requiredInputs.every(
+        (input) => input.value.trim().length > 0,
+      );
 
       btn.disabled = !(hasToken && allRequiredFilled);
     };
@@ -243,12 +249,13 @@ document.addEventListener("DOMContentLoaded", () => {
           EVENTS_FILE_PATH,
           JSON.stringify(semesters, null, 2),
           sha,
-          `Add event under ${targetSem}: "${textVal.slice(0, 40)}..."`,
+          `ADMIN PANEL (Event): ${targetSem}: "${textVal.slice(0, 40)}..."`,
         );
 
         window.setGlobalStatus(`Event committed under ${targetSem}.`);
         formEvent.reset();
-        if (eventPreview) eventPreview.innerHTML = "<em>Preview will appear here...</em>";
+        if (eventPreview)
+          eventPreview.innerHTML = "<em>Preview will appear here...</em>";
       } catch (err) {
         window.setGlobalStatus(err.message, true);
       } finally {
@@ -295,12 +302,13 @@ document.addEventListener("DOMContentLoaded", () => {
           NEWSLETTERS_FILE_PATH,
           JSON.stringify(issues, null, 2),
           sha,
-          `Publish newsletter issue: ${issueTitle}`,
+          `ADMIN PANEL (Newsletter): ${issueTitle}`,
         );
 
         window.setGlobalStatus(`Newsletter "${issueTitle}" published.`);
         formNewsletter.reset();
-        if (nlPreview) nlPreview.innerHTML = "<em>Preview will appear here...</em>";
+        if (nlPreview)
+          nlPreview.innerHTML = "<em>Preview will appear here...</em>";
       } catch (err) {
         window.setGlobalStatus(err.message, true);
       } finally {
@@ -320,22 +328,26 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.disabled = true;
         window.setGlobalStatus("Pushing notice to repository...");
 
+        const noticeText = document.getElementById("notice-text").value.trim();
+        const commitSnippet = noticeText.slice(0, 20);
+
         const { sha, data } = await fetchFile(NOTICES_FILE_PATH);
         const notices = Array.isArray(data) ? data : [];
 
         notices.unshift({
-          text: document.getElementById("notice-text").value.trim(),
+          text: noticeText,
         });
 
         await commitFile(
           NOTICES_FILE_PATH,
           JSON.stringify(notices, null, 2),
           sha,
-          "Add notice via admin dashboard",
+          `ADMIN PANEL (Notices): ${commitSnippet}`,
         );
         window.setGlobalStatus("Notice committed.");
         formNotice.reset();
-        if (noticePreview) noticePreview.innerHTML = "<em>Preview will appear here...</em>";
+        if (noticePreview)
+          noticePreview.innerHTML = "<em>Preview will appear here...</em>";
       } catch (err) {
         window.setGlobalStatus(err.message, true);
       } finally {
