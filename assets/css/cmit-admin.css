@@ -314,7 +314,7 @@
 
 .cmit-admin-wrap {
   width: 100%;
-  max-width: 820px;
+  max-width: 1140px;
   margin: 0 auto;
   padding-bottom: 5rem;
   box-sizing: border-box;
@@ -343,30 +343,42 @@
 .cmit-admin-nav {
   display: flex;
   gap: 0.5rem;
-  border-bottom: 1px solid var(--line, #e0e0e0);
+  border-bottom: 2px solid var(--line, #e0e0e0);
   margin-bottom: 2rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  width: 100%;
 }
 
 .cmit-tab-trigger {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
   background: transparent;
   border: none;
-  border-bottom: 2px solid transparent;
-  padding: 0.75rem 1.25rem;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px; /* aligns active border cleanly over the line */
+  padding: 0.75rem 0.5rem;
   font-family: 'Roboto', sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--muted, #666);
   cursor: pointer;
-  white-space: nowrap;
+  text-align: center;
   transition: all 0.2s ease;
+}
+
+.cmit-tab-trigger:hover {
+  color: var(--moss-deep, #2c4a3e);
+  background: rgba(74, 124, 89, 0.04);
 }
 
 .cmit-tab-trigger.active {
   color: var(--moss-deep, #2c4a3e);
+  font-weight: 700;
   border-bottom-color: var(--moss-deep, #2c4a3e);
 }
+
 
 .cmit-tab-content {
   display: none;
@@ -483,8 +495,223 @@
   border: 1px solid #f5c6cb;
 }
 
+
+
 /* ==========================================================================
-   6. RESPONSIVE BREAKPOINTS
+   6. MEDIA UPLOADER TAB & DUAL STATUS BUTTON
+   ========================================================================== */
+
+.cmit-media-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.cmit-media-dropzone {
+  border: 2px dashed var(--line, #ccc);
+  border-radius: 6px;
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  background: #fafaf9;
+  transition: all 0.2s ease;
+}
+
+.cmit-media-dropzone:hover,
+.cmit-media-dropzone.is-hovered {
+  border-color: var(--moss, #4a7c59);
+  background: #f4f7f4;
+}
+
+.cmit-media-drop-icon {
+  font-size: 2.2rem;
+  color: var(--moss, #4a7c59);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.cmit-media-drop-title {
+  font-family: var(--font-head, 'STIX Two Text', serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.cmit-media-drop-sub {
+  font-size: 0.9rem;
+  color: var(--muted, #666);
+}
+
+.cmit-media-browse-link {
+  color: var(--moss-deep, #2c4a3e);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.cmit-file-hidden {
+  display: none;
+}
+
+.cmit-media-staged {
+  background: #fdfdfc;
+  border: 1px solid var(--line, #e0e0e0);
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+}
+
+.cmit-media-staged-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+}
+
+.cmit-media-staged-name {
+  font-weight: 600;
+  color: var(--ink, #222);
+}
+
+.cmit-media-target-path {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--moss-deep, #2c4a3e);
+  background: #eef4ee;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+}
+
+/* Dual-Action Button Row (Left: Commit, Right: Media Status) */
+.cmit-form-actions-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.cmit-status-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.cmit-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Idle State */
+.cmit-status-btn.idle {
+  background: #f0f0f0;
+  color: #777;
+  border: 1px solid #ddd;
+}
+.cmit-status-btn.idle .cmit-status-dot {
+  background: #bbb;
+}
+
+/* Ready State */
+.cmit-status-btn.ready {
+  background: #eef4fa;
+  color: #1a568c;
+  border: 1px solid #bde0fe;
+}
+.cmit-status-btn.ready .cmit-status-dot {
+  background: #1a568c;
+}
+
+/* Uploading State */
+.cmit-status-btn.uploading {
+  background: #fff8e6;
+  color: #945900;
+  border: 1px solid #fed7aa;
+}
+.cmit-status-btn.uploading .cmit-status-dot {
+  background: #f59e0b;
+}
+
+/* Success State (Link Active) */
+.cmit-status-btn.success {
+  background: #2c4a3e;
+  color: #ffffff;
+  border: 1px solid #2c4a3e;
+  cursor: pointer;
+}
+.cmit-status-btn.success .cmit-status-dot {
+  background: #4ade80;
+}
+.cmit-status-btn.success:hover {
+  background: #3b6353;
+  transform: translateY(-1px);
+}
+
+/* Error State */
+.cmit-status-btn.error {
+  background: #fdecea;
+  color: #b33939;
+  border: 1px solid #f8d7da;
+}
+.cmit-status-btn.error .cmit-status-dot {
+  background: #b33939;
+}
+
+/* Link Output Box */
+.cmit-link-output {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.cmit-link-input {
+  flex: 1;
+  min-width: 0;
+  font-family: monospace;
+  font-size: 0.85rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line, #ccc);
+  border-radius: 4px;
+  background: #fff;
+}
+
+
+
+/* Mandatory field indicator */
+.cmit-req {
+  color: #c0392b;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+/* Clear disabled button state */
+.cmit-btn:disabled {
+  background-color: #d1d5db !important;
+  color: #6b7280 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+  border: 1px solid #d1d5db !important;
+}
+
+
+
+
+/* ==========================================================================
+   7. RESPONSIVE BREAKPOINTS
    ========================================================================== */
 
 @media (max-width: 1000px) {
@@ -546,5 +773,49 @@
 
   .cmit-auth-box {
     padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cmit-admin-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+    border-bottom: none;
+    background: #f0eee6;
+    padding: 0.3rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+
+  .cmit-tab-trigger {
+    margin-bottom: 0;
+    border-bottom: none;
+    border-radius: 6px;
+    padding: 0.6rem 0.25rem;
+    font-size: 0.8rem;
+    flex-direction: column;
+    gap: 0.2rem;
+    line-height: 1.2;
+  }
+
+  .cmit-tab-trigger.active {
+    /* background: var(--card, #fff); */
+    color: var(--moss-deep, #2c4a3e);
+    border: var(--moss-deep) 1px solid;
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); */
+  }
+
+  .cmit-admin-nav {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .cmit-form-actions-split {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cmit-status-btn {
+    justify-content: center;
   }
 }

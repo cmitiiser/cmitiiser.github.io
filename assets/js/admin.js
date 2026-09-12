@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tokenInput.value = localStorage.getItem("cmit_pat") || "";
     tokenInput.addEventListener("input", () => {
       localStorage.setItem("cmit_pat", tokenInput.value.trim());
+      updateAllFormsValidation();
     });
   }
 
@@ -61,6 +62,41 @@ document.addEventListener("DOMContentLoaded", () => {
       );
   }
 
+  const eventDateInput = document.getElementById("event-date");
+  const eventSubjectInput = document.getElementById("event-subject");
+  const eventLinkInput = document.getElementById("event-link");
+  const eventPreview = document.getElementById("event-preview");
+
+  function updateEventPreview() {
+    if (!eventPreview) return;
+
+    const dateVal = eventDateInput ? eventDateInput.value.trim() : "";
+    const subjectVal = eventSubjectInput ? eventSubjectInput.value.trim() : "";
+    const linkVal = eventLinkInput ? eventLinkInput.value.trim() : "";
+
+    if (!dateVal && !subjectVal) {
+      eventPreview.innerHTML = "<em>Preview will appear here...</em>";
+      return;
+    }
+
+    let parsedSubject = parseMarkdown(subjectVal);
+
+    if (linkVal) {
+      parsedSubject = `<a href="${linkVal}" target="_blank" rel="noopener">${parsedSubject}</a>`;
+    }
+
+    const formattedDate = dateVal ? `<strong>${parseMarkdown(dateVal)}</strong>: ` : "";
+    eventPreview.innerHTML = `${formattedDate}${parsedSubject}`;
+  }
+
+  if (eventDateInput && eventSubjectInput) {
+    eventDateInput.addEventListener("input", updateEventPreview);
+    eventSubjectInput.addEventListener("input", updateEventPreview);
+    if (eventLinkInput) {
+      eventLinkInput.addEventListener("input", updateEventPreview);
+    }
+  }
+
   const nlWriteupInput = document.getElementById("nl-writeup");
   const nlPreview = document.getElementById("nl-preview");
   if (nlWriteupInput && nlPreview) {
@@ -100,11 +136,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const res = await fetch(
       `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`,
       {
-        headers: { Authorization: `Bearer ${getAuthToken()}` },
+        headers: {
+          Authorization: `Bearer ${getAuthToken()}`,
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
       },
     );
     if (res.status === 404) return { sha: null, data: null };
-    if (!res.ok) throw new Error(`Could not access repository path: ${path}`);
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || `Could not access repository path: ${path}`);
+    }
     const json = await res.json();
     const content = decodeURIComponent(escape(atob(json.content)));
     return { sha: json.sha, data: JSON.parse(content) };
@@ -118,6 +161,8 @@ document.addEventListener("DOMContentLoaded", () => {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${getAuthToken()}`,
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -133,6 +178,32 @@ document.addEventListener("DOMContentLoaded", () => {
       throw new Error(err.message || "Commit failed. Check token permissions.");
     }
   }
+
+  function setupFormValidation(formId, btnId) {
+    const form = document.getElementById(formId);
+    const btn = document.getElementById(btnId);
+    if (!form || !btn) return;
+
+    const checkFormValidity = () => {
+      const hasToken = tokenInput && tokenInput.value.trim().length > 0;
+      const requiredInputs = Array.from(form.querySelectorAll("[required]"));
+      const allRequiredFilled = requiredInputs.every((input) => input.value.trim().length > 0);
+
+      btn.disabled = !(hasToken && allRequiredFilled);
+    };
+
+    form.addEventListener("input", checkFormValidity);
+    form.addEventListener("change", checkFormValidity);
+    checkFormValidity();
+  }
+
+  function updateAllFormsValidation() {
+    setupFormValidation("form-event", "btn-event");
+    setupFormValidation("form-newsletter", "btn-newsletter");
+    setupFormValidation("form-notice", "btn-notice");
+  }
+
+  updateAllFormsValidation();
 
   const formEvent = document.getElementById("form-event");
   if (formEvent) {
@@ -182,11 +253,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         notify(`Event added under "${targetSem}" and pushed to Git!`);
         formEvent.reset();
+        if (eventPreview) {
+          eventPreview.innerHTML = "<em>Preview will appear here...</em>";
+        }
       } catch (err) {
         notify(err.message, "error");
       } finally {
         btn.textContent = "Commit Event to Git";
-        btn.disabled = false;
+        setupFormValidation("form-event", "btn-event");
       }
     });
   }
@@ -242,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
         notify(err.message, "error");
       } finally {
         btn.textContent = "Publish Edition";
-        btn.disabled = false;
+        setupFormValidation("form-newsletter", "btn-newsletter");
       }
     });
   }
@@ -278,7 +352,7 @@ document.addEventListener("DOMContentLoaded", () => {
         notify(err.message, "error");
       } finally {
         btn.textContent = "Push Notice";
-        btn.disabled = false;
+        setupFormValidation("form-notice", "btn-notice");
       }
     });
   }
