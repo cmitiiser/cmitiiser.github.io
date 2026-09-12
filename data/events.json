@@ -3,8 +3,20 @@
     "semester": "VARSHA 2026",
     "events": [
       {
+        "date": "September 01",
+        "text": "A talk by Nalin on Whitney Embedding Theorem and Sard's Theorem"
+      },
+      {
+        "date": "September 01",
+        "text": "A talk by Tharun on The Language of Differential Forms"
+      },
+      {
         "date": "August 18",
         "text": "CMIT Tangent Tuesdays 3.0: A talk by Anushka Roy on Mysteries of Solar Neutrinos"
+      },
+      {
+        "date": "August 11",
+        "text": "CMIT Tangent Tuesdays 3.0: A talk by Rithik Menon on Anatomy of Groups, Composition Series and the Jordan-Hölder Theorem"
       }
     ]
   },
