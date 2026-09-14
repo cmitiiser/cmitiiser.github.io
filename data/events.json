@@ -3,17 +3,17 @@
     "semester": "VARSHA 2026",
     "events": [
       {
+        "date": "September 01",
+        "text": "CMIT Tangent Tuesdays 3.0: A talk by Nalin on Whitney Embedding Theorem and Sard's Theorem"
+      },
+      {
+        "date": "September 01",
+        "text": "CMIT Tangent Tuesdays 3.0: A talk by Tharun on The Language of Differential Forms"
+      },
+      {
         "date": "August 29",
         "text": "CMIT x CCIT joint session: Can Paper Folds Compute?",
         "link": "/events/Origami26/"
-      },
-      {
-        "date": "September 01",
-        "text": "A talk by Nalin on Whitney Embedding Theorem and Sard's Theorem"
-      },
-      {
-        "date": "September 01",
-        "text": "A talk by Tharun on The Language of Differential Forms"
       },
       {
         "date": "August 18",
