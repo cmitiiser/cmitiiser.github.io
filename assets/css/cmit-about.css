@@ -120,7 +120,7 @@
   padding-bottom: 3rem;
 }
 .notices {
-  background-color: var(--card);
+  background-color: var(--paper);
   border: 1px solid var(--line);
   border-left: 3px solid var(--moss);
   border-radius: 2px;

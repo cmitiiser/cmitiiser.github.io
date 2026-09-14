@@ -439,3 +439,80 @@
     height: 500px;
   }
 }
+
+
+/* ---------------- PDF Link ---------------- */
+.event-resources {
+  margin-top: 1.5rem;
+}
+
+.resources-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  color: var(--text, #222);
+}
+
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.6rem;
+}
+
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.65rem;
+  background: var(--card);
+  border: 1px solid var(--logo-gray);
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  min-height: 80px;
+}
+
+
+.resource-icon-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.resource-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.resource-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 1px 4px;
+  background: var(--moss);
+  color: var(--moss-wash);
+  border-radius: 3px;
+  letter-spacing: 0.03em;
+}
+
+.resource-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.resource-desc {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 2px;
+  line-height: 1.2;
+}
