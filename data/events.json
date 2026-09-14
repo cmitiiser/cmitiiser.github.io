@@ -3,6 +3,11 @@
     "semester": "VARSHA 2026",
     "events": [
       {
+        "date": "August 29",
+        "text": "CMIT x CCIT joint session: Can Paper Folds Compute?",
+        "link": "/events/Origami26/"
+      },
+      {
         "date": "September 01",
         "text": "A talk by Nalin on Whitney Embedding Theorem and Sard's Theorem"
       },
