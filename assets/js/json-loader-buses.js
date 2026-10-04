@@ -98,7 +98,7 @@
   }
 
   try {
-    const res = await fetch("/data/buses.json", { cache: "no-cache" });
+    const res = await fetch("/data/ksrtc-buses.json", { cache: "no-cache" });
     state.data = await res.json();
   } catch (e) {
     $("bus-list").innerHTML =
