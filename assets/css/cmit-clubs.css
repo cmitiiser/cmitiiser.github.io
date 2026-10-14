@@ -1,0 +1,248 @@
+@import url("general.css");
+
+body {
+  overflow-x: clip;
+}
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0 2rem;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(38, 42, 46, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 42, 46, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at 30% 20%, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at 30% 20%,
+    black 45%,
+    transparent 85%
+  );
+}
+
+.hero-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-copy {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title em {
+  font-weight: 1000;
+  font-style: normal;
+  color: var(--logo-gray, #555);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.hero-text {
+  max-width: 60ch;
+  margin-bottom: 1rem;
+  color: var(--muted, #666);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   2. CLUB SECTIONS & FLOW
+   ========================================================================== */
+
+.brand-section {
+  width: 100%;
+  min-width: 0;
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+}
+
+.clubs-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+  width: 100%;
+}
+
+.club-group {
+  width: 100%;
+}
+
+.club-head {
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid var(--line, #e2dfd7);
+  padding-bottom: 0.6rem;
+}
+
+.club-head h2 {
+  font-family: var(--font-head, 'STIX Two Text', serif);
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: var(--ink, #1a1a1a);
+  margin: 0;
+}
+
+.brand-loading {
+  font-size: 0.95rem;
+  color: var(--muted, #777);
+  padding: 2rem 0;
+}
+
+.brand-loading.error {
+  color: #c0392b;
+}
+
+/* ==========================================================================
+   3. ASSET GRID (MIN 2, MAX 5, LEFT-TO-RIGHT)
+   ========================================================================== */
+
+.club-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  justify-content: start;
+}
+
+/* ==========================================================================
+   4. ASSET CARDS
+   ========================================================================== */
+
+.asset-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-width: 0;
+  margin: 0;
+}
+
+.asset-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: transparent;
+  border: 1px solid var(--line, #e2dfd7);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 1.35rem;
+}
+
+.asset-stage img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+
+/* ==========================================================================
+   5. METADATA & GREEN ICON BUTTONS
+   ========================================================================== */
+
+.asset-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.1rem;
+}
+
+.asset-format {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--moss-deep, #2c4a3e);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.asset-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.asset-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: var(--moss-deep, #2c4a3e);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: transform 0.15s ease;
+}
+
+.asset-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.asset-action-btn:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .club-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-copy {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+  .hero-text {
+    margin: 1rem auto;
+  }
+  .club-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .club-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .asset-stage {
+    padding: 1rem;
+  }
+}

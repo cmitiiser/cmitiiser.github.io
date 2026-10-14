@@ -1,0 +1,362 @@
+@import url("general.css");
+
+body {
+  overflow-x: clip;
+}
+
+/* ---------------- Hero ---------------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0 2rem;
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(38, 42, 46, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 42, 46, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at 30% 20%, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at 30% 20%,
+    black 45%,
+    transparent 85%
+  );
+}
+.hero-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.hero-copy {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+.eyebrow {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--moss-deep);
+  margin-bottom: 0.4rem;
+}
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.hero-title em {
+  font-weight: 1000;
+  font-style: normal;
+  color: var(--logo-gray);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+.hero-text {
+  max-width: 60ch;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-copy {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+  .hero-text {
+    margin: 1rem auto;
+  }
+}
+
+/* ---------------- Layout: centered, 1 to 3 columns ---------------- */
+.misc-section {
+  width: 100%;
+  min-width: 0;
+  /* max-width: 960px; */
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+}
+
+.misc-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+.misc-search[hidden] {
+  display: none;
+}
+.misc-search input {
+  width: 100%;
+  max-width: 340px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.misc-search input:focus {
+  border-color: var(--moss);
+}
+
+.misc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.misc-empty {
+  width: 100%;
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  padding: 2.5rem 0;
+}
+
+.tool {
+  width: calc((100% - 3rem) / 3);
+} /* 3 per row */
+@media (max-width: 899px) {
+  .tool {
+    width: calc((100% - 1.5rem) / 2);
+  }
+} /* 2 per row */
+@media (max-width: 599px) {
+  .tool {
+    width: 100%;
+    max-width: 420px;
+  }
+} /* 1 per row */
+
+/* ---------------- Tool card (one unit, one timing) ---------------- */
+.tool {
+  --tool: var(--moss);
+  --ease: cubic-bezier(0.22, 0.9, 0.3, 1);
+  --dur: 0.35s;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  text-align: center;
+  color: var(--ink);
+  padding: 2.25rem 1.25rem 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  transition:
+    /* transform var(--dur) var(--ease), */
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease);
+  animation: rise 0.5s ease backwards;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    /* transform: translateY(14px); */
+  }
+}
+
+.tool:hover,
+.tool:focus-visible {
+  /* transform: translateY(-4px); */
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--tool) 60%, var(--line));
+  background: color-mix(in srgb, var(--tool) 6%, var(--card));
+  box-shadow: 0 12px 26px rgba(38, 42, 46, 0.1);
+}
+/* .tool:active {
+  transform: translateY(-1px) scale(0.99);
+} */
+.tool:focus-visible {
+  outline: 2px solid var(--moss);
+  outline-offset: 4px;
+}
+
+/* ---------------- Folder (fixed size, never stretches) ---------------- */
+.folder {
+  position: relative;
+  flex: none;
+  width: 150px;
+  height: 120px;
+  margin: 0 auto 1.25rem;
+}
+
+.folder-back {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: color-mix(in srgb, var(--tool) 78%, #000);
+  border-radius: 0 10px 10px 10px;
+}
+.folder-back::before {
+  /* tab */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -12px;
+  width: 56px;
+  height: 14px;
+  background: inherit;
+  border-radius: 8px 8px 0 0;
+}
+
+.paper,
+.paper-2 {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 10px;
+  height: 84px;
+  border-radius: 5px;
+  transition: transform var(--dur) var(--ease);
+}
+.paper-2 {
+  background: #ebe7da;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.paper {
+  background: #fffefb;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  gap: 8px;
+  overflow: hidden;
+}
+
+/* the icon is part of the paper: no animation of its own */
+.paper-icon {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  font-size: 1.9rem;
+  line-height: 1;
+}
+.paper-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.paper-lines {
+  width: 60%;
+  height: 14px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--line) 0 2px,
+    transparent 2px 6px
+  );
+}
+
+.folder-front {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 78px;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--tool) 86%, #fff),
+    var(--tool)
+  );
+  border-radius: 4px 4px 10px 10px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transform-origin: bottom center;
+  transition: transform var(--dur) var(--ease);
+}
+
+/* Open state: papers rise together, flap leans open, everything on the same timing */
+.tool:hover .paper,
+.tool:focus-visible .paper {
+  transform: translateY(-38px);
+}
+.tool:hover .paper-2,
+.tool:focus-visible .paper-2 {
+  transform: translateY(-26px) rotate(4deg);
+}
+.tool:hover .folder-front,
+.tool:focus-visible .folder-front {
+  transform: perspective(400px) rotateX(-14deg);
+}
+
+/* Touch screens: no hover, so keep the folder open so the icon is always visible */
+@media (hover: none) {
+  .paper {
+    transform: translateY(-38px);
+  }
+  .paper-2 {
+    transform: translateY(-26px) rotate(4deg);
+  }
+  .folder-front {
+    transform: perspective(400px) rotateX(-14deg);
+  }
+}
+
+/* ---------------- Text ---------------- */
+.tool-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+  margin: 0 0 0.3rem;
+}
+
+.tool-tag {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--accent-gold);
+  color: var(--ink-dark);
+}
+.tool-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
+  max-width: 32ch;
+  overflow-wrap: anywhere;
+}
+
+/* ---------------- Phones ---------------- */
+@media (max-width: 560px) {
+  .hero {
+    padding: 2.5rem 0 1rem;
+  }
+  .hero-title {
+    font-size: 1.9rem;
+  }
+  .misc-section {
+    padding-bottom: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool,
+  .paper,
+  .paper-2,
+  .folder-front {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,249 @@
+@import url("general.css");
+
+body {
+  overflow-x: clip;
+}
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0 2rem;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(38, 42, 46, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 42, 46, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at 30% 20%, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at 30% 20%,
+    black 45%,
+    transparent 85%
+  );
+}
+
+.hero-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-copy {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title em {
+  font-weight: 1000;
+  font-style: normal;
+  color: var(--logo-gray, #555);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.hero-text {
+  max-width: 60ch;
+  margin-bottom: 1rem;
+  color: var(--muted, #666);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   2. DROPS SECTION
+   ========================================================================== */
+
+.merch-section {
+  width: 100%;
+  min-width: 0;
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+}
+
+.drop {
+  width: 100%;
+  margin-bottom: 4.5rem;
+}
+
+.drop-head {
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid var(--line, #e2dfd7);
+  padding-bottom: 0.6rem;
+}
+
+.drop-head h2 {
+  font-family: var(--font-head, 'STIX Two Text', serif);
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: var(--ink, #1a1a1a);
+  margin: 0;
+}
+
+/* ==========================================================================
+   3. CLUSTERS
+   ========================================================================== */
+
+.merch-cluster-hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.merch-cluster-tray {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ==========================================================================
+   4. CARDS & STAGES
+   ========================================================================== */
+
+.merch-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  min-width: 0;
+}
+
+.merch-stage {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--line, #e2dfd7);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.is-apparel .merch-stage {
+  aspect-ratio: 4 / 3;
+  padding: 2rem;
+}
+
+.is-small .merch-stage {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  max-height: none;
+  padding: 1.5rem;
+}
+
+.merch-stage img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  transform: translateZ(0);
+  will-change: filter;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.20));
+}
+
+/* ==========================================================================
+   5. LABELS
+   ========================================================================== */
+
+.merch-details {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0 0.1rem;
+}
+
+.merch-index {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.75rem;
+  color: var(--moss-deep, #2c4a3e);
+  opacity: 0.6;
+  margin-top: 0.15rem;
+}
+
+.merch-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.merch-name {
+  font-family: var(--font-head, 'STIX Two Text', Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink, #1a1a1a);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.is-apparel .merch-name {
+  font-size: 1.25rem;
+}
+
+.merch-category {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  color: var(--muted, #777);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-copy {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+  .hero-text {
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .merch-cluster-hero {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .merch-cluster-tray {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .is-apparel .merch-stage {
+    padding: 1.5rem;
+  }
+
+  .is-small .merch-stage {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .merch-cluster-tray {
+    grid-template-columns: 1fr;
+  }
+}
