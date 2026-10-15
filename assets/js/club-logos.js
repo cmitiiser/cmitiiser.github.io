@@ -47,13 +47,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const assetCards = allAssets
           .map((asset) => {
+            const hasSize = asset.size && asset.format.toLowerCase() !== "svg";
+            const labelText = hasSize
+              ? `${asset.format.toUpperCase()} · ${asset.size}`
+              : asset.format.toUpperCase();
+
             return `
               <article class="asset-card">
                 <div class="asset-stage">
-                  <img src="${asset.url}" alt="${club.name} logo" loading="lazy" />
+                  <img src="${asset.url}" alt="${club.name} ${asset.variant}" loading="lazy" />
                 </div>
                 <div class="asset-meta">
-                  <span class="asset-format">${asset.format}</span>
+                  <span class="asset-format">${labelText}</span>
                   <div class="asset-actions">
                     <button type="button" class="asset-action-btn btn-copy" data-url="${asset.url}" title="Copy raw link" aria-label="Copy raw link">
                       ${COPY_ICON}
@@ -85,10 +90,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       btn.addEventListener("click", () => {
         navigator.clipboard.writeText(btn.dataset.url);
         btn.innerHTML = CHECK_ICON;
-        btn.classList.add("copied");
         setTimeout(() => {
           btn.innerHTML = COPY_ICON;
-          btn.classList.remove("copied");
         }, 1400);
       });
     });

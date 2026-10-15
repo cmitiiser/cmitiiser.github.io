@@ -111,7 +111,7 @@ body {
 }
 
 /* ==========================================================================
-   3. ASSET GRID (MIN 2, MAX 5, LEFT-TO-RIGHT)
+   3. ASSET GRID
    ========================================================================== */
 
 .club-grid {
@@ -145,7 +145,7 @@ body {
   justify-content: center;
   box-sizing: border-box;
   overflow: hidden;
-  padding: 1.35rem;
+  padding: 1.25rem;
 }
 
 .asset-stage img {
@@ -177,6 +177,7 @@ body {
   color: var(--moss-deep, #2c4a3e);
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .asset-actions {
@@ -243,6 +244,13 @@ body {
   }
 
   .asset-stage {
-    padding: 1rem;
+    padding: 0.85rem;
+  }
+}
+
+@media (max-width: 385px) {
+  .club-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
   }
 }
