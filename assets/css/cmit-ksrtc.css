@@ -66,6 +66,161 @@ body {
   text-decoration-thickness: 1.5px;
 }
 
+/* ---------------- Route timeline ---------------- */
+.route-card {
+  position: relative;
+  max-width: 640px;
+  width: 100%;
+  margin: 2rem auto 1.5rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.route-details {
+  max-width: 540px;
+  margin: -1rem auto 0;
+  text-align: center;
+}
+
+.route-summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.route-summary::-webkit-details-marker {
+  display: none;
+}
+
+.route-summary::after {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  position: relative;
+  top: -1px;
+}
+
+.route-details[open] .route-summary::after {
+  transform: rotate(-135deg);
+  top: 1px;
+}
+
+.route-details-body {
+  margin-top: 0.75rem;
+  padding: 0 0.5rem;
+}
+
+.route-details-body p {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0;
+  text-align: center;
+}
+
+
+.route-label {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.route {
+  position: relative;
+  height: 76px;
+  margin-top: 2.25rem;
+}
+
+.route-line {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--line);
+}
+
+.route-stop {
+  position: absolute;
+  top: 0;
+  left: var(--pos);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.route-stop.is-start {
+  left: 0;
+  transform: none;
+  align-items: flex-start;
+}
+.route-stop.is-end {
+  left: 100%;
+  transform: translateX(-100%);
+  align-items: flex-end;
+}
+
+.stop-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2.5px solid var(--moss-deep);
+  box-sizing: border-box;
+}
+.route-stop.is-terminus .stop-dot {
+  background: var(--moss-deep);
+}
+
+.stop-name {
+  margin-top: 12px;
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.route-stop.is-terminus .stop-name {
+  font-weight: 600;
+  color: var(--logo-gray);
+}
+
+.leg-item {
+  position: absolute;
+  top: -30px;
+  left: var(--pos);
+  transform: translateX(-50%);
+}
+
+.leg-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
 /* ---------------- Layout ---------------- */
 .bus-section {
   width: 100%;
@@ -118,7 +273,7 @@ body {
   white-space: nowrap;
 }
 
-/* ---------------- Tabs (scroll sideways inside their own box) ---------------- */
+/* ---------------- Tabs ---------------- */
 .bus-tabs {
   display: flex;
   gap: 0;
@@ -213,7 +368,7 @@ body {
 }
 .bus-row {
   display: grid;
-  grid-template-columns: 6.5rem minmax(0, 1fr) auto; /* minmax(0,…) lets text wrap */
+  grid-template-columns: 6.5rem minmax(0, 1fr) auto;
   align-items: center;
   gap: 1rem;
   background: var(--card);
@@ -378,5 +533,49 @@ body {
     grid-column: 1 / -1;
     grid-row: 2;
     font-size: 0.9rem;
+  }
+
+  .route-card {
+    padding: 1.1rem 1rem 1.25rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .route {
+    height: 320px;
+    width: 150px;
+    margin: 1rem 0;
+    position: relative;
+  }
+
+  .route-line {
+    top: 7px;
+    bottom: 7px;
+    left: 6px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+
+  .route-stop,
+  .route-stop.is-start,
+  .route-stop.is-end {
+    top: var(--pos);
+    left: 0;
+    transform: translateY(-50%);
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+  }
+
+  .stop-name {
+    margin-top: 0;
+  }
+
+  .leg-item {
+    top: var(--pos);
+    left: 24px;
+    transform: translateY(-50%);
   }
 }

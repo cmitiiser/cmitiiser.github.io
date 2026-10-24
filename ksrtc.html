@@ -82,9 +82,12 @@
           <p class="hero-text">
             KSRTC govt. bus timings for IISER Thiruvananthapuram students. Ask
             your hostel wardens/front gate security for the latest updates, as
-            these timings are tentative and may change. The buses may arrive
-            15 minutes earlier or later than the listed time, so please plan
-            accordingly.
+            these timings are tentative and may change.
+
+            <strong>
+              The buses may arrive ~30 minutes earlier or later than the listed
+              time, so please plan accordingly.
+            </strong>
           </p>
           <p class="hero-text">
             Download the bus timetable as a PDF
@@ -96,6 +99,74 @@
               >here</a
             >.
           </p>
+
+          <!-- Route timeline -->
+          <div class="route-card" aria-label="Route stops and travel duration">
+            <!-- <p class="route-label">Route &amp; travel time</p> -->
+
+            <div class="route">
+              <div class="route-line" aria-hidden="true"></div>
+
+              <div class="route-stop is-start is-terminus" style="--pos: 0%">
+                <span class="stop-dot"></span>
+                <span class="stop-name"
+                  ><a href="https://maps.app.goo.gl/wfh5HQSn3GiPHWyQ8"
+                    >Campus</a
+                  ></span
+                >
+              </div>
+
+              <div class="route-stop" style="--pos: 26%">
+                <span class="stop-dot"></span>
+                <span class="stop-name"
+                  ><a href="https://maps.app.goo.gl/iP9uwvLryyNkLAVS6"
+                    >Vithura</a
+                  ></span
+                >
+              </div>
+
+              <div class="route-stop" style="--pos: 50%">
+                <span class="stop-dot"></span>
+                <span class="stop-name"
+                  ><a href="https://maps.app.goo.gl/GAmtSKAtxktkgtZq7"
+                    >Nedumangad</a
+                  ></span
+                >
+              </div>
+
+              <div class="route-stop is-end is-terminus" style="--pos: 100%">
+                <span class="stop-dot"></span>
+                <span class="stop-name"
+                  ><a href="https://maps.app.goo.gl/YR76nPnQ6zHqUBTB9"
+                    >Thampanoor</a
+                  ></span
+                >
+              </div>
+
+              <div class="leg-item" style="--pos: 13%">
+                <span class="leg-badge">~20 min</span>
+              </div>
+              <div class="leg-item" style="--pos: 38%">
+                <span class="leg-badge">~40 min</span>
+              </div>
+              <div class="leg-item" style="--pos: 75%">
+                <span class="leg-badge">~60 min</span>
+              </div>
+            </div>
+          </div>
+
+          <details class="route-details">
+            <summary class="route-summary">More Info</summary>
+            <div class="route-details-body">
+              <p>
+                All buses follow this linear route. A bus heading to Nedumangad
+                or Thampanoor always passes through every preceding stop. Ask
+                the bus conductor if you are unsure about the bus's destination.
+                The travel time between stops is approximate and may vary
+                depending on traffic conditions.
+              </p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
