@@ -3,6 +3,10 @@
     "semester": "VARSHA 2026",
     "events": [
       {
+        "date": "October 04",
+        "text": "AXIOMATICA 5.0 - Annual Mathematics Quiz"
+      },
+      {
         "date": "September 30",
         "text": "CMIT Game Night",
         "link": "/events/Varsha26/games_night/"
