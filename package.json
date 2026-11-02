@@ -1,0 +1,22 @@
+{
+  "name": "cmitiiser.github.io",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">   <img src=\"https://github.com/cmitiiser/cmitiiser.github.io/blob/main/assets/brand/logo_rounded.png?raw=true\" alt=\"Clover Logo\" width=\"200\" height=\"200\"> </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmitiiser/cmitiiser.github.io.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cmitiiser/cmitiiser.github.io/issues"
+  },
+  "homepage": "https://github.com/cmitiiser/cmitiiser.github.io#readme",
+  "dependencies": {
+    "terser": "^5.51.2"
+  }
+}

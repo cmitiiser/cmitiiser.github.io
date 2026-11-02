@@ -15,7 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const idealLoad = Promise.all([pageHasLoaded, minimumDisplayTime]);
+  // Gathers all <img> elements and waits for them to load or fail (to prevent hanging)
+  const imagesLoaded = Promise.all(
+    Array.from(document.images).map(img => {
+      if (img.complete) {
+        return Promise.resolve();
+      }
+      return new Promise(resolve => {
+        img.addEventListener('load', resolve, { once: true });
+        img.addEventListener('error', resolve, { once: true });
+      });
+    })
+  );
+
+  const idealLoad = Promise.all([pageHasLoaded, imagesLoaded, minimumDisplayTime]);
 
   const maxTimeout = new Promise(resolve => setTimeout(resolve, 10000));
 
