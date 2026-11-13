@@ -60,12 +60,12 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <div class="asset-meta">
                   <span class="asset-format">${labelText}</span>
                   <div class="asset-actions">
-                    <button type="button" class="asset-action-btn btn-copy" data-url="${asset.url}" title="Copy raw link" aria-label="Copy raw link">
+                    <button type="button" class="asset-action-btn btn-copy" data-url="${asset.url}" title="Copy image to clipboard" aria-label="Copy image to clipboard">
                       ${COPY_ICON}
                     </button>
-                    <a href="${asset.url}" download="${asset.filename}" class="asset-action-btn" title="Download file" aria-label="Download file" target="_blank" rel="noopener">
+                    <button type="button" class="asset-action-btn btn-download" data-url="${asset.url}" data-filename="${asset.filename}" title="Download file" aria-label="Download file">
                       ${DOWNLOAD_ICON}
-                    </a>
+                    </button>
                   </div>
                 </div>
               </article>
@@ -86,15 +86,85 @@ document.addEventListener("DOMContentLoaded", async () => {
       })
       .join("");
 
+    // --- 1. NEW COPY LOGIC ---
     container.querySelectorAll(".btn-copy").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        navigator.clipboard.writeText(btn.dataset.url);
-        btn.innerHTML = CHECK_ICON;
-        setTimeout(() => {
-          btn.innerHTML = COPY_ICON;
-        }, 1400);
+      btn.addEventListener("click", async () => {
+        try {
+          const url = btn.dataset.url;
+          const response = await fetch(url);
+          const blob = await response.blob();
+          
+          let clipboardBlob = blob;
+          
+          // Browsers only allow image/png to be copied to the clipboard.
+          // If the file is SVG or JPG, we paint it to a canvas and convert it to PNG.
+          if (blob.type !== "image/png") {
+            clipboardBlob = await new Promise((resolve, reject) => {
+              const img = new Image();
+              img.crossOrigin = "anonymous";
+              img.onload = () => {
+                const canvas = document.createElement("canvas");
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0);
+                canvas.toBlob((b) => resolve(b), "image/png");
+              };
+              img.onerror = reject;
+              img.src = URL.createObjectURL(blob);
+            });
+          }
+
+          // Write the image blob to the clipboard
+          await navigator.clipboard.write([
+            new ClipboardItem({ "image/png": clipboardBlob })
+          ]);
+
+          btn.innerHTML = CHECK_ICON;
+          setTimeout(() => { btn.innerHTML = COPY_ICON; }, 1400);
+        } catch (err) {
+          console.error("Failed to copy image. Falling back to URL copy:", err);
+          // Fallback to text copy if the clipboard API fails or is blocked
+          navigator.clipboard.writeText(btn.dataset.url);
+          btn.innerHTML = CHECK_ICON;
+          setTimeout(() => { btn.innerHTML = COPY_ICON; }, 1400);
+        }
       });
     });
+
+    // --- 2. NEW DOWNLOAD LOGIC ---
+    container.querySelectorAll(".btn-download").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        try {
+          const url = btn.dataset.url;
+          const filename = btn.dataset.filename || "logo";
+          
+          // Fetch the file to bypass cross-origin download restrictions
+          const response = await fetch(url);
+          const blob = await response.blob();
+          const blobUrl = URL.createObjectURL(blob);
+          
+          // Create a hidden anchor element, trigger download, and clean up
+          const a = document.createElement("a");
+          a.style.display = "none";
+          a.href = blobUrl;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          
+          document.body.removeChild(a);
+          URL.revokeObjectURL(blobUrl);
+
+          btn.innerHTML = CHECK_ICON;
+          setTimeout(() => { btn.innerHTML = DOWNLOAD_ICON; }, 1400);
+        } catch (err) {
+          console.error("Download failed, opening in new tab:", err);
+          // Fallback to opening the raw link in a new tab if fetch fails
+          window.open(btn.dataset.url, '_blank');
+        }
+      });
+    });
+
   } catch (err) {
     container.innerHTML = `<p class="brand-loading error">${err.message}</p>`;
   }
