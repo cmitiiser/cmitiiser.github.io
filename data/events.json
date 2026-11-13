@@ -3,6 +3,14 @@
     "semester": "VARSHA 2026",
     "events": [
       {
+        "date": "November 03",
+        "text": "CMIT Tangent Tuesdays 3.0: A talk by Dhairya Sood on The Riemann Mapping Theorem and Related Results"
+      },
+      {
+        "date": "October 04",
+        "text": "AXIOMATICA 5.0 - Annual Mathematics Quiz"
+      },
+      {
         "date": "September 30",
         "text": "CMIT Game Night",
         "link": "/events/Varsha26/games_night/"
